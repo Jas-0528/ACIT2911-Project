@@ -1,9 +1,10 @@
-from sqlalchemy.sql import functions as func
+import random
 from sqlalchemy import (
     Integer,
     String,
 )
 from sqlalchemy.orm import mapped_column
+from sqlalchemy.dialects.postgresql import JSON
 from db import db
 
 
@@ -13,9 +14,25 @@ class Question(db.Model):
     difficulty = mapped_column(String(10), nullable=False)
     question = mapped_column(String(200), nullable=False)
     correct_answer = mapped_column(String(200), nullable=False)
-    incorrect_answer_1 = mapped_column(String(200), nullable=False)
-    incorrect_answer_2 = mapped_column(String(200), nullable=False)
-    incorrect_answer_3 = mapped_column(String(200), nullable=False)
+    incorrect_answers = mapped_column(JSON, nullable=False)
 
-    def to_dict(self):
-        pass
+    def to_api_dict(self):
+        return {
+            "id": self.id,
+            "category": self.category,
+            "difficulty": self.difficulty,
+            "question": self.question,
+            "correct_answer": self.correct_answer,
+            "incorrect_answers": self.incorrect_answers,
+        }
+
+    def to_game_dict(self):
+        answers = [self.correct_answer] + self.incorrect_answers
+        random.shuffle(answers)
+        return {
+            "id": self.id,
+            "category": self.category,
+            "difficulty": self.difficulty,
+            "question": self.question,
+            "answers": answers,
+        }

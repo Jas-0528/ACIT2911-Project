@@ -3,4 +3,5 @@
 {% block content %}
 <h1>Home</h1>
 <h3>Welcome to Trivia Game</h3>
+<a href="{{ url_for('html.play_question', question_id=random_id) }}">Play</a>
 {% endblock %}
