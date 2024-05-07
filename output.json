@@ -1,0 +1,119 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "type": "boolean",
+            "difficulty": "easy",
+            "category": "Entertainment: Video Games",
+            "question": "In Kingdom Hearts the Paopu fruit is said to intertwine the destinies for two people forever.",
+            "correct_answer": "True",
+            "incorrect_answers": [
+                "False"
+            ]
+        },
+        {
+            "type": "boolean",
+            "difficulty": "easy",
+            "category": "Entertainment: Video Games",
+            "question": "Valve&#039;s &quot;Portal&quot; and &quot;Half-Life&quot; franchises exist within the same in-game universe.",
+            "correct_answer": "True",
+            "incorrect_answers": [
+                "False"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "Which one of the first four titles of the &quot;Grand Theft Auto&quot; franchise started the series of iconic image grid cover arts?",
+            "correct_answer": "Grand Theft Auto III",
+            "incorrect_answers": [
+                "Grand Theft Auto",
+                "Grand Theft Auto II",
+                "Grand Theft Auto Vice City"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "General Knowledge",
+            "question": "Which American president appears on a one dollar bill?",
+            "correct_answer": "George Washington",
+            "incorrect_answers": [
+                "Thomas Jefferson",
+                "Abraham Lincoln",
+                "Benjamin Franklin"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Musicals &amp; Theatres",
+            "question": "What play is the quote &quot;Hell is other people&quot; from?",
+            "correct_answer": "No Exit",
+            "incorrect_answers": [
+                "The Devil and the Good Lord",
+                "The Condemned of Altona",
+                "The Flies"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Entertainment: Japanese Anime &amp; Manga",
+            "question": "Which animation studio produced &quot;Log Horizon&quot;?",
+            "correct_answer": "Satelite",
+            "incorrect_answers": [
+                "Sunrise",
+                "Xebec",
+                "Production I.G"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Video Games",
+            "question": "Which of the following was NOT a playable character in the game Kingdom Hearts: Birth by Sleep?",
+            "correct_answer": "Ignis",
+            "incorrect_answers": [
+                "Ventus",
+                "Terra",
+                "Aqua"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Science: Computers",
+            "question": "When did the online streaming service &quot;Mixer&quot; launch?",
+            "correct_answer": "2016",
+            "incorrect_answers": [
+                "2013",
+                "2009",
+                "2011"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "In the game Pok&eacute;mon Conquest, how many kingdoms make up the region of Ransei?",
+            "correct_answer": "17",
+            "incorrect_answers": [
+                "18",
+                "15",
+                "16"
+            ]
+        },
+        {
+            "type": "boolean",
+            "difficulty": "medium",
+            "category": "Science: Mathematics",
+            "question": "111,111,111 x 111,111,111 = 12,345,678,987,654,321",
+            "correct_answer": "True",
+            "incorrect_answers": [
+                "False"
+            ]
+        }
+    ]
+}
