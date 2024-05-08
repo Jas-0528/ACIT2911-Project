@@ -1,0 +1,602 @@
+[
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "How many chromosomes are in your body cells?",
+        "correct_answer": "23",
+        "incorrect_answers": [
+            "21",
+            "22",
+            "24"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "Where is the area commonly known as the Bermuda Triangle?",
+        "correct_answer": "North Atlantic Ocean, between Florida and Puerto Rico",
+        "incorrect_answers": [
+            "North Pacific Ocean, between Japan and the USA",
+            "In the Caribbean Sea",
+            "South Pacific Ocean, far off Chile"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Japanese Anime &amp; Manga",
+        "question": "In &quot;Puella Magi Madoka Magica&quot;, what is the first name of Madoka&#039;s younger brother?",
+        "correct_answer": "Tatsuya",
+        "incorrect_answers": [
+            "Montoya",
+            "Tomohisa",
+            "Minato"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Japanese Anime &amp; Manga",
+        "question": "Which anime did Seiji Kishi NOT direct?",
+        "correct_answer": "Another",
+        "incorrect_answers": [
+            "Humanity Has Declined",
+            "Assassination Classroom",
+            "Danganronpa: The Animation"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Politics",
+        "question": "Which of the following Pacific Islander countries is ruled by a constitutional monarchy?",
+        "correct_answer": "Tonga",
+        "incorrect_answers": [
+            "Palau",
+            "Fiji",
+            "Kiribati"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "What is the 15th letter of the Greek alphabet?",
+        "correct_answer": "Omicron (&Omicron;)",
+        "incorrect_answers": [
+            "Sigma (&Sigma;)",
+            "Pi (&Pi;)",
+            "Nu (&Nu;)"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "History",
+        "question": "What was the name of the planned invasion of Japan towards the end of World War II?",
+        "correct_answer": "Operation Downfall",
+        "incorrect_answers": [
+            "Operation Boarding Party",
+            "Operation Ironclad",
+            "Operation Aflame"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Entertainment: Film",
+        "question": "Who directed the Kill Bill movies?",
+        "correct_answer": "Quentin Tarantino",
+        "incorrect_answers": [
+            "Arnold Schwarzenegger",
+            "David Lean",
+            "Stanley Kubrick"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Entertainment: Video Games",
+        "question": "&quot;The Potato Sack&quot; was a collection of indie games released on Steam in 2011 as a promotion for which game?",
+        "correct_answer": "Portal 2",
+        "incorrect_answers": [
+            "Left 4 Dead 2",
+            "Half-Life 3",
+            "Dota 2"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Video Games",
+        "question": "What is the AK-47&#039;s name in Counter Strike: Source?",
+        "correct_answer": "CV-47",
+        "incorrect_answers": [
+            "AK-74",
+            "AK",
+            "CZ-75"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Celebrities",
+        "question": "Donald J. Trump&#039;s Middle Name is...",
+        "correct_answer": "John",
+        "incorrect_answers": [
+            "Jeff",
+            "Jerald",
+            "Jason"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "General Knowledge",
+        "question": "Which iconic Disneyland attraction was closed in 2017 to be remodeled as a &quot;Guardians of the Galaxy&quot; themed ride?",
+        "correct_answer": "Twilight Zone Tower of Terror",
+        "incorrect_answers": [
+            "The Haunted Mansion",
+            "Pirates of the Caribbean",
+            "Peter Pan&#039;s Flight"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "A positron is an antiparticle of a what?",
+        "correct_answer": "Electron",
+        "incorrect_answers": [
+            "Neutron",
+            "Proton",
+            "Photon"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "History",
+        "question": "When did the United States formally declare war on Japan, entering World War II?",
+        "correct_answer": "December 8, 1941",
+        "incorrect_answers": [
+            "June 6, 1944",
+            "June 22, 1941",
+            "September 1, 1939"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Video Games",
+        "question": "What was the original release date of Grand Theft Auto V?",
+        "correct_answer": "September 17, 2013",
+        "incorrect_answers": [
+            "August 17, 2013",
+            "April 14, 2015",
+            "November 18, 2014"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Video Games",
+        "question": "In &quot;Resident Evil 2&quot;, what is Leon Kennedy&#039;s middle name?",
+        "correct_answer": "Scott",
+        "incorrect_answers": [
+            "Shaun",
+            "Simon",
+            "Sam"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Entertainment: Video Games",
+        "question": "In the game &quot;Overwatch,&quot; what are the names of the two Australian criminals from the Junkers faction?",
+        "correct_answer": "Junkrat and Roadhog",
+        "incorrect_answers": [
+            "Roadrat and Junkhog",
+            "Ana and Pharah",
+            "McCree and Deadeye"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "History",
+        "question": "In what year was the video game company Electronic Arts founded?",
+        "correct_answer": "1982",
+        "incorrect_answers": [
+            "1999",
+            "1981",
+            "2005"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "General Knowledge",
+        "question": "What is the largest organ of the human body?",
+        "correct_answer": "Skin",
+        "incorrect_answers": [
+            "Heart",
+            "large Intestine",
+            "Liver"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Entertainment: Video Games",
+        "question": "When was Left 4 Dead 2 released?",
+        "correct_answer": "November 17, 2009",
+        "incorrect_answers": [
+            "May 3, 2008",
+            "November 30, 2009",
+            "June 30, 2010"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "General Knowledge",
+        "question": "What is the name of the very first video uploaded to YouTube?",
+        "correct_answer": "Me at the zoo",
+        "incorrect_answers": [
+            "tribute",
+            "carrie rides a truck",
+            "Her new puppy from great grandpa vern."
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Entertainment: Music",
+        "question": "From which country did the song &quot;Gangnam Style&quot; originate from?",
+        "correct_answer": "South Korea",
+        "incorrect_answers": [
+            "Japan",
+            "North Korea",
+            "China"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Entertainment: Music",
+        "question": "What Led Zeppelin album contains &quot;Stairway to Heaven&quot;?",
+        "correct_answer": "Led Zeppelin IV",
+        "incorrect_answers": [
+            "Houses of the Holy",
+            "Physical Graffiti",
+            "Led Zeppelin III"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Entertainment: Comics",
+        "question": "In the webcomic &quot;Ava&#039;s Demon&quot;, what sin is &quot;Nevy Nervine&quot; based off of? ",
+        "correct_answer": "Envy ",
+        "incorrect_answers": [
+            "Sloth",
+            "Wrath ",
+            "Lust"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Entertainment: Music",
+        "question": "Who is the lead singer of Foo Fighters?",
+        "correct_answer": "Dave Grohl",
+        "incorrect_answers": [
+            "Dave Mustaine",
+            "James Hetfield",
+            "Little Red Riding Hood"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science: Computers",
+        "question": "Which of these names was an actual codename for a cancelled Microsoft project?",
+        "correct_answer": "Neptune",
+        "incorrect_answers": [
+            "Enceladus",
+            "Pollux",
+            "Saturn"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Video Games",
+        "question": "Which game is NOT part of the Science Adventure series by 5pb. and Nitroplus?",
+        "correct_answer": "Occultic; Nine",
+        "incorrect_answers": [
+            "Steins; Gate",
+            "Robotics; Notes",
+            "Chaos; Child"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Video Games",
+        "question": "Which of these is NOT a game under the Worms series?",
+        "correct_answer": "Major Malfunction",
+        "incorrect_answers": [
+            "Crazy Golf",
+            "Clan Wars",
+            "Ultimate Mayhem"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Entertainment: Music",
+        "question": "The heavy metal band Black Sabbath hail from which English city?",
+        "correct_answer": "Birmingham",
+        "incorrect_answers": [
+            "Manchester",
+            "London",
+            "Newcastle-Upon-Tyne"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "Which chemical element was originally known as Alabamine?",
+        "correct_answer": "Astatine",
+        "incorrect_answers": [
+            "Selenium",
+            "Antimony",
+            "Molybdenum"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "General Knowledge",
+        "question": "What is the Swedish word for &quot;window&quot;?",
+        "correct_answer": "F&ouml;nster",
+        "incorrect_answers": [
+            "H&aring;l",
+            "Sk&auml;rm",
+            "Ruta"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Entertainment: Video Games",
+        "question": "Which Mario spin-off game did Waluigi make his debut?",
+        "correct_answer": "Mario Tennis",
+        "incorrect_answers": [
+            "Mario Party 3",
+            "Mario Kart: Double Dash!!",
+            "Mario Golf: Toadstool Tour"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Entertainment: Comics",
+        "question": "In the Marvel Universe, the planet of Svartalfheim is home to what race?",
+        "correct_answer": "Dark Elves",
+        "incorrect_answers": [
+            "Frost Giants",
+            "Kronans",
+            "Skrulls"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Entertainment: Television",
+        "question": "In the show &quot;Dragonball Z&quot;, what is the name of Cell&#039;s most powerful attack?",
+        "correct_answer": "Solar Kamehameha",
+        "incorrect_answers": [
+            "Super Kamehameha",
+            "Cell Kamehameha",
+            "Android Kamehameha"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Sports",
+        "question": "Which female player won the gold medal of table tennis singles in 2016 Olympics Games?",
+        "correct_answer": "DING Ning (China)",
+        "incorrect_answers": [
+            "LI Xiaoxia (China)",
+            "Ai FUKUHARA (Japan)",
+            "Song KIM (North Korea)"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Video Games",
+        "question": "What mainly favored rifle is used by the Terrorists in Counter Strike: Global Offensive?",
+        "correct_answer": "AK-47",
+        "incorrect_answers": [
+            "AK-74",
+            "M4A4",
+            "CZ-75 AUTO"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "General Knowledge",
+        "question": "In past times, what would a gentleman keep in his fob pocket?",
+        "correct_answer": "Watch",
+        "incorrect_answers": [
+            "Money",
+            "Keys",
+            "Notebook"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "History",
+        "question": "Which American civilization is the source of the belief that the world would end or drastically change on December 21st, 2012?",
+        "correct_answer": "The Mayans",
+        "incorrect_answers": [
+            "The Incas",
+            "The Aztecs",
+            "The Navajos"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Video Games",
+        "question": "In vanilla Minecraft, you can make armor out of all BUT which of the following?",
+        "correct_answer": "Emeralds",
+        "incorrect_answers": [
+            "Diamonds",
+            "Iron",
+            "Leather"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Music",
+        "question": "In which year was the Megadeth album &quot;Peace Sells... but Who&#039;s Buying?&quot; released?",
+        "correct_answer": "1986",
+        "incorrect_answers": [
+            "1979",
+            "1987",
+            "1983"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Video Games",
+        "question": "What is the name of the virus in &quot;Metal Gear Solid 1&quot;?",
+        "correct_answer": "FOXDIE",
+        "incorrect_answers": [
+            "FOXENGINE",
+            "FOXALIVE",
+            "FOXKILL"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Entertainment: Video Games",
+        "question": "In World of Warcraft the default UI color that signifies Druid is what?",
+        "correct_answer": "Orange",
+        "incorrect_answers": [
+            "Brown",
+            "Green",
+            "Blue"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Music",
+        "question": "Which of these artists has NOT been a member of dancehall group Major Lazer?",
+        "correct_answer": "Skrillex",
+        "incorrect_answers": [
+            "Diplo",
+            "Jillionaire",
+            "Walshy Fire"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "The biggest distinction between a eukaryotic cell and a prokaryotic cell is:",
+        "correct_answer": "The presence or absence of a nucleus",
+        "incorrect_answers": [
+            "The overall size",
+            "The presence or absence of certain organelles",
+            "The mode of reproduction"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Celebrities",
+        "question": "Which actress married Michael Douglas in 2000?",
+        "correct_answer": "Catherine Zeta-Jones",
+        "incorrect_answers": [
+            "Ruth Jones",
+            "Pam Ferris",
+            "Sara Sugarman"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Japanese Anime &amp; Manga",
+        "question": "Krusty is the guild master of which guild in &quot;Log Horizon&quot;?",
+        "correct_answer": "D. D. D",
+        "incorrect_answers": [
+            "Silver Sword",
+            "West Wind Brigade",
+            "Oceanic Systems (Marine Agency)"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Celebrities",
+        "question": "What is the real name of &quot;moot&quot;, founder of the imageboard 4chan?",
+        "correct_answer": "Christopher Poole",
+        "incorrect_answers": [
+            "Mark Zuckerberg",
+            "Allison Harvard",
+            "Catie Wayne"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Entertainment: Books",
+        "question": "What&#039;s Harry Potter&#039;s dad&#039;s name?",
+        "correct_answer": "James Potter",
+        "incorrect_answers": [
+            "Joey Potter",
+            "Frank Potter",
+            "Hairy Potter Sr."
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "Which constellation contains the center of the Milky Way?",
+        "correct_answer": "Sagittarius",
+        "incorrect_answers": [
+            "Scorpius",
+            "Ophiuchus",
+            "Capricornus"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Celebrities",
+        "question": "Which of these people is NOT a part of the Internet comedy group Mega64?",
+        "correct_answer": "Jon Jafari",
+        "incorrect_answers": [
+            "Rocco Botte",
+            "Derrick Acosta",
+            "Shawn Chatfield"
+        ]
+    }
+]
