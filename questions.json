@@ -1,0 +1,605 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "History",
+            "question": "What country joined the EU in 2013?",
+            "correct_answer": "Croatia",
+            "incorrect_answers": [
+                "Bulgaria",
+                "Slovenia",
+                "Turkey"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Sports",
+            "question": "Which country is hosting the 2022 FIFA World Cup?",
+            "correct_answer": "Qatar",
+            "incorrect_answers": [
+                "Uganda",
+                "Vietnam",
+                "Bolivia"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "By how many minutes are you late to work in &quot;Half-Life&quot;?",
+            "correct_answer": "30",
+            "incorrect_answers": [
+                "5",
+                "60",
+                "15"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Music",
+            "question": "What is rapper Drake&#039;s real name?",
+            "correct_answer": "Aubrey Graham",
+            "incorrect_answers": [
+                "Shaun Carter",
+                "Dwayne Carter",
+                "Andre Young"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Entertainment: Video Games",
+            "question": "In &quot;Call Of Duty: Zombies&quot;, which map&#039;s opening cutscene shows &quot;Richtofen&quot; killing another version of himself?",
+            "correct_answer": "The Giant",
+            "incorrect_answers": [
+                "Shadows Of Evil",
+                "Der Eisendrache",
+                "Moon"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Sports",
+            "question": "Who won the UEFA Champions League in 2017?",
+            "correct_answer": "Real Madrid C.F.",
+            "incorrect_answers": [
+                "Atletico Madrid",
+                "AS Monaco FC",
+                "Juventus F.C."
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "General Knowledge",
+            "question": "When was &quot;YouTube&quot; founded?",
+            "correct_answer": "February 14, 2005",
+            "incorrect_answers": [
+                "May 22, 2004",
+                "September 12, 2005",
+                "July 19, 2009"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Entertainment: Video Games",
+            "question": "In Left 4 Dead, what is the character Bill&#039;s last name?",
+            "correct_answer": "Overbeck",
+            "incorrect_answers": [
+                "Fish",
+                "Roberts",
+                "Stevenson"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Japanese Anime &amp; Manga",
+            "question": "What was Ash Ketchum&#039;s second Pokemon?",
+            "correct_answer": "Caterpie",
+            "incorrect_answers": [
+                "Charmander",
+                "Pikachu",
+                "Pidgey"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Celebrities",
+            "question": "What year did radio icon Howard Stern start a job at radio station WNBC?",
+            "correct_answer": "1982",
+            "incorrect_answers": [
+                "1985",
+                "1984",
+                "1995"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "General Knowledge",
+            "question": "What is the weight of a Gold Bar in Fallout: New Vegas?",
+            "correct_answer": "35 Pounds",
+            "incorrect_answers": [
+                "30 Pounds",
+                "40 Pounds",
+                "32.50 Pounds"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "General Knowledge",
+            "question": "What is the Italian word for &quot;tomato&quot;?",
+            "correct_answer": "Pomodoro",
+            "incorrect_answers": [
+                "Aglio",
+                "Cipolla",
+                "Peperoncino"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Sports",
+            "question": "Why was The Green Monster at Fenway Park was originally built?",
+            "correct_answer": "To prevent viewing games from outside the park.",
+            "incorrect_answers": [
+                "To make getting home runs harder.",
+                "To display advertisements.",
+                "To provide extra seating."
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "General Knowledge",
+            "question": "How many calories are in a 355 ml can of Pepsi Cola?",
+            "correct_answer": "150",
+            "incorrect_answers": [
+                "200",
+                "100",
+                "155"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Entertainment: Video Games",
+            "question": "In Super Mario RPG: Legend of The Seven Stars, what is Geno&#039;s real name?",
+            "correct_answer": "\u2661\u266a!?",
+            "incorrect_answers": [
+                "Geno",
+                "Exor",
+                "Smithy"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Video Games",
+            "question": "What war is Call Of Duty: Black Ops based on?",
+            "correct_answer": "Cold War",
+            "incorrect_answers": [
+                "WW3",
+                "Vietnam",
+                "WW1"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Science &amp; Nature",
+            "question": "Which of these is a type of stretch/deep tendon reflex?",
+            "correct_answer": "Ankle jerk reflex",
+            "incorrect_answers": [
+                "Gag reflex",
+                "Pupillary light reflex",
+                "Scratch reflex"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Geography",
+            "question": "The land of Gotland is located in which European country?",
+            "correct_answer": "Sweden",
+            "incorrect_answers": [
+                "Denmark",
+                "Norway",
+                "Germany"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Film",
+            "question": "In &quot;Jurassic World&quot;, what is the name of the dinosaur that is a genetic hybrid?",
+            "correct_answer": "Indominus Rex",
+            "incorrect_answers": [
+                "Mosasaurus",
+                "Pteranodon",
+                "Tyrannosaurus Rex "
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Video Games",
+            "question": "Who are the original creators of Rachet &amp; Clank?",
+            "correct_answer": "Insomniac Games",
+            "incorrect_answers": [
+                "PixelTail Games",
+                "Rare",
+                "Bethesda"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Books",
+            "question": "Which famous spy novelist wrote the childrens&#039; story &quot;Chitty-Chitty-Bang-Bang&quot;?",
+            "correct_answer": "Ian Fleming",
+            "incorrect_answers": [
+                "Joseph Conrad",
+                "John Buchan",
+                "Graham Greene"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Entertainment: Comics",
+            "question": "In what Homestuck Update was [S] Game Over released?",
+            "correct_answer": "October 25th, 2014",
+            "incorrect_answers": [
+                "April 13th, 2009",
+                "April 8th, 2012",
+                "August 28th, 2003"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Music",
+            "question": "Which Twitch streamer is the vocalist for Red Vox?",
+            "correct_answer": "Vinesauce",
+            "incorrect_answers": [
+                "The8BitDrummer",
+                "LIRIK",
+                "Sodapoppin"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Science &amp; Nature",
+            "question": "After which Danish city is the 72th element on the periodic table named?",
+            "correct_answer": "Copenhagen",
+            "incorrect_answers": [
+                "Odense",
+                "Herning",
+                "Skagen"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Sports",
+            "question": "Which car company is the only Japanese company which won the 24 Hours of Le Mans?",
+            "correct_answer": "Mazda",
+            "incorrect_answers": [
+                "Toyota",
+                "Subaru",
+                "Nissan"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Entertainment: Video Games",
+            "question": "What Touhou Project character&#039;s first ever appearance was as a midboss in the eighth game, Imperishable Night?",
+            "correct_answer": "Tewi Inaba",
+            "incorrect_answers": [
+                "Mystia Lorelei",
+                "Kaguya Houraisan",
+                "Rumia"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Music",
+            "question": "Which Aerosmith album featured &quot;Walk This Way&quot;?",
+            "correct_answer": "Toys in the Attic",
+            "incorrect_answers": [
+                "Rocks",
+                "Get Your Wings",
+                "Draw the Line"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Music",
+            "question": "What is the name of the main character from the music video of &quot;Shelter&quot; by Porter Robinson and A-1 Studios?",
+            "correct_answer": "Rin",
+            "incorrect_answers": [
+                "Rem",
+                "Ren",
+                "Ram"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "What was the unofficial name for Germany between 1919 and 1933?",
+            "correct_answer": "Weimar Republic",
+            "incorrect_answers": [
+                "German Democratic Republic",
+                "Federal Republic of Germany",
+                "Oesterreich "
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Entertainment: Television",
+            "question": "In &quot;It&#039;s Always Sunny in Philadelphia&quot; what was the name of Frank&#039;s wrestling persona?",
+            "correct_answer": "The Trash Man",
+            "incorrect_answers": [
+                "Bird of War",
+                "Day Man",
+                "The Maniac"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Entertainment: Television",
+            "question": "Prior to working at Wizards of the Coast, &quot;Mark Rosewater&quot; was a writer for which show?",
+            "correct_answer": "Roseanne",
+            "incorrect_answers": [
+                "Boy Meets World",
+                "The X-Files",
+                "NYPD Blue"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Entertainment: Video Games",
+            "question": "In &quot;Super Mario Sunshine&quot;, how do you unlock the &quot;Corona Mountain&quot; level?",
+            "correct_answer": "By clearing every 7th episode",
+            "incorrect_answers": [
+                "By obtaining 70 Shines",
+                "By clearing every episode involving a &quot;Secret&quot;",
+                "By unlocking every nozzle F.L.U.D.D can use"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "General Knowledge",
+            "question": "Waluigi&#039;s first appearance was in what game?",
+            "correct_answer": "Mario Tennis 64 (N64)",
+            "incorrect_answers": [
+                "Wario Land: Super Mario Land 3",
+                "Mario Party (N64)",
+                "Super Smash Bros. Ultimate"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Entertainment: Board Games",
+            "question": "The board game &quot;Monopoly&quot; is a variation of what board game?",
+            "correct_answer": "The Landlord&#039;s Game",
+            "incorrect_answers": [
+                "Territorial Dispute",
+                "Property Feud",
+                "The Monopolist&#039;s Game"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Video Games",
+            "question": "In the video game, Half-life, what event started the Half-life universe as we know today?",
+            "correct_answer": "The Resonance Cascade",
+            "incorrect_answers": [
+                "World War 3",
+                "The Xen Attack",
+                "The Black Mesa Nuke"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "In Splatoon, what is the age that inklings can freely change between squid and humanoid forms?",
+            "correct_answer": "14",
+            "incorrect_answers": [
+                "13",
+                "16",
+                "10"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Art",
+            "question": "Painter Piet Mondrian (1872 - 1944) was a part of what movement?",
+            "correct_answer": "Neoplasticism",
+            "incorrect_answers": [
+                "Precisionism",
+                "Cubism",
+                "Impressionism"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Film",
+            "question": "Who is the main protagonist in, the 1985 film, Back to the Future?",
+            "correct_answer": "Marty McFly",
+            "incorrect_answers": [
+                "Emmett &quot;Doc&quot; Brown",
+                "Biff Tannen",
+                "George McFly"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "In Terraria, which of these items is NOT crafted at a Mythril Anvil?",
+            "correct_answer": "Ankh Charm",
+            "incorrect_answers": [
+                "Venom Staff",
+                "Sky Fracture",
+                "Orichalcum Tools"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Cartoon &amp; Animations",
+            "question": "In the 1993 Disney animated series &quot;Bonkers&quot;, what is the name of Bonker&#039;s second partner?",
+            "correct_answer": "Miranda Wright",
+            "incorrect_answers": [
+                "Dick Tracy",
+                "Eddie Valiant",
+                "Dr. Ludwig von Drake"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "What level do you have to be to get a service medal on CS:GO?",
+            "correct_answer": "40",
+            "incorrect_answers": [
+                "50",
+                "30",
+                "20"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Video Games",
+            "question": "In the game Battleblock Theater, what was the name of the voice actor who voiced the narrator?",
+            "correct_answer": "Will Stamper",
+            "incorrect_answers": [
+                "Steve Blum",
+                "Richard Epcar",
+                "Yuri Lowenthal"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Video Games",
+            "question": "In Pokemon Red &amp; Blue, what is the name of HM05?",
+            "correct_answer": "Flash",
+            "incorrect_answers": [
+                "Strength",
+                "Cut",
+                "Fly"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Video Games",
+            "question": "Blinky, Pinky, Inky and Clyde are characters from which classic video game?",
+            "correct_answer": "Pac-Man",
+            "incorrect_answers": [
+                "Gauntlet",
+                "Space Invaders",
+                "Street Fighter"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Music",
+            "question": "When was Gangnam Style uploaded to YouTube?",
+            "correct_answer": "2012",
+            "incorrect_answers": [
+                "2013",
+                "2014",
+                "2011"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Film",
+            "question": "Who directed the movies &quot;Pulp Fiction&quot;, &quot;Reservoir Dogs&quot; and &quot;Django Unchained&quot;?",
+            "correct_answer": "Quentin Tarantino",
+            "incorrect_answers": [
+                "Martin Scorcese",
+                "Steven Spielberg",
+                "James Cameron"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "General Knowledge",
+            "question": "Which of the following is not another name for the eggplant?",
+            "correct_answer": "Potimarron",
+            "incorrect_answers": [
+                "Brinjal",
+                "Guinea Squash",
+                "Melongene"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "How old is Chloe Price in Life is Strange: Before the Storm?",
+            "correct_answer": "16",
+            "incorrect_answers": [
+                "24",
+                "19",
+                "15"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "General Knowledge",
+            "question": "What was Mountain Dew&#039;s original slogan?",
+            "correct_answer": "Yahoo! Mountain Dew... It&#039;ll tickle your innards!",
+            "incorrect_answers": [
+                "Give Me A Dew",
+                "Do The Dew",
+                "Get&#039; that barefoot feelin&#039; drinkin&#039; Mountain Dew"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Science &amp; Nature",
+            "question": "Which of the following bones is not in the leg?",
+            "correct_answer": "Radius",
+            "incorrect_answers": [
+                "Patella",
+                "Tibia",
+                "Fibula "
+            ]
+        }
+    ]
+}
