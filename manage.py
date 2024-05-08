@@ -5,19 +5,6 @@ import json
 import requests
 import html
 
-#create the json file
-def json_file():
-    # Make an API request to OpenTDB (replace with the correct endpoint and parameters)
-    url = "https://opentdb.com/api.php?amount=50&type=multiple"  #  Get 50 questions
-    response = requests.get(url)
-    data = response.json()
-    print(data)
-    # Now you have both database questions and API questions in the "output.json" file
-
-    # write out the gotten data to a file
-    with open("questions.json", "w") as outfile:
-        json.dump(data, outfile, indent=4)
-
 # create database tables
 def create_all():
     db.create_all()
@@ -28,13 +15,23 @@ def drop_all():
     db.drop_all()
     print("All tables dropped")
 
-# add questions to the database
-def add_questions(filepath):
+# add questions to the database from jjson file created from the API
+def add_questions():
+    # Make an API request to OpenTDB (replace with the correct endpoint and parameters)
+    url = "https://opentdb.com/api.php?amount=50&type=multiple"  #  Get 50 questions
+    response = requests.get(url)
+    data = response.json()
+    print("Converted to JSON")
+
+    # write out the gotten data to a file
+    with open("data/trivia.json", "w") as outfile:
+        json.dump(data, outfile, indent=4)
     # read the questions.json file
-    with open(filepath) as file:
+    with open("data/trivia.json") as file:
         # Add logic to add questions here
         data = json.load(file)
         data = data["results"]
+        
     #loop though each question and add it to the database
     for question in data:
         new_question = Question(
@@ -53,7 +50,6 @@ def add_questions(filepath):
 
 if __name__ == "__main__":
     with app.app_context():
-        json_file()
         drop_all()
         create_all()
-        add_questions("./questions.json")
+        add_questions()

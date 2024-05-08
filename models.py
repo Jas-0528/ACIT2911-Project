@@ -7,7 +7,6 @@ from sqlalchemy.orm import mapped_column
 from sqlalchemy.dialects.postgresql import JSON
 from db import db
 
-
 class Question(db.Model):
     id = mapped_column(Integer, primary_key=True)
     category = mapped_column(String(50), nullable=False)

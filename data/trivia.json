@@ -1,0 +1,605 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Board Games",
+            "question": "How many dots are on a single die?",
+            "correct_answer": "21",
+            "incorrect_answers": [
+                "24",
+                "15",
+                "18"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Politics",
+            "question": "What is former United States President Bill Clinton&#039;s full name?",
+            "correct_answer": "William Jefferson Clinton",
+            "incorrect_answers": [
+                "William Roosevelt Clinton",
+                "William Truman Clinton",
+                "William Lincoln Clinton"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "When did the Battle of the Bulge end?",
+            "correct_answer": "January 25, 1945",
+            "incorrect_answers": [
+                "August 6, 1945",
+                "December 7, 1941",
+                "December 16, 1944"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Television",
+            "question": "What is the name of Chris&#039;s brother in &quot;Everybody Hates Chris&quot;?",
+            "correct_answer": "Drew",
+            "incorrect_answers": [
+                "Jerome",
+                "Greg",
+                "Joe"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "In the original DOOM games, which of the following demons is a recolor of the Baron of Hell, but is weaker than the Baron?",
+            "correct_answer": "Hell Knight",
+            "incorrect_answers": [
+                "Mancubus",
+                "Pinky",
+                "Arch-Vile"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Science: Computers",
+            "question": "What was the first company to use the term &quot;Golden Master&quot;?",
+            "correct_answer": "Apple",
+            "incorrect_answers": [
+                "IBM",
+                "Microsoft",
+                "Google"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "In what year was the video game company Electronic Arts founded?",
+            "correct_answer": "1982",
+            "incorrect_answers": [
+                "1999",
+                "1981",
+                "2005"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "In the Mario Kart and Smash Bros. Games, Princess Rosalina is considered what weight class?",
+            "correct_answer": "Heavy",
+            "incorrect_answers": [
+                "Medium",
+                "Light",
+                "Light-Medium"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Music",
+            "question": "In what film was the Michael Jackson song &quot;Will You Be There&quot; featured?",
+            "correct_answer": "Free Willy",
+            "incorrect_answers": [
+                "Sleepless in Seattle",
+                "Men in Black",
+                "Bad Boys"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Celebrities",
+            "question": "What was the cause of Marilyn Monroes suicide?",
+            "correct_answer": "Drug Overdose",
+            "incorrect_answers": [
+                "Knife Attack",
+                "House Fire",
+                "Gunshot"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Music",
+            "question": "Which of these is NOT an album released by The Beatles?",
+            "correct_answer": "The Wall",
+            "incorrect_answers": [
+                "Abbey Road",
+                "Magical Mystery Tour",
+                "Revolver"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Video Games",
+            "question": "How many times do you fight Gilgamesh in &quot;Final Fantasy 5&quot;?",
+            "correct_answer": "6",
+            "incorrect_answers": [
+                "4",
+                "5",
+                "3"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Science: Computers",
+            "question": "What is the name of the default theme that is installed with Windows XP?",
+            "correct_answer": "Luna",
+            "incorrect_answers": [
+                "Neptune",
+                "Whistler",
+                "Bliss"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "What is the name of Joel&#039;s daughter in the game, &quot;The Last of Us&quot;? ",
+            "correct_answer": "Sarah",
+            "incorrect_answers": [
+                "Ellie",
+                "Tess",
+                "Marlene"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Entertainment: Music",
+            "question": "Which of these artists did NOT remix the song &quot;Faded&quot; by Alan Walker?",
+            "correct_answer": "Skrillex",
+            "incorrect_answers": [
+                "Ti&euml;sto",
+                "Slushii",
+                "Dash Berlin"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "When did the United States formally declare war on Japan, entering World War II?",
+            "correct_answer": "December 8, 1941",
+            "incorrect_answers": [
+                "June 6, 1944",
+                "June 22, 1941",
+                "September 1, 1939"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "History",
+            "question": "Toussaint Louverture led a successful slave revolt in which country?",
+            "correct_answer": "Haiti",
+            "incorrect_answers": [
+                "France",
+                "Cuba",
+                "United States"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Celebrities",
+            "question": "Which radio personality calls himself &quot;The King of All Media&quot;?",
+            "correct_answer": "Howard Stern",
+            "incorrect_answers": [
+                "Rush Limbaugh",
+                "Pete Tong",
+                "Ryan Seacrest"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Entertainment: Video Games",
+            "question": "Which game in the &quot;Dark Souls&quot; series does the player play as the &quot;Ashen One&quot;?",
+            "correct_answer": "Dark Souls III",
+            "incorrect_answers": [
+                "Dark Souls I",
+                "Bloodborne",
+                "Demon Souls"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Video Games",
+            "question": "Which of these is not a wonder weapon in &quot;Call Of Duty: Zombies&quot;?",
+            "correct_answer": "R115 Resonator",
+            "incorrect_answers": [
+                "GKZ-45 Mk3",
+                "Ray Gun",
+                "Scavenger"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Science &amp; Nature",
+            "question": "A comet&#039;s gaseous envelope (which creates the tail) is called what?",
+            "correct_answer": "The coma",
+            "incorrect_answers": [
+                "The wake",
+                "The backwash",
+                "The ablative"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Film",
+            "question": "Who provided a majority of the songs and lyrics for &quot;Spirit: Stallion of the Cimarron&quot;?",
+            "correct_answer": "Bryan Adams",
+            "incorrect_answers": [
+                "Smash Mouth",
+                "Oasis",
+                "Air Supply"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Japanese Anime &amp; Manga",
+            "question": "What is the name of the final villain in the manga series &quot;Bleach&quot;?",
+            "correct_answer": "Yhwach",
+            "incorrect_answers": [
+                "Juha Bach",
+                "Yuhabah",
+                "Juhabach"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Television",
+            "question": "In the Sci-Fi television show Doctor Who, who plays the Tenth Doctor?",
+            "correct_answer": "David Tennant",
+            "incorrect_answers": [
+                "William Hartnell",
+                "Peter Capaldi",
+                "Peter Davison"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Television",
+            "question": "How many seasons did the Sci-Fi television show &quot;Stargate Atlantis&quot; have?",
+            "correct_answer": "5",
+            "incorrect_answers": [
+                "10",
+                "2",
+                "7"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Geography",
+            "question": "Which of the following Arab countries does NOT have a flag containing only Pan-Arab colours?",
+            "correct_answer": "Qatar",
+            "incorrect_answers": [
+                "Kuwait",
+                "United Arab Emirates",
+                "Jordan"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Animals",
+            "question": "Which animal was part of an Russian domestication experiment in 1959?",
+            "correct_answer": "Foxes",
+            "incorrect_answers": [
+                "Pigeons",
+                "Bears",
+                "Alligators"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Science &amp; Nature",
+            "question": "What is the scientific name of the red fox?",
+            "correct_answer": "Vulpes Vulpes",
+            "incorrect_answers": [
+                "Vulpes Redus",
+                "Red Fox",
+                "Vulpes Vulpie"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Television",
+            "question": "Who was the winner of the 2016 WWE Royal Rumble?",
+            "correct_answer": "Triple H",
+            "incorrect_answers": [
+                "Roman Reigns",
+                "AJ Styles",
+                "Dean Ambrose"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "Sports",
+            "question": "The Mazda 787B won the 24 Hours of Le Mans in what year?",
+            "correct_answer": "1991",
+            "incorrect_answers": [
+                "1990",
+                "2000",
+                "1987"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Music",
+            "question": "According to a song by Belinda Carlisle, Heaven is a place on what?",
+            "correct_answer": "Earth",
+            "incorrect_answers": [
+                "Venus",
+                "Mars",
+                "Uranus"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Art",
+            "question": "Who painted the Mona Lisa?",
+            "correct_answer": "Leonardo da Vinci ",
+            "incorrect_answers": [
+                "Pablo Picasso",
+                " Vincent van Gogh",
+                "Michelangelo"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "Which of the following is not a playable race in the MMORPG Guild Wars 2? ",
+            "correct_answer": "Tengu",
+            "incorrect_answers": [
+                "Sylvari",
+                "Charr",
+                "Asura "
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Books",
+            "question": "Which American author was also a budding travel writer and wrote of his adventures with his dog Charley?",
+            "correct_answer": "John Steinbeck",
+            "incorrect_answers": [
+                "F. Scott Fitzgerald",
+                "Ernest Hemingway",
+                "William Faulkner"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Music",
+            "question": "What is the stage name of English female rapper Mathangi Arulpragasam, who is known for the song &quot;Paper Planes&quot;?",
+            "correct_answer": "M.I.A.",
+            "incorrect_answers": [
+                "K.I.A.",
+                "C.I.A.",
+                "A.I.A."
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Science: Computers",
+            "question": "In HTML, which non-standard tag used to be be used to make elements scroll across the viewport?",
+            "correct_answer": "&lt;marquee&gt;&lt;/marquee&gt;",
+            "incorrect_answers": [
+                "&lt;scroll&gt;&lt;/scroll&gt;",
+                "&lt;move&gt;&lt;/move&gt;",
+                "&lt;slide&gt;&lt;/slide&gt;"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Video Games",
+            "question": "What year did the game &quot;Overwatch&quot; enter closed beta?",
+            "correct_answer": "2015",
+            "incorrect_answers": [
+                "2013",
+                "2011",
+                "2016"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Cartoon &amp; Animations",
+            "question": "What Cartoon Network show aired its first episode on November 4th, 2013?",
+            "correct_answer": "Steven Universe",
+            "incorrect_answers": [
+                "Regular Show",
+                "Adventure Time",
+                "The Amazing World of Gumball"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "History",
+            "question": "List the following Iranic empires in chronological order:",
+            "correct_answer": "Median, Achaemenid, Parthian, Sassanid",
+            "incorrect_answers": [
+                "Median, Achaemenid, Sassanid, Parthian",
+                "Achaemenid, Median, Parthian, Sassanid",
+                "Achaemenid, Median, Sassanid, Parthian"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "History",
+            "question": "How long did the Warsaw Uprising during World War II last?",
+            "correct_answer": "63 Days",
+            "incorrect_answers": [
+                "20 Days",
+                "55 Days",
+                "224 Days"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Music",
+            "question": "Who performed &quot;I Took A Pill In Ibiza&quot;?",
+            "correct_answer": "Mike Posner",
+            "incorrect_answers": [
+                "Avicii",
+                "Robbie Williams",
+                "Harry Styles"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Mythology",
+            "question": "Neptune&#039;s greek name was...",
+            "correct_answer": "Poseidon",
+            "incorrect_answers": [
+                "Ares",
+                "Zeus",
+                "Apollo"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Science &amp; Nature",
+            "question": "What term is best associated with Sigmund Freud?",
+            "correct_answer": "Psychoanalysis",
+            "incorrect_answers": [
+                "Cognitive-Behavioral Therapy",
+                "Theory of Gravity",
+                "Dialectical Behavior Therapy"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Video Games",
+            "question": "Who is the leader of the Brotherhood of Nod in the Command and Conquer series?",
+            "correct_answer": "Kane",
+            "incorrect_answers": [
+                "Joseph Stalin",
+                "CABAL",
+                "Yuri"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "Killing Floor started as a mod for which Unreal Engine 2 game?",
+            "correct_answer": "Unreal Tournament 2004",
+            "incorrect_answers": [
+                "Deus Ex: Invisible War",
+                "Unreal Tournament 3",
+                "Postal"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Video Games",
+            "question": "Which of the following Pok&eacute;mon games released first?",
+            "correct_answer": "Pok&eacute;mon Crystal",
+            "incorrect_answers": [
+                "Pok&eacute;mon Platinum",
+                "Pok&eacute;mon FireRed",
+                "Pok&eacute;mon Black"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Entertainment: Books",
+            "question": "Which novel by John Grisham was conceived on a road trip to Florida while thinking about stolen books with his wife?",
+            "correct_answer": "Camino Island",
+            "incorrect_answers": [
+                "Rogue Lawyer",
+                "Gray Mountain",
+                "The Litigators"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "Entertainment: Video Games",
+            "question": "In &quot;Undertale&quot;, how many main endings are there?",
+            "correct_answer": "3",
+            "incorrect_answers": [
+                "2",
+                "5",
+                "13"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "Science: Mathematics",
+            "question": "What are the first 6 digits of the number &quot;Pi&quot;?",
+            "correct_answer": "3.14159",
+            "incorrect_answers": [
+                "3.14169",
+                "3.12423",
+                "3.25812"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "History",
+            "question": "Which of these theoretical phycisists first predicted the existence of antimatter?",
+            "correct_answer": "Paul Dirac",
+            "incorrect_answers": [
+                "Niels Bohr",
+                "Albert Einstein",
+                "Werner Heisenberg"
+            ]
+        }
+    ]
+}
