@@ -13,6 +13,6 @@ def api_question_list():
     questions = []
 
     for question_obj in question_objs:
-        questions.append(question_obj.to_api_dict())
+        questions.append(question_obj.to_dict())
 
     return jsonify(questions)
