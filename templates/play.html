@@ -1,19 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Play</h1>
-{{ question }}
+<img src="../static/TriviaLogo.png" alt="Logo" id="Navlogo">
+<h1>Trivia Game</h1>
+<body class="play">
+<span class="card">{{ question }}</span>
 
 {% if answered %}
 {% set disabled = "disabled" %}
 {% endif %}
 
-{% for answer in answers %}
-<form method="POST" action="{{ url_for('html.play_question_submit', question_id=id) }}">
-  <input type="hidden" name="answer" value="{{ answer }}">
-  <button type="submit" {{ disabled }}>{{ answer }}</button>
-</form>
-{% endfor %}
+<div class="options">
+  {% for answer in answers %}
+  <form method="POST" action="{{ url_for('html.play_question_submit', question_id=id) }}">
+    <input type="hidden" name="answer" value="{{ answer }}">
+    <button class="rectangle" id="rectangle1" type="submit" {{ disabled }}>{{ answer }}</button>
+  </form>
+  {% endfor %}
+</div>
 
 {% if answered %}
 <p class="{{ 'hidden' if not correct else '' }}">Correct!</p>
@@ -21,4 +25,7 @@
 {% endif %}
 
 <a href="{{ url_for('html.play_question', question_id=random_id) }}">New question</a>
+</body>
 {% endblock %}
+
+

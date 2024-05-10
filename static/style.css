@@ -1,3 +1,200 @@
+* {margin: 0px;}
+
+:root {
+    --text-color:#ffa791;
+    --background-color: #f9d388;
+    --pink: #ff3186;
+    --Bittersweet-pink: #ff725c;
+    --Supernova-yellow: #ffb437;
+    --Mona-lisa-pink: #ff8f8f;
+    --Burgundy-red: #db1049;
+    --Star-pink: #f1728b;
+    }
+
+body {
+    margin: 0;
+    padding: 0; /* Remove any default padding */
+    height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: grid;
+    place-items: center;
+    width: fit-content;
+  }
+
+/* center the game */
+.play {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* make grid for answer options  2 by 2*/
+.options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.card {
+    border: 1.5rem solid var(--Supernova-yellow);
+    padding: 2rem;
+    /* border-radius: 25%; */
+    /* margin: 3.5cm; */
+    text-align: center;
+    /* display: inline-flex; */
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-size: 2em;
+}
+
+.h1 {
+    padding: 0px;
+    font-size: 4em;
+}
+
+button:disabled,
+  button[disabled]{
+    background-color: #767676;
+    height: 3cm;
+    width: 10cm;
+    /* margin-bottom: 10px; */
+    color: white;
+    font-size: 1.5em;
+
+    text-align: center;
+    /* display: inline-flex; */
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    /* above 4 is to center the text */
+}
+button:disabled,
+  button[disabled]:hover{
+    background-color: #767676;
+    transform: scale(1);
+}
+
+
+button {
+  background-color: black;
+  height: 3cm;
+  width: 10cm;
+  /* margin-bottom: 10px; */
+  color: white;
+  font-size: 1.5em;
+
+  text-align: center;
+  /* display: inline-flex; */
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  /* above 4 is to center the text */
+}
+
+button:hover {
+  transform: scale(1.2);
+  transition-duration: 0.2s; 
+  background-color: var(--Supernova-yellow);
+}
+
 .hidden {
   display: none;
+}
+
+nav {
+    width: 100%;
+    background-color: var(--Supernova-yellow);
+    padding: 10px 0;
+    font-size: 2em;
+    position: fixed; 
+    top: 0;
+    left: 0; 
+}
+
+/* space out the nav links, the first 2 evenly and the last with less spce */
+nav li{
+    list-style-type: none;
+    text-decoration: none;
+    display: inline;
+    margin-left: 15%;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  position: relative;
+}
+
+nav a:hover {
+    color: black;
+    background-color: var(--Supernova-yellow);
+    border-radius: 25%;
+    padding: 1rem;
+    background-color: var(--Bittersweet-pink);
+}
+
+.profile-icon {
+    width: 2.5cm;
+    height: 2.5cm;
+    background-color: lightgray;
+    border-radius: 100%;
+    margin-bottom: 0px;
+    margin-left: 500px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 4em;
+    text-decoration-color: var(--Mona-lisa-pink);
+}
+
+div {
+    display: flex;
+    align-items: center;
+}
+
+#Navlogo {
+    height: 100px;
+    border-radius: 6500%;
+    margin-right: 10px;
+}
+
+#CenteredLogo.LogoContainer {
+    text-align: center;
+}
+
+.LogoContainer {
+    text-align: center;
+}
+
+.LogoContainer img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 500%;
+}
+
+main {
+    padding-left: 280px;
+    padding-top: 120px;
+}
+
+section, div, div{
+    padding: 3px;
+    margin-left: 20px;
+}
+
+.card{
+    padding-right: 10px;
+}
+
+p{
+    font-size: 1.5rem;
+    background-color: var(--Star-pink);
+    padding: 1rem;
+    border-radius: 10px;
+
 }
