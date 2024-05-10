@@ -1,7 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Home</h1>
-<h3>Welcome to Trivia Game</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="static/style.css"
+</head>
+
+<body>
+    <nav>
+        <div class="nav">
+            <li>
+            <a href="#">Home</a>
+            </li>
+            <li>
+            <a href="{{ url_for('html.play_question', question_id=random_id) }}">Play</a>
+            </li>
+            <li>
+            <div class="profile-icon"></div>
+            </li>
+        </div>
+    </nav>
+    
+</body>
+</html>
 <a href="{{ url_for('html.play_question', question_id=random_id) }}">Play</a>
 {% endblock %}
