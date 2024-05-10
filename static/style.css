@@ -1,3 +1,112 @@
-.hidden {
-  display: none;
-}
+:root {
+    --text-color: #ffa791;
+    --background-color: #f9d388;
+    --pink: #ff3186;
+    --bittersweet-pink: #ff725c;
+    --supernova-yellow: #ffb437;
+    --mona-lisa-pink: #ff8f8f;
+    --burgundy-red: #db1049;
+    --star-pink: #f1728b;
+  }
+  
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  body {
+    margin: 0px;
+  }
+  
+  nav {
+    background-color: var(--supernova-yellow);
+    padding: 10px 0;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul {
+    margin: auto;
+    padding-inline: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  nav a:hover {
+    border-radius: 25%;
+    padding: 1rem;
+    background-color: var(--bittersweet-pink);
+  }
+  
+  .container {
+    display: grid;
+    place-items: center;
+    height: calc(100vh - 57px);
+  }
+  
+  #home-logo {
+    margin: auto;
+    height: 500px;
+    border-radius: 50%;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .play {
+    display: grid;
+    place-items: center;
+    height: calc(100vh - 57px);
+  }
+  
+  .card {
+    border: 1.5rem solid var(--supernova-yellow);
+    padding: 2rem;
+    background-color: black;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+  }
+  
+  /* Make grid for answer options 2 by 2 */
+  .options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  button {
+    background-color: black;
+    height: 3cm;
+    width: 10cm;
+    color: white;
+    font-size: 1.5em;
+    margin: 5px;
+  }
+  
+  button:not(:disabled):hover {
+    transform: scale(1.2);
+    transition-duration: 0.2s;
+    background-color: var(--supernova-yellow);
+  }
+  
+  button:disabled {
+    background-color: #767676;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #play-logo {
+    height: 100px;
+    border-radius: 50%;
+  }
