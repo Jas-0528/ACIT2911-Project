@@ -11,9 +11,18 @@
 </head>
 
 <body>
+  <nav>
+    <ul>
+      <li>
+        <a href="{{ url_for('html.home', question_id=random_id) }}">Home</a>
+      </li>
+      <li>
+        <a href="{{ url_for('html.play_question', question_id=random_id) }}">Play</a>
+      </li>
+    </ul>
+  </nav>
   {% block content %}
   {% endblock %}
-  </div>
 </body>
 
 </html>

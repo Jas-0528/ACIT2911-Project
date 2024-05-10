@@ -1,31 +1,33 @@
 {% extends "base.html" %}
 
 {% block content %}
-<img src="../static/TriviaLogo.png" alt="Logo" id="Navlogo">
-<h1>Trivia Game</h1>
-<body class="play">
-<span class="card">{{ question }}</span>
+<div class="play">
+  <img src="../static/logo.png" alt="Trivia Game logo" id="play-logo">
+  <h1>Trivia Game</h1>
 
-{% if answered %}
-{% set disabled = "disabled" %}
-{% endif %}
+  <span class="card">{{ question }}</span>
 
-<div class="options">
-  {% for answer in answers %}
-  <form method="POST" action="{{ url_for('html.play_question_submit', question_id=id) }}">
-    <input type="hidden" name="answer" value="{{ answer }}">
-    <button class="rectangle" id="rectangle1" type="submit" {{ disabled }}>{{ answer }}</button>
-  </form>
-  {% endfor %}
+  {% if answered %}
+  {% set disabled = "disabled" %}
+  {% endif %}
+
+  <div class="options">
+    {% for answer in answers %}
+    <form method="POST" action="{{ url_for('html.play_question_submit', question_id=id) }}">
+      <input type="hidden" name="answer" value="{{ answer }}">
+      <button type="submit" {{ disabled }}>{{ answer }}</button>
+    </form>
+    {% endfor %}
+  </div>
+
+  {% if answered %}
+  <p class="{{ 'hidden' if not correct else '' }}">Correct!</p>
+  <p class="{{ 'hidden' if correct else '' }}">Sorry. The answer was {{ correct_answer }}.</p>
+  {% else %}
+  <p></p>
+  {% endif %}
+
+  <a href="{{ url_for('html.play_question', question_id=random_id) }}">New question</a>
+  <a href="https://opentdb.com/api_config.php">Questions were obtained from the Open Trivia Database API</a>
 </div>
-
-{% if answered %}
-<p class="{{ 'hidden' if not correct else '' }}">Correct!</p>
-<p class="{{ 'hidden' if correct else '' }}">Nope. The answer was {{ correct_answer }}.</p>
-{% endif %}
-
-<a href="{{ url_for('html.play_question', question_id=random_id) }}">New question</a>
-</body>
 {% endblock %}
-
-
