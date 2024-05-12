@@ -7,7 +7,7 @@ from db import db
 from models import User
 from routes import html_bp, api_questions_bp, auth_bp
 
-# Load the environment variables from the .env file
+# Load environment variables from .env file
 load_dotenv()
 
 # Create Flask application
@@ -17,7 +17,7 @@ app.instance_path = Path("./data").resolve()
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///trivia.db"
 app.secret_key = os.getenv("SECRET_KEY")
 
-# Initialize the database with the app
+# Initialize database
 db.init_app(app)
 
 login_manager = LoginManager()
