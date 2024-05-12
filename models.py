@@ -1,10 +1,10 @@
-import random
+import json
 from sqlalchemy import (
+    ForeignKey,
     Integer,
     String,
 )
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.dialects.postgresql import JSON
+from sqlalchemy.orm import mapped_column, relationship
 from db import db
 
 
@@ -14,7 +14,7 @@ class Question(db.Model):
     difficulty = mapped_column(String(10), nullable=False)
     question = mapped_column(String(200), nullable=False)
     correct_answer = mapped_column(String(200), nullable=False)
-    incorrect_answers = mapped_column(JSON, nullable=False)
+    incorrect_answers_string = mapped_column(String(600), nullable=False)
 
     def to_dict(self):
         return {
@@ -23,5 +23,5 @@ class Question(db.Model):
             "difficulty": self.difficulty,
             "question": self.question,
             "correct_answer": self.correct_answer,
-            "incorrect_answers": self.incorrect_answers,
+            "incorrect_answers": json.loads(self.incorrect_answers_string),
         }
