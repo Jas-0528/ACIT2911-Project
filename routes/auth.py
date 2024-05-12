@@ -11,7 +11,7 @@ from flask_login import login_user
 @auth_bp.route("/login", methods=["GET"])
 def login():
     random_id = db.session.query(Question.id).order_by(func.random()).first()[0]
-    return render_template("login.html", random_id=random_id)
+    return render_template("login.html", next_question_id=random_id)
 
 @auth_bp.route("/login", methods=["POST"])
 def login_post():
@@ -36,7 +36,7 @@ def login_post():
 @auth_bp.route("/register", methods=["GET"])
 def register():
     random_id = db.session.query(Question.id).order_by(func.random()).first()[0]
-    return render_template("signup.html", random_id=random_id)
+    return render_template("signup.html", next_question_id=random_id)
 
 #take the form data and create a new user
 @auth_bp.route("/register", methods=["POST"])
