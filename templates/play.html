@@ -13,7 +13,7 @@
 
   <div class="options">
     {% for answer in answers %}
-    <form method="POST" action="{{ url_for('html.play_question_submit', question_id=id) }}">
+    <form method="POST" action="{{ url_for('html.play_random_submit', question_id=id) }}">
       <input type="hidden" name="answer" value="{{ answer }}">
       <button type="submit" {{ disabled }}>{{ answer }}</button>
     </form>
@@ -27,7 +27,7 @@
   <p></p>
   {% endif %}
 
-  <a href="{{ url_for('html.play_question', question_id=random_id) }}">New question</a>
+  <a href="{{ url_for('html.play_random', question_id=next_question_id) }}">New question</a>
   <a href="https://opentdb.com/api_config.php">Questions were obtained from the Open Trivia Database API</a>
 </div>
 {% endblock %}

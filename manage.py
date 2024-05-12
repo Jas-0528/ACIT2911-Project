@@ -1,9 +1,7 @@
+import json, requests, html
 from db import db
 from app import app
 from models import Question
-import json
-import requests
-import html
 
 
 def write_to_json():
@@ -34,7 +32,9 @@ def append_to_json():
         existing_data = []
 
     # Append new data
-    existing_data.extend(question for question in data if question not in existing_data)
+    existing_data.extend(
+        question_json for question_json in data if question_json not in existing_data
+    )
 
     # Write out JSON to file
     with open("data/trivia.json", "w") as outfile:
@@ -61,18 +61,18 @@ def add_questions():
         data = json.load(file)
 
     # Loop though each question and add it to the database
-    for question in data:
-        new_question = Question(
-            question=html.unescape(question["question"]),
-            correct_answer=html.unescape(question["correct_answer"]),
-            incorrect_answers=[
-                html.unescape(answer) for answer in question["incorrect_answers"]
-            ],
-            category=html.unescape(question["category"]),
-            difficulty=html.unescape(question["difficulty"]),
+    for question_json in data:
+        question = Question(
+            question=html.unescape(question_json["question"]),
+            correct_answer=html.unescape(question_json["correct_answer"]),
+            incorrect_answers_string=json.dumps(
+                [html.unescape(answer) for answer in question_json["incorrect_answers"]]
+            ),
+            category=html.unescape(question_json["category"]),
+            difficulty=html.unescape(question_json["difficulty"]),
         )
         # Add the question to the database
-        db.session.add(new_question)
+        db.session.add(question)
 
     # Once all questions have been added, commit the transaction
     db.session.commit()
