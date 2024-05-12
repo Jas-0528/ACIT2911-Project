@@ -46,6 +46,7 @@ def play_random(question_id):
 def play_random_submit(question_id):
     # Retrieve user-submited answer
     answer = request.form.get("answer")
+    
     # Retrieve question from database based on id in URL
     question = db.get_or_404(
         Question, question_id, description=f"Question {question_id} does not exist"
