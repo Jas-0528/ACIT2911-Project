@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 from flask import Flask
 from flask_login import LoginManager
 from pathlib import Path
@@ -6,11 +7,17 @@ from db import db
 from models import User
 from routes import html_bp, api_questions_bp, auth_bp
 
-app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///trivia.db"
-app.secret_key = "super-secret"
-app.instance_path = Path("./data").resolve()
+# Load environment variables from .env file
+load_dotenv()
 
+# Create Flask application
+app = Flask(__name__)
+
+app.instance_path = Path("./data").resolve()
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///trivia.db"
+app.secret_key = os.getenv("SECRET_KEY")
+
+# Initialize database
 db.init_app(app)
 
 login_manager = LoginManager()
