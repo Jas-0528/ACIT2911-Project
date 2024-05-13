@@ -139,6 +139,6 @@ if __name__ == "__main__":
         # append_to_json()
         drop_all()
         create_all()
-        create_test_accounts()
         add_questions()
+        create_test_accounts()
         # create_random_game()

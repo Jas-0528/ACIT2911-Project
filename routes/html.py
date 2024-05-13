@@ -35,6 +35,7 @@ def get_categories():
     stmt = db.select(Question.category).distinct()
     result = db.session.execute(stmt)
     categories = [row[0] for row in result]
+    categories.sort()
     return categories
 
 
@@ -47,7 +48,7 @@ def fetch_questions(category="all", difficulty="all", length=5):
     if difficulty != "all":
         stmt = stmt.where(Question.difficulty == difficulty)
 
-    stmt = stmt.limit(length)
+    stmt = stmt.order_by(func.random()).limit(length)
 
     questions = db.session.execute(stmt).scalars().all()
     return questions
