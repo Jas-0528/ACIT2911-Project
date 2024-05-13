@@ -17,6 +17,8 @@
     src: url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 } 
 
+/* nav: similar to Amina's code but is a bit tweaked to align everything */
+
 nav {
     background-color: #E4E9EF;
     font-style: italic;
@@ -123,15 +125,14 @@ a {
     margin-left: 100px;
 }
 
-
-#triv {
-    align-content: first baseline;
-}
+/* body, which includes the whole login square */
 
 body{
     width: 100%;
     background-color: var(--Goated-Purple);
 }
+
+/* alignment and look of login text */
 
 .login{
     display: flex;
@@ -143,6 +144,8 @@ body{
     font-weight: bold;
     font-family: "Playfair Display", serif;
 }
+
+/* look of the gold square */
 
 section{
     margin-top: 20px;
@@ -156,6 +159,8 @@ section{
     border-radius: 30px;
 
 }
+
+/* username code, not sure how to implement the actual code so that users can input, this is all just for the shape and appearance. */
 
 .Username{
     margin-top: 50px;
