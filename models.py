@@ -15,23 +15,14 @@ class User(UserMixin, db.Model):
     email = mapped_column(String(50), nullable=False, unique=True)
     username = mapped_column(String(50), nullable=False, unique=True)
     password = mapped_column(String(50), nullable=False)
-    game = relationship("Game", uselist=False, cascade="all, delete-orphan")
-
-    def to_dict(self):
-        return {
-            "id": self.id,
-            "role": self.role,
-            "email": self.email,
-            "username": self.username,
-            "password": self.password,
-        }
+    quiz = relationship("Quiz", uselist=False, cascade="all, delete-orphan")
 
 
-class Game(db.Model):
+class Quiz(db.Model):
     id = mapped_column(Integer, primary_key=True)
     user_id = mapped_column(Integer, ForeignKey(User.id), nullable=False, unique=True)
-    user = relationship("User", back_populates="game")
-    questions = relationship("GameQuestion", cascade="all, delete-orphan")
+    user = relationship("User", back_populates="quiz")
+    questions = relationship("QuizQuestion", cascade="all, delete-orphan")
 
 
 class Question(db.Model):
@@ -41,9 +32,9 @@ class Question(db.Model):
     question = mapped_column(String(200), nullable=False)
     correct_answer = mapped_column(String(200), nullable=False)
     incorrect_answers_string = mapped_column(String(600), nullable=False)
-    games = relationship("GameQuestion", cascade="all, delete-orphan")
+    quizzes = relationship("QuizQuestion", cascade="all, delete-orphan")
 
-    def to_dict(self):
+    def to_api_dict(self):
         return {
             "id": self.id,
             "category": self.category,
@@ -53,11 +44,22 @@ class Question(db.Model):
             "incorrect_answers": json.loads(self.incorrect_answers_string),
         }
 
+    def to_play_dict(self):
+        return {
+            "id": self.id,
+            "category": self.category,
+            "difficulty": self.difficulty,
+            "question": self.question,
+            "correct_answer": self.correct_answer,
+            "answers": json.loads(self.incorrect_answers_string)
+            + [self.correct_answer],
+        }
 
-class GameQuestion(db.Model):
+
+class QuizQuestion(db.Model):
     id = mapped_column(Integer, primary_key=True)
-    game_id = mapped_column(Integer, ForeignKey(Game.id), nullable=False)
+    quiz_id = mapped_column(Integer, ForeignKey(Quiz.id), nullable=False)
     question_id = mapped_column(Integer, ForeignKey(Question.id), nullable=False)
     answered = mapped_column(db.Boolean, default=False)
-    game = relationship("Game", back_populates="questions")
-    question = relationship("Question", back_populates="games")
+    quiz = relationship("Quiz", back_populates="questions")
+    question = relationship("Question", back_populates="quizzes")

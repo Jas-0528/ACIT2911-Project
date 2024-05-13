@@ -1,4 +1,3 @@
-import json
 from flask import Blueprint, jsonify
 from db import db
 from models import Question
@@ -11,9 +10,9 @@ api_questions_bp = Blueprint("api_questions", __name__)
 def api_question_list():
     question_stmt = db.select(Question).order_by(Question.id)
     questions = db.session.execute(question_stmt).scalars()
-    questions = []
+    questions_list = []
 
     for question in questions:
-        questions.append(question.to_dict())
+        questions_list.append(question.to_api_dict())
 
-    return jsonify(questions)
+    return jsonify(questions_list)

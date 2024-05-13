@@ -13,10 +13,10 @@
 
   <div class="options">
     {% for answer in answers %}
-    {% if play == "random" %}
+    {% if mode == "random" %}
     <form method="POST" action="{{ url_for('html.play_random_submit', question_id=id) }}">
       {% else %}
-      <form method="POST" action="{{ url_for('html.play_game_submit') }}">
+      <form method="POST" action="{{ url_for('html.play_quiz_submit') }}">
         {% endif %}
         <input type="hidden" name="answer" value="{{ answer }}">
         <button type="submit" {{ disabled }}>{{ answer }}</button>
@@ -31,10 +31,10 @@
   <p></p>
   {% endif %}
 
-  {% if play == "random" %}
-  <a href="{{ url_for('html.play_random', question_id=next_question_id) }}">Random question</a>
+  {% if mode == "random" %}
+  <a href="{{ url_for('html.play_random', question_id=random_question_id) }}">Random question</a>
   {% else %}
-  <a href="{{ url_for('html.play_game') }}">Next question</a>
+  <a href="{{ url_for('html.play_quiz') }}">Next question</a>
   {% endif %}
 
   <a href="https://opentdb.com/api_config.php">Questions were obtained from the Open Trivia Database API</a>

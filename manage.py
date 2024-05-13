@@ -3,7 +3,7 @@ from sqlalchemy.sql import functions as func
 from werkzeug.security import generate_password_hash
 from db import db
 from app import app
-from models import User, Game, Question, GameQuestion
+from models import User, Quiz, Question, QuizQuestion
 
 
 def write_to_json():
@@ -109,7 +109,7 @@ def create_random_game():
     user = db.session.execute(user_stmt).scalar()
 
     # Make an game
-    game = Game(user=user)
+    game = Quiz(user=user)
     db.session.add(game)
 
     # Sample 1 to 4 questions from the Question table and create a list of database objects
@@ -121,8 +121,8 @@ def create_random_game():
     # Loop over game questions in sample
     for question in questions:
 
-        # Create GameQuestion objects and add to database
-        game_question = GameQuestion(
+        # Create QuizQuestion objects and add to database
+        game_question = QuizQuestion(
             game=game,
             question=question,
         )
