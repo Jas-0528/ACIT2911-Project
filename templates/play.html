@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="play">
-  <img src="../static/logo.png" alt="Trivia Game logo" id="play-logo">
+  <img src="{{ url_for('static', filename='logo.png') }}" alt="Trivia Game logo" id="play-logo">
   <h1>Trivia Game</h1>
 
   <span class="card">{{ question }}</span>
@@ -13,11 +13,15 @@
 
   <div class="options">
     {% for answer in answers %}
+    {% if play == "random" %}
     <form method="POST" action="{{ url_for('html.play_random_submit', question_id=id) }}">
-      <input type="hidden" name="answer" value="{{ answer }}">
-      <button type="submit" {{ disabled }}>{{ answer }}</button>
-    </form>
-    {% endfor %}
+      {% else %}
+      <form method="POST" action="{{ url_for('html.play_game_submit') }}">
+        {% endif %}
+        <input type="hidden" name="answer" value="{{ answer }}">
+        <button type="submit" {{ disabled }}>{{ answer }}</button>
+      </form>
+      {% endfor %}
   </div>
 
   {% if answered %}
@@ -27,7 +31,12 @@
   <p></p>
   {% endif %}
 
-  <a href="{{ url_for('html.play_random', question_id=next_question_id) }}">New question</a>
+  {% if play == "random" %}
+  <a href="{{ url_for('html.play_random', question_id=next_question_id) }}">Random question</a>
+  {% else %}
+  <a href="{{ url_for('html.play_game') }}">Next question</a>
+  {% endif %}
+
   <a href="https://opentdb.com/api_config.php">Questions were obtained from the Open Trivia Database API</a>
 </div>
 {% endblock %}

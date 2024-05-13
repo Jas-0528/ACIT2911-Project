@@ -1,7 +1,9 @@
-import json, requests, html
+import html, json, random, requests
+from sqlalchemy.sql import functions as func
+from werkzeug.security import generate_password_hash
 from db import db
 from app import app
-from models import Question
+from models import User, Game, Question, GameQuestion
 
 
 def write_to_json():
@@ -79,10 +81,64 @@ def add_questions():
     print("All questions added")
 
 
+# Create test user and admin
+def create_test_accounts():
+    user = User(
+        role="user",
+        email="user1@example.com",
+        username="user1",
+        password=generate_password_hash("password1", method="pbkdf2:sha256"),
+    )
+    db.session.add(user)
+    admin = User(
+        role="admin",
+        email="admin1@example.com",
+        username="admin1",
+        password=generate_password_hash("password1", method="pbkdf2:sha256"),
+    )
+    db.session.add(admin)
+
+    # Once all users have been added, commit
+    db.session.commit()
+    print("Test user and admin created")
+
+
+def create_random_game():
+    # Find a random user
+    user_stmt = db.select(User).order_by(func.random()).limit(1)
+    user = db.session.execute(user_stmt).scalar()
+
+    # Make an game
+    game = Game(user=user)
+    db.session.add(game)
+
+    # Sample 1 to 4 questions from the Question table and create a list of database objects
+    random_question_stmt = (
+        db.select(Question).order_by(func.random()).limit(random.randint(1, 4))
+    )
+    questions = db.session.execute(random_question_stmt).scalars()
+
+    # Loop over game questions in sample
+    for question in questions:
+
+        # Create GameQuestion objects and add to database
+        game_question = GameQuestion(
+            game=game,
+            question=question,
+        )
+        db.session.add(game_question)
+
+    # Commit to database
+    db.session.commit()
+    print("Random game created")
+
+
 if __name__ == "__main__":
     with app.app_context():
         # write_to_json()
         # append_to_json()
         drop_all()
         create_all()
+        create_test_accounts()
         add_questions()
+        # create_random_game()
