@@ -1,12 +1,13 @@
 * {margin: 0px;}
 
+
 body {
     font-family: Manjari Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin: 0; /* remove default margin */
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    
+   
     /* changed the background colour to purple. use an image of the stars to cover the page, each url with different locations each time.
         background does not repeat! */
     background-color: #2A2030;
@@ -14,6 +15,7 @@ body {
     background-position: right, top left, center bottom, calc(2cm) calc(100% - 2cm), calc(100% - 6cm) calc(100% - 2cm);
     background-repeat: no-repeat;
 }
+
 
 /* Manjari isn't a font available in css. i downloaded it, declared it with @font-face and can call it later */
 @font-face {
@@ -23,14 +25,18 @@ body {
     font-style: normal;
 }
 
+
 @font-face {
     font-family: 'Playfair Display';
     src: url(PlayfairDisplay.ttf)
 }
 
+
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 
+
 /* CSS for nav starts herw */
+
 
 nav {
     background-color: #E4E9EF;
@@ -38,15 +44,19 @@ nav {
     font-weight: 200;
 }
 
+/* Hover option if u want */
+/* 
 nav a:hover {
     color: black;
     background-color: #E4E9EF;
     border-radius: 50%;
 }
 
+
 nav:hover {
     background-color: #BC9B47;
-}
+} */
+
 
 /* the nav is displayed in grid. columns are spaced out by different widths so we don't have to use margin or padding. Makes it easier to move them around by their columns  */
 nav, nav div, nav img{
@@ -56,32 +66,36 @@ nav, nav div, nav img{
     /* the 500px is a empty. I used this so i didn't have to space out the logo and the links using margin */
 }
 
+
 a {
     /* aligns content for the 'home', 'play' and 'sign in' to be in the middle */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    
+   
     text-decoration: none;
     color: black;
     height: 100px;
     width: 100px;
     font-size: 1.5em;
 
-    background-color: #D9D9D9; 
+
+    background-color: #D9D9D9;
     /* the "home" and "Sign in" backgrounds are gray but not the "play" because i use an id later on to change the backgrnd color */
 }
+
 
 /* don't need to specify grid-row for any of the nav options becasue there's only one row */
 #Navlogo {
     display: grid;
-    grid-column: 1 / 2; 
+    grid-column: 1 / 2;
     height: 100px;
     border-radius: 600%;
     align-items: center;
     justify-content: center;
 }
+
 
 #home {
     align-items: center;
@@ -90,16 +104,20 @@ a {
 }
 
 
+
+
 #play {
     grid-column: 4 / 5;
     background-color: #FCDE93;
 }
+
 
 #SignIn {
     align-items: center;
     justify-content: center;
     grid-column: 5 / 6;
 }
+
 
 #scoreboard {
     transform: translateY(30%);/*  centers the scoreboard vertically within the nav */
@@ -110,8 +128,8 @@ a {
     background-color: white;
     border: 3px solid black;
     border-radius: 50px;
-    
-    
+   
+   
     text-align: left;
     align-content: center;
     justify-self: center;
@@ -123,14 +141,18 @@ a {
 }
 
 
+
+
 #user {
     text-align: left;
 }
+
 
 #points {
     text-align: right;
     color: orange;
 }
+
 
 #profile-icon {
     display: grid;
@@ -142,10 +164,15 @@ a {
     margin-left: 100px;
 }
 
+
 /* CSS for nav ends here */
 
 
+
+
 /* ////////////////////////////////////////////////////////////////////////////////////// */
+
+
 
 
 main {
@@ -155,30 +182,36 @@ main {
     gap: 20px; /* gap between grid items */
     padding: 20px; /* padding inside the main container */
 
+
     max-width: 800px; /* limit maximum width */
     margin: 0 auto; /* center the grid horizontally */
     text-align: center; /* center text inside main */
     justify-content: center;
 
+
     font-family: 'Manjari Bold', sans-serif;
 }
+
 
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 
 
+
+
 /* CSS for question card starts here */
+
 
 .card {
     grid-column: 1 / 3;
     background-color: #f0f0f0; /* background color for the question card */
     padding: 20px; /* padding inside the card */
-    
+   
     border: 20px solid #E16787;
     border-radius: 10cm;
     color: white; /* text-color*/
     font-size: 4em;
     background-color: #BC9B47;
-    
+   
     display: flex;
     display: flex;
     justify-content: center;
@@ -187,10 +220,15 @@ main {
 /* CSS for question card ends here  */
 
 
+
+
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 
 
+
+
 /* CSS for the answers start here */
+
 
 .answer {
     display: grid;
@@ -200,6 +238,7 @@ main {
     margin-left: 35px; /* to center the answer options with respect to the question card*/
 }
 
+
 .rectangle {
     font-size: 1.5em;
     background-color: #FFFFFF; /* background color for the rectangle cards */
@@ -207,18 +246,25 @@ main {
     text-align: center; /* center align text */
     justify-content: center;
     align-items: center;
-    border-radius: 380px; /* smoothens it from sharp corners to rounded--more circular */   
+    border-radius: 380px; /* smoothens it from sharp corners to rounded--more circular */  
     border: 4px solid#FCDE93;
     box-shadow: 2px 1px 10px 5px gray inset; /* this adds the shadow to the inside of the answer options. makes it look more 3d*/
 }
 
+
 .rectangle:hover {
     transform: scale(1.2);
-    transition-duration: 0.4s; 
+    transition-duration: 0.4s;
     background-color: #FCDE93;
 }
 
+
 /* CSS for the answers ends here */
 
+
 /* ////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
 
