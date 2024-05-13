@@ -11,8 +11,7 @@ auth_bp = Blueprint("auth", __name__)
 # Login page
 @auth_bp.route("/login", methods=["GET"])
 def login():
-    random_id = db.session.query(Question.id).order_by(func.random()).first()[0]
-    return render_template("login.html", next_question_id=random_id)
+    return render_template("login.html")
 
 
 # Login post
@@ -40,8 +39,7 @@ def login_post():
 # Register page
 @auth_bp.route("/register", methods=["GET"])
 def register():
-    random_id = db.session.query(Question.id).order_by(func.random()).first()[0]
-    return render_template("register.html", next_question_id=random_id)
+    return render_template("register.html")
 
 
 # Register post

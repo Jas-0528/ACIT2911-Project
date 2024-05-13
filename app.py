@@ -3,8 +3,9 @@ from dotenv import load_dotenv
 from flask import Flask
 from flask_login import LoginManager
 from pathlib import Path
+from sqlalchemy.sql import functions as func
 from db import db
-from models import User
+from models import Question, User
 from routes import html_bp, api_questions_bp, auth_bp
 
 # Load environment variables from .env file
@@ -12,6 +13,14 @@ load_dotenv()
 
 # Create Flask application
 app = Flask(__name__)
+
+
+@app.context_processor
+def inject_random_question_id():
+    stmt = db.select(Question.id).order_by(func.random())
+    random_question_id = db.session.execute(stmt).scalar()
+    return dict(random_question_id=random_question_id)
+
 
 app.instance_path = Path("./data").resolve()
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///trivia.db"
