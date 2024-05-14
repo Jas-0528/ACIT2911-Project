@@ -1,9 +1,9 @@
 import html, json, random, requests
 from sqlalchemy.sql import functions as func
 from werkzeug.security import generate_password_hash
-from db import db
+from trivia.db import db
 from app import app
-from models import User, Quiz, Question, QuizQuestion
+from trivia.models import User, Quiz, Question, QuizQuestion
 
 
 def write_to_json():

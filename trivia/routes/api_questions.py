@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
-from db import db
-from models import Question
+from trivia.db import db
+from trivia.models import Question
 
 api_questions_bp = Blueprint("api_questions", __name__)
 

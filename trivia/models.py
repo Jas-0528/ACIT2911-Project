@@ -6,7 +6,7 @@ from sqlalchemy import (
     String,
 )
 from sqlalchemy.orm import mapped_column, relationship
-from db import db
+from trivia.db import db
 
 
 class User(UserMixin, db.Model):
