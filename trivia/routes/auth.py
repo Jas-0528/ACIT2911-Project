@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import login_user
+from sqlalchemy import select
 from werkzeug.security import generate_password_hash, check_password_hash
 from trivia.db import db
 from trivia.models import User
@@ -22,10 +23,15 @@ def login_post():
     login_method = request.form.get("login_method")
 
     # Search database for matching username or email to login_method
-    user = User.query.filter_by(email=login_method).first()
+
+    stmt = select(User).where(User.email == login_method)
+    result = db.session.execute(stmt)
+    user = result.scalars().first()
     if not user:
-        user = User.query.filter_by(username=login_method).first()
-    if not user or not check_password_hash(user.password, password):
+        stmt = select(User).where(User.username == login_method)
+        result = db.session.execute(stmt)
+        user = result.scalars().first()
+    if not user or not check_password_hash(user.password_hashed, password):
         flash("User not found: check login details")
         return redirect(url_for("auth.login"))
 
@@ -49,7 +55,9 @@ def register_post():
     username = request.form.get("name")
 
     # Check if user already exists
-    existing_user = User.query.filter_by(email=email).first()
+    stmt = select(User).where(User.email == email)
+    result = db.session.execute(stmt)
+    existing_user = result.scalars().first()
     if existing_user:
         flash("Email address already exists")
         return redirect(url_for("auth.register"))
@@ -58,7 +66,7 @@ def register_post():
     new_user = User(
         email=email,
         username=username,
-        password=generate_password_hash(password, method="pbkdf2:sha256"),
+        password=password,
     )
 
     db.session.add(new_user)
