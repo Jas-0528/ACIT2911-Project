@@ -2,8 +2,8 @@ import json
 from flask import Blueprint, redirect, render_template, request, session, url_for
 from flask_login import login_required, current_user
 from sqlalchemy.sql import functions as func
-from db import db
-from models import Quiz, QuizQuestion, Question, User
+from trivia.db import db
+from trivia.models import Quiz, QuizQuestion, Question, User
 
 html_bp = Blueprint("html", __name__)
 

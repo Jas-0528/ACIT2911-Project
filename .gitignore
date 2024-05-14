@@ -162,10 +162,14 @@ cython_debug/
 # macOS
 .DS_Store
 
+# VSCode
+.vscode
+
 # Other
-*.lnk
+*.db
 *.doc
 *.docx
+*.lnk
 *.pdf
-*.db
+*.pyc
 *.zip
