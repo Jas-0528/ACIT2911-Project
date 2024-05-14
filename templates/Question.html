@@ -11,13 +11,14 @@
 <body>
 
 
-    <!-- changed the nav so all of the items are direct children of nav. easier to target them--don't have to use :nth-child multiple times -->
+    <!-- changed the nav so all of the items are direct children of nav. easier to target them--don't have to use :nth-child multiple times 
+    Commented profile icon out for html and css so it's easier to place back in when we add the profile feature-->
      <nav>
-        <img src="TriviaLogo.png" alt="Logo" id="Navlogo">
+        <img src="logo.png" alt="Logo" id="Navlogo">
         <a href="#" id="home">Home</a>
         <a href="#" id="play">Play</a>
         <a href="#" id="SignIn">Sign In</a>
-        <img src="profile-icon.png" id="profile-icon">
+        <!-- <img src="profile-icon.png" id="profile-icon"> -->
         <div id="scoreboard">
             <p id="user">#NA User</p>  
             <p id="points">1025</p>
@@ -36,8 +37,25 @@
                 <div class="rectangle" id="rectangle3">Option 3</div>
                 <div class="rectangle" id="rectangle4">Option 4</div>
             </div>
-   
+            
+            <div class="right-arrow">
+                <a href="#" class="arrow-link">   <!-- this is the link for the arrow so you would be clicking the text for the link, not the arrow directly -->
+                    <p class="arrow-right"><i>&#8594;</i></p>
+                </a>
+            </div>
+
     </main>  
+
+    <footer>
+        <div class="container">
+            <a href="https://opentdb.com/api_config.php" id="link">Link to API</a>
+            <p>
+                <p class="arrow-left"><i>&#8592;</i></p>
+            </p>
+            <!-- the numbers "&#8592;" are html source code. It generates a left arrow so i dont have to make code for it -->
+
+        </div>
+      </footer>
 
 
 </body>
