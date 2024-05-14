@@ -1,4 +1,4 @@
-from models import User
+from trivia.models import User
 
 
 def test_new_user():
