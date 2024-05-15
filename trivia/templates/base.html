@@ -14,21 +14,11 @@
 
 <body>
   <nav>
-    <ul>
-      <li>
-        <a href="{{ url_for('html.home') }}">Home</a>
-      </li>
-      <li>
-        <a href="{{ url_for('html.play_random', question_id=random_question_id) }}">Play Random</a>
-      </li>
-    </ul>
-  </nav>
-  <nav>
     <img src="TriviaLogo.png" alt="Logo" id="Navlogo">
     <a href="{{ url_for('html.home') }}">Home</a>
     <a href="{{ url_for('html.play_random', question_id=random_question_id) }}">Play Random</a>
     <a href="{{ url_for('auth.login') }}">Log In</a>
-</nav>
+  </nav>
   {% block content %}
   {% endblock %}
 </body>
