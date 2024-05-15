@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="../static/login.css">
+<!--Google Font for Playfair Display-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+  rel="stylesheet">
+
+<!--Google Font for Manjari-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+  rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div>
+  <h3 class="login">Log In</h3>
+  <form method="POST" action="{{ url_for('auth.login') }}">
+    <div>
+      <input class="Username" type="text" name="login_method" placeholder="Your Email" autofocus="">
+    </div>
+    <div>
+      <input class="Password" type="password" name="password" placeholder="Your Password">
+    </div>
+    <div>
+      <label class="checkbox">
+        <input type="checkbox" name="remember">
+        Remember me
+      </label>
+    </div>
+    <button class="Submit">Log In</button>
+    <div class="Create-Account">Create Account</div>
+  </form>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="notification is-danger">
+    {{ messages[0] }}
+  </div>
+  {% endif %}
+  {% endwith %}
+</div>
+{% endblock %}
