@@ -1,7 +1,7 @@
 import html, json, random, requests
 from sqlalchemy.sql import functions as func
 from trivia.db import db
-from run import app
+from app import app
 from trivia.models import User, Quiz, Question, QuizQuestion
 
 
