@@ -17,7 +17,7 @@
 {% endblock %}
 
 {% block content %}
-<div>
+<section>
   <h3 class="login">Log In</h3>
   <form method="POST" action="{{ url_for('auth.login') }}">
     <div>
@@ -42,5 +42,5 @@
   </div>
   {% endif %}
   {% endwith %}
-</div>
+</section>
 {% endblock %}
