@@ -1,6 +1,4 @@
-<h1>ACIT2911-Project</h1>
-
-# Trivia Game
+<h1>Trivia Game</h1>
 
 Welcome to *Trivia Game*! Get ready for an exciting trivia adventure by following these steps:
 
@@ -14,8 +12,8 @@ Welcome to *Trivia Game*! Get ready for an exciting trivia adventure by followin
 
 5. **Start Playing:** Hit the 'Play' button to begin the trivia game.
 
-If you wish to __save your progress__ create an account by clicking on 'Sign In' and entering your credentials.
 
 Let the trivia fun begin!
+<h6>Create an account by clicking on 'Sign In' and entering your credentials. </h6>
  
->Questions were taken from the API link (https://opentdb.com/api_config.php)
+>Questions were taken from Open Trivia DB API (https://opentdb.com/api_config.php)
