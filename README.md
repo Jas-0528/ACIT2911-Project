@@ -1,4 +1,4 @@
-<h1>ACIT2911-Project</h1>
+<h1>ACIT2911-Project
 
 # Trivia Game
 
