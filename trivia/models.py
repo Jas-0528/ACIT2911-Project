@@ -6,6 +6,7 @@ from sqlalchemy import (
     String,
 )
 from sqlalchemy.orm import mapped_column, relationship
+from werkzeug.security import generate_password_hash
 from trivia.db import db
 
 
@@ -14,8 +15,14 @@ class User(UserMixin, db.Model):
     role = mapped_column(String(20), nullable=False, default="user")
     email = mapped_column(String(50), nullable=False, unique=True)
     username = mapped_column(String(50), nullable=False, unique=True)
-    password = mapped_column(String(50), nullable=False)
+    password_hashed = mapped_column(String(50), nullable=False)
     quiz = relationship("Quiz", uselist=False, cascade="all, delete-orphan")
+
+    def __init__(self, email, username, password, role="user"):
+        self.role = role
+        self.email = email
+        self.username = username
+        self.password_hashed = generate_password_hash(password, method="pbkdf2:sha256")
 
 
 class Quiz(db.Model):

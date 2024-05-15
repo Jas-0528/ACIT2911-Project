@@ -1,6 +1,5 @@
 import html, json, random, requests
 from sqlalchemy.sql import functions as func
-from werkzeug.security import generate_password_hash
 from trivia.db import db
 from app import app
 from trivia.models import User, Quiz, Question, QuizQuestion
@@ -87,14 +86,14 @@ def create_test_accounts():
         role="user",
         email="user1@example.com",
         username="user1",
-        password=generate_password_hash("password1", method="pbkdf2:sha256"),
+        password="password1",
     )
     db.session.add(user)
     admin = User(
         role="admin",
         email="admin1@example.com",
         username="admin1",
-        password=generate_password_hash("password1", method="pbkdf2:sha256"),
+        password="password1",
     )
     db.session.add(admin)
 
