@@ -7,53 +7,58 @@
     --Mona-lisa-pink: #ff8f8f;
     --Burgundy-red: #db1049;
     --Goated-Purple: #2A2030;
-    --Goated-Gold: #BC9B47; 
+    --Goated-Gold: #BC9B47;
     --Goated-Yellow: #FCDE93;
     --Goated-Pink: #E16787;
     }
-
-@font-face {
+ 
+ 
+ @font-face {
     font-family: "Playfair Display", serif;
     src: url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
-} 
-
-/* nav: similar to Amina's code but is a bit tweaked to align everything */
-
-nav {
+ }
+ 
+ 
+ nav {
     background-color: #E4E9EF;
     font-style: italic;
     font-weight: 200;
-}
-
-nav a:hover {
+ }
+ 
+ 
+ nav a:hover {
     color: black;
-    background-color: #E4E9EF;
-    border-radius: 50%;
-}
-
-nav:hover {
     background-color: #BC9B47;
-}
-
-/* the nav is displayed in grid. columns are spaced out by different widths so we don't have to use margin or padding. Makes it easier to move them around by their columns  */
-nav, nav div, nav img{
+    border-radius: 50%;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ /* the nav is displayed in grid. columns are spaced out by different widths so we don't have to use margin or padding. Makes it easier to move them around by their columns  */
+ nav, nav div, nav img{
     display: grid;
     grid-template-rows: 100px;
-    grid-template-columns: 100px 475px 100px 100px 100px 100px 550px 100px;
+    grid-template-columns: 100px 475px 100px 100px 100px 10px 550px 100px;
     /* the 500px is a empty. I used this so i didn't have to space out the logo and the links using margin */
-}
-
-#scoreboard{
+ }
+ 
+ 
+ #scoreboard{
     margin-top: 21px;
     font-family: "Manjari", sans-serif;
     font-weight: bold;
-}
-
-#Navlogo{
+ }
+ 
+ 
+ #Navlogo{
     margin-top: 21px;
-}
-
-a {
+ }
+ 
+ 
+ a {
     /* aligns content for the 'home', 'play' and 'sign in' to be in the middle */
     display: flex;
     align-items: center;
@@ -66,39 +71,45 @@ a {
     font-size: 1.5em;
     font-family: "Playfair Display", serif;
     font-weight: bold;
-    background-color: #D9D9D9; 
+    background-color: #D9D9D9;
     /* the "home" and "Sign in" backgrounds are gray but not the "play" because i use an id later on to change the backgrnd color */
-}
-
-/* don't need to specify grid-row for any of the nav options becasue there's only one row */
-#Navlogo {
+ }
+ 
+ 
+ /* don't need to specify grid-row for any of the nav options becasue there's only one row */
+ #Navlogo {
     display: grid;
-    grid-column: 1 / 2; 
+    grid-column: 1 / 2;
     height: 100px;
     border-radius: 600%;
     align-items: center;
     justify-content: center;
-}
-
-#home {
+ }
+ 
+ 
+ #home {
     align-items: center;
     justify-content: center;
     grid-column: 3 / 4;
-}
-
-
-#play {
+ }
+ 
+ 
+ 
+ 
+ #play {
     grid-column: 4 / 5;
     background-color: #FCDE93;
-}
-
-#SignIn {
+ }
+ 
+ 
+ #SignIn {
     align-items: center;
     justify-content: center;
     grid-column: 5 / 6;
-}
-
-#scoreboard {
+ }
+ 
+ 
+ #scoreboard {
     /* scoreboard starts at the 7th column */
     grid-row: 1 / 1;
     grid-column: 7 / 8;
@@ -107,15 +118,16 @@ a {
     background-color: white;
     border: 3px solid black;
     border-radius: 50px;
-    
-    
+   
+   
     display: block;
     text-align: center;
     align-content: center;
     justify-self: center;
-}
-
-#profile-icon {
+ }
+ 
+ 
+ #profile-icon {
     display: grid;
     height: 100px;
     width: 100px;
@@ -123,18 +135,21 @@ a {
     grid-column: 8 / 9;
     border-radius: 100%;
     margin-left: 100px;
-}
-
-/* body, which includes the whole login square */
-
-body{
+ }
+ 
+ 
+ #triv {
+    align-content: first baseline;
+ }
+ 
+ 
+ body{
     width: 100%;
     background-color: var(--Goated-Purple);
-}
-
-/* alignment and look of login text */
-
-.login{
+ }
+ 
+ 
+ .login{
     display: flex;
     text-align: center;
     height: 100px;
@@ -143,11 +158,10 @@ body{
     font-size: 50px;
     font-weight: bold;
     font-family: "Playfair Display", serif;
-}
-
-/* look of the gold square */
-
-section{
+ }
+ 
+ 
+ section{
     margin-top: 20px;
     position: relative;
     bottom: 50%;
@@ -157,12 +171,12 @@ section{
     background-color: var(--Goated-Gold);
     top: 50px;
     border-radius: 30px;
-
-}
-
-/* username code, not sure how to implement the actual code so that users can input, this is all just for the shape and appearance. */
-
-.Username{
+ 
+ 
+ }
+ 
+ 
+ .Username{
     margin-top: 50px;
     margin-left: 85px;
     background-color: #FFFFFF;
@@ -177,9 +191,10 @@ section{
     box-shadow: 1px 0px 8px 2px gray inset;
     border: #2A2030;
     border-style: solid;
-}
-
-.Password{
+ }
+ 
+ 
+ .Password{
     margin-top: 50px;
     margin-left: 85px;
     background-color: #FFFFFF;
@@ -193,16 +208,18 @@ section{
     font-family: "Manjari", sans-serif;
     box-shadow: 1px 0px 8px 2px gray inset;
     border-style: solid;
-}
-
-.Forgot-Password{
+ }
+ 
+ 
+ .Forgot-Password{
     color: var(--Goated-Pink);
     font-size: 15px;
     margin-top: 5px;
     margin-left: 85px;
-}
-
-.Submit{
+ }
+ 
+ 
+ .Submit{
     margin-top: 50px;
     margin-left: 200px;
     background-color: #FFFFFF;
@@ -216,12 +233,15 @@ section{
     align-items: center;
     justify-content: center;
     box-shadow: 4px 6px gray inset;
-}
-
-.Create-Account {
+ }
+ 
+ 
+ .Create-Account {
     color: var(--Goated-Pink);
     font-size: 15px;
     margin-top: 5px;
     margin-left: 235px;
     text-decoration: underline;
-}
+    margin-bottom: 2000px;
+ }
+ 

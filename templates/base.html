@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
-  <title>Trivia Game</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="../static/style.css" rel="stylesheet">
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" -->
-  <!-- integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+ <title>Trivia Game</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+ <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+ integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!--Google Font for Playfair Display-->
+ <link rel="stylesheet" href=".././static/login.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+
+ <!--Google Font for Manjari-->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+ <title>Document</title>
 </head>
 
+
 <body>
-  <nav>
-    <ul>
-      <li>
-        <a href="{{ url_for('html.home', question_id=random_id) }}">Home</a>
-      </li>
-      <li>
-        <a href="{{ url_for('html.play_question', question_id=random_id) }}">Play</a>
-      </li>
-    </ul>
-  </nav>
-  {% block content %}
-  {% endblock %}
+ <nav>
+   <img src="TriviaLogo.png" alt="Logo" id="Navlogo">
+   <a href="{{ url_for('html.home') }}">Home</a>
+   <a href="{{ url_for('html.play_random', question_id=random_question_id) }}">Play</a>
+   <a href="#" id="SignIn">Sign In</a>
+   <img src="profile-icon.png" id="profile-icon">
+   <div id="scoreboard">
+       <p id="user">#NA User</p>
+       <p id="points">1025</p>
+
+
+   </div>
+</nav>
+ {% block content %}
+ {% endblock %}
 </body>
+
 
 </html>
