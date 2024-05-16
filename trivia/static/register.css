@@ -232,4 +232,8 @@ section {
   box-shadow: 4px 6px gray inset;
 }
 
+.Username, .Password, .Submit, .Email {
+  border-color: var(--Goated-Pink);
+}
+
 

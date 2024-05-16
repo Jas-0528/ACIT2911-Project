@@ -221,3 +221,12 @@ section {
   margin-left: 235px;
   text-decoration: underline;
 }
+
+.checkbox{
+  margin-left: 80px;
+  color: var(--Goated-Pink);
+}
+
+.Username, .Password, .Submit {
+  border-color: var(--Goated-Pink);
+}
