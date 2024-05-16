@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
-from flask_login import login_user
+from flask_login import login_user, logout_user
 from sqlalchemy import select
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import check_password_hash
 from trivia.db import db
 from trivia.models import User
 
@@ -78,4 +78,6 @@ def register_post():
 # Logout page
 @auth_bp.route("/logout", methods=["GET"])
 def logout():
-    return "You have been logged out"
+    # Log user out
+    logout_user()
+    return redirect(url_for("auth.login"))
