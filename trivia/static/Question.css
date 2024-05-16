@@ -35,7 +35,7 @@ body {
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 
 
-/* CSS for nav starts herw */
+/* CSS for nav starts here */
 
 
 nav {
@@ -47,25 +47,18 @@ nav {
 }
 
 /* Hover option if u want */
-/* 
+
 nav a:hover {
     color: black;
     background-color: #E4E9EF;
-    border-radius: 50%;
 }
 
-
-nav:hover {
-    background-color: #BC9B47;
-} */
 
 
 /* the nav is displayed in grid. columns are spaced out by different widths so we don't have to use margin or padding. Makes it easier to move them around by their columns  */
 nav, nav div, nav img{
-    display: grid;
-    grid-template-rows: 1fr; /* 1 row */
-    gap: 0px; /* no gap between columns */
-    /* the 500px is a empty. I used this so i didn't have to space out the logo and the links using margin */
+    display: flex;
+    align-items: center;
 }
 
 
@@ -79,7 +72,7 @@ a {
     text-decoration: none;
     color: black;
     height: 100px;
-    width: 15em;
+    width: 12em;
     font-size: 1.5em;
 
 
@@ -174,12 +167,10 @@ a {
 main {
     padding: 20px; /* padding inside the main container */
 
-    max-width: 50%; /* limit maximum width */
+    max-width: 80%; /* limit maximum width */
     margin: 0 auto; /* center the grid horizontally */
-    text-align: center; /* center text inside main */
-    justify-content: center;
-
-
+    display: grid;  
+    grid-template-columns: 1fr;
     font-family: 'Manjari Bold', sans-serif;
 }
 
@@ -223,8 +214,14 @@ main {
 
 .options {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columns with equal width. Answer is now split into to a 2x2 square */
-    gap: 10px; /* to center the answer options with respect to the question card*/
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 
@@ -318,10 +315,24 @@ footer, footer i {
     height: 0px;
     /* add border around the text */
     text-shadow: 10px 10px 10px #E16787;
+    display: flex;
+    justify-content: center;
+    margin-left: 150px;
 }
 
 .arrow-link {
     text-decoration: none;
     background-color: transparent;
     color: inherit; 
+}
+
+#random-play-button{
+    background-color: #FFFFFF;
+    border: 10px solid #E16787;
+    border-radius: 380px;
+}    
+
+.right-arrow {
+    display: flex;
+    justify-content: center;
 }
