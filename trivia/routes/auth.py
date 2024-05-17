@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import login_user, logout_user
-from sqlalchemy import select
 from werkzeug.security import check_password_hash
 from trivia.db import db
 from trivia.models import User
@@ -23,14 +22,17 @@ def login_post():
     login_method = request.form.get("login_method")
 
     # Search database for matching username or email to login_method
-
-    stmt = select(User).where(User.email == login_method)
+    stmt = db.select(User).where(User.email == login_method)
     result = db.session.execute(stmt)
     user = result.scalars().first()
+
+    # If no user found with matching email, find user with matching username
     if not user:
-        stmt = select(User).where(User.username == login_method)
+        stmt = db.select(User).where(User.username == login_method)
         result = db.session.execute(stmt)
         user = result.scalars().first()
+
+    # If no user found or password doesn't match, flash error message and redirect to login page
     if not user or not check_password_hash(user.password_hashed, password):
         flash("User not found: check login details")
         return redirect(url_for("auth.login"))
@@ -55,7 +57,7 @@ def register_post():
     username = request.form.get("name")
 
     # Check if user already exists
-    stmt = select(User).where(User.email == email)
+    stmt = db.select(User).where(User.email == email)
     result = db.session.execute(stmt)
     existing_user = result.scalars().first()
     if existing_user:
@@ -73,6 +75,7 @@ def register_post():
     db.session.commit()
 
     return redirect(url_for("auth.login"))
+
 
 # Logout page
 @auth_bp.route("/logout", methods=["GET"])
