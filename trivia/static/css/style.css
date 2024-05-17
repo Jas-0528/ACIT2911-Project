@@ -1,36 +1,35 @@
-* {
-  margin: 0px;
-}
+* {margin: 0px;}
 
 
 body {
-  font-family: Manjari Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  margin: 0;
-  /* remove default margin */
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+    font-family: Manjari Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0;
+    /* remove default margin */
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  
+    /* changed the background colour to purple. use an image of the stars to cover the page, each url with different locations each time.
+          background does not repeat! */
+    background-color: #2A2030;
+    background-image: url(../images/star.png), url(../images/trivia_stars_2.png), url(../images/star_dot.png), url(../images/star_dot.png), url(../images/trivia_stars_2.png);
+    background-position: right, top left, center bottom, calc(2cm) calc(100% - 2cm), calc(100% - 6cm) calc(100% - 2cm);
+    background-repeat: no-repeat;
+  }
 
-  /* changed the background colour to purple. use an image of the stars to cover the page, each url with different locations each time.
-        background does not repeat! */
-  background-color: #2A2030;
-  background-image: url(../images/star.png), url(../images/trivia_stars_2.png), url(../images/star_dot.png), url(../images/star_dot.png), url(../images/trivia_stars_2.png);
-  background-position: right, top left, center bottom, calc(2cm) calc(100% - 2cm), calc(100% - 6cm) calc(100% - 2cm);
-  background-repeat: no-repeat;
-}
 
 /* Manjari isn't a font available in css. i downloaded it, declared it with @font-face and can call it later */
 @font-face {
-  font-family: 'Manjari Bold';
-  src: url('MainFont.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
+    font-family: 'Manjari Bold';
+    src: url('MainFont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
 }
 
 /* same thing with playfair display */
 @font-face {
-  font-family: 'Playfair Display';
-  src: url(PlayfairDisplay.ttf)
+    font-family: 'Playfair Display';
+    src: url(PlayfairDisplay.ttf)
 }
 
 
@@ -41,109 +40,111 @@ body {
 
 
 nav {
-  background-color: #E4E9EF;
-  font-style: italic;
-  font-weight: 200;
-  display: flex;
-  justify-content: center;
+    background-color: #E4E9EF;
+    font-style: italic;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
 }
 
 /* Hover option if u want */
 
 nav a:hover {
-  color: black;
-  background-color: #e4e9ef97;
+    color: black;
+    background-color: #e4e9ef97;
 }
 
 #play:hover {
-  background-color: #FCDE93;
+    background-color: #FCDE93;
 }
 
 
 
 /* the nav is displayed in grid. columns are spaced out by different widths so we don't have to use margin or padding. Makes it easier to move them around by their columns  */
-nav,
-nav div,
-nav img {
-  display: flex;
-  align-items: center;
+nav, nav div, nav img{
+    display: flex;
+    align-items: center;
 }
 
 
 a {
-  /* aligns content for the 'home', 'play' and 'sign in' to be in the middle */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+    /* aligns content for the 'home', 'play' and 'sign in' to be in the middle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+    text-decoration: none;
+    color: black;
+    height: 100px;
+    width: 12em;
+    font-size: 1.5em;
 
-  text-decoration: none;
-  color: black;
-  height: 100px;
-  width: 12em;
-  font-size: 1.5em;
 
-
-  background-color: #D9D9D9;
-  /* the "home" and "Sign in" backgrounds are gray but not the "play" because i use an id later on to change the backgrnd color */
+    background-color: #D9D9D9;
+    /* the "home" and "Sign in" backgrounds are gray but not the "play" because i use an id later on to change the backgrnd color */
 }
 
 
 /* don't need to specify grid-row for any of the nav options becasue there's only one row */
-#nav-logo {
-  display: grid;
-  grid-column: 1 / 2;
-  height: 100px;
-  border-radius: 600%;
-  align-items: center;
-  justify-content: center;
+#Navlogo {
+    display: grid;
+    grid-column: 1 / 2;
+    height: 100px;
+    border-radius: 600%;
+    align-items: center;
+    justify-content: center;
 }
 
 
 #home {
-  align-items: center;
-  justify-content: center;
-  grid-column: 3 / 4;
+    align-items: center;
+    justify-content: center;
+    grid-column: 3 / 4;
 }
 
 #play {
-  grid-column: 4 / 5;
+    grid-column: 4 / 5;
 }
 
 
 #SignIn {
-  align-items: center;
-  justify-content: center;
-  grid-column: 5 / 6;
+    align-items: center;
+    justify-content: center;
+    grid-column: 5 / 6;
 }
+
 
 
 #scoreboard {
-  transform: translateY(30%);
-  /*  centers the scoreboard vertically within the nav */
-  grid-row: 1 / 1;
-  grid-column: 7 / 8;
-  width: 250px;
-  height: 50px;
-  background-color: white;
-  border: 3px solid black;
-  border-radius: 50px;
-
-
-  text-align: left;
-  align-content: center;
-  justify-self: center;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* To separate user and points */
-  padding: 0 10px;
-  /* Add some padding to separate text from border */
+    transform: translateY(30%);/*  centers the scoreboard vertically within the nav */
+    grid-row: 1 / 1;
+    grid-column: 7 / 8;
+    width: 250px;
+    height: 50px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 50px;
+   
+   
+    text-align: left;
+    align-content: center;
+    justify-self: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* To separate user and points */
+    padding: 0 10px; /* Add some padding to separate text from border */
 }
 
 #user {
-  text-align: left;
+    text-align: left;
+}
+
+
+#points {
+    text-align: right;
+    color: orange;
 }
 
 /* profile icon is commented out */
@@ -169,13 +170,13 @@ a {
 
 
 main {
-  padding: 20px;
-  /* padding inside the main container */
-  max-width: 80%;
-  /* limit maximum width */
-  margin: 0 auto;
-  /* center the grid horizontally */
-  font-family: 'Manjari Bold', sans-serif;
+    padding: 20px; /* padding inside the main container */
+
+    max-width: 80%; /* limit maximum width */
+    margin: 0 auto; /* center the grid horizontally */
+    display: grid;  
+    grid-template-columns: 1fr;
+    font-family: 'Manjari Bold', sans-serif;
 }
 
 
@@ -185,27 +186,24 @@ main {
 
 
 .card {
-  grid-column: 1 / 5;
-  background-color: #f0f0f0;
-  /* background color for the question card */
-  padding: 2rem;
-
-  border: 1.5rem solid #E16787;
-  border-radius: 10cm;
-  color: white;
-  /* text-color*/
-  font-size: 2em;
-  font-weight: 700;
-  background-color: #BC9B47;
-  text-align: center;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2em;
-  margin-bottom: 2rem;
+    grid-column: 1 / 5;
+    background-color: #f0f0f0; /* background color for the question card */
+    padding: 2rem;
+   
+    border: 1.5rem solid #E16787;
+    border-radius: 10cm;
+    color: white; /* text-color*/
+    font-size: 2em;
+    font-weight: 700;
+    background-color: #BC9B47;
+    text-align: center;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    margin-bottom: 2rem;
 }
-
 /* CSS for question card ends here  */
 
 
@@ -220,64 +218,60 @@ main {
 
 
 .options {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 
-.options button {
-  font-size: 1.5em;
-  color: #2A2030;
-  background-color: #FFFFFF;
-  /* background color for the rectangle cards */
-  border-radius: 380px;
-  /* smoothens it from sharp corners to rounded--more circular */
-  border: 4px solid#FCDE93;
-  box-shadow: 2px 1px 10px 5px gray inset;
-  /* this adds the shadow to the inside of the answer options. makes it look more 3d*/
-  height: 3cm;
-  width: 12cm;
-  margin: 5px;
+.options button{
+    font-size: 1.5em;
+    color: #2A2030;
+    background-color: #FFFFFF; /* background color for the rectangle cards */
+    border-radius: 380px; /* smoothens it from sharp corners to rounded--more circular */  
+    border: 4px solid#FCDE93;
+    box-shadow: 2px 1px 10px 5px gray inset; /* this adds the shadow to the inside of the answer options. makes it look more 3d*/
+    height: 3cm;
+    width: 12cm;
+    margin: 5px;
 }
 
 
 .options button:not(:disabled):hover {
-  transform: scale(1.2);
-  transition-duration: 0.4s;
-  background-color: #FCDE93;
+    transform: scale(1.2);
+    transition-duration: 0.4s;
+    background-color: #FCDE93;
 }
-
 .options button:disabled {
-  background-color: #767676;
+    background-color: #767676;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
 #result {
-  display: grid;
-  grid-column: 1 / 5;
-  grid-row: 2/3;
-  font-size: 2em;
-  font-weight: 700;
-  text-align: center;
+    display: grid;
+    grid-column: 1 / 5;
+    grid-row: 2/3;
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center;
 }
 
 #result #correct {
-  color: green;
+    color: green;
 
 }
 
 #result #incorrect {
-  color: red;
+    color: red;
 }
 
 
@@ -289,24 +283,28 @@ main {
 
 /* CSS for API link starts here */
 
-.link {
-  width: fit-content;
-  /* to make all the text appear in one line regardless of how big the font is*/
-  font-size: 1.5em;
-  background-color: transparent;
-  /* removes background applied to the other 'a' tags*/
-  color: white;
-  font-family: 'Playfair', serif;
-  font-style: oblique;
-  /* italics*/
+footer, footer i {
+    display: grid;
+    position: fixed;
+    bottom: 1.5cm;
+    left: 2cm;
+}
 
-  display: block;
-  margin-left: 20px;
-  /* margin-bottom: 10px; */
-  text-shadow: 2px 2px 2px #E16787;
-  /* adds shadow to the text */
-  margin-top: 0;
-  margin-bottom: 2rem;
+
+.link {
+    width: fit-content; /* to make all the text appear in one line regardless of how big the font is*/
+    font-size: 1.5em;
+    background-color: transparent; /* removes background applied to the other 'a' tags*/
+    color: white;
+    font-family: 'Playfair', serif;
+    font-style: oblique; /* italics*/
+
+    display: block;
+    margin-left: 20px;
+    /* margin-bottom: 10px; */
+    text-shadow: 2px 2px 2px #E16787; /* adds shadow to the text */
+    margin-top: 0;
+    margin-bottom: 2rem;
 }
 
 /* CSS for API link ends here */
@@ -315,25 +313,65 @@ main {
 
 /* CSS for the arrow starts here */
 
-.arrow {
-  color: white;
-  font-size: 12em;
-  margin-top: 5rem;
-  height: 0px;
-  /* add border around the text */
-  text-shadow: 10px 10px 10px #E16787;
-  display: flex;
-  justify-content: center;
-  margin-left: 150px;
+.arrow{
+    color: white;
+    font-size: 12em;
+    margin-top: 5rem;
+    height: 0px;
+    /* add border around the text */
+    text-shadow: 10px 10px 10px #E16787;
+    display: flex;
+    justify-content: center;
+    margin-left: 150px;
 }
 
-#random-play-button {
-  background-color: #FFFFFF;
-  border: 10px solid #E16787;
-  border-radius: 380px;
+.arrow-link {
+    text-decoration: none;
+    background-color: transparent;
+    color: inherit; 
 }
+
+#random-play-button{
+    background-color: #FFFFFF;
+    border: 10px solid #E16787;
+    border-radius: 380px;
+}    
 
 .right-arrow {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
+
+.play_button {
+  text-align: center; /* Center the form on the page */
+  font-family: 'Manjari Bold', sans-serif;
+  color: #BC9B47;
+  font-size: 1.5em;
+  margin-top: 50px;
+  border-radius: 15px;
+  font-weight: 700;
+
+}
+
+#home-logo {
+  border-radius: 50%;
+
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  text-align: center; /* Center the form on the page */
+  font-family: 'Manjari Bold', sans-serif;
+  color: #BC9B47;
+  font-size: 1.5em;
+}
+
+.category {
+  text-align: center; /* Center the form on the page */
+  font-family: 'Manjari Bold', sans-serif;
+  color: #BC9B47;
+  font-size: 1.5em;
+}
+
+
