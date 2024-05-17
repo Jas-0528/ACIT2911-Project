@@ -15,6 +15,7 @@ load_dotenv()
 app = Flask(__name__)
 
 
+# Supply each template with a random question id for Play Random link
 @app.context_processor
 def inject_random_question_id():
     stmt = db.select(Question.id).order_by(func.random())

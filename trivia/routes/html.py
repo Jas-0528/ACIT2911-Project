@@ -1,4 +1,3 @@
-import json
 from flask import Blueprint, redirect, render_template, request, session, url_for
 from flask_login import login_required, current_user
 from sqlalchemy.sql import functions as func
@@ -31,6 +30,7 @@ def get_quiz_question(quiz_question_id):
     )
 
 
+# Get categories (can be used in user category selection)
 def get_categories():
     stmt = db.select(Question.category).distinct()
     result = db.session.execute(stmt)
@@ -39,6 +39,7 @@ def get_categories():
     return categories
 
 
+# Fetch questions based on specified parameters
 def fetch_questions(category="all", difficulty="all", length=5):
     stmt = db.select(Question)
 
@@ -54,6 +55,7 @@ def fetch_questions(category="all", difficulty="all", length=5):
     return questions
 
 
+# Create Quiz with QuizQuestions
 def create_quiz(user, category, difficulty, length):
     # Return existing quiz if exists
     stmt = db.select(Quiz).where(Quiz.user == user)
@@ -123,7 +125,7 @@ def play_random_submit():
     question_data.update(
         {
             "answered": True,
-            "correct": False if question_data['correct_answer'] != answer else True,
+            "correct": False if question_data["correct_answer"] != answer else True,
             "mode": "random",
         }
     )
@@ -159,7 +161,7 @@ def play_quiz():
     # Store question_data and quiz_question ID in session
     session["question_data"] = question_data
     session["quiz_question_id"] = quiz_question.id
-    
+
     return render_template("play.html", **question_data)
 
 
@@ -182,7 +184,7 @@ def play_quiz_submit():
     question_data.update(
         {
             "answered": True,
-            "correct": False if question_data['correct_answer'] != answer else True,
+            "correct": False if question_data["correct_answer"] != answer else True,
             "mode": "challenge",
         }
     )
