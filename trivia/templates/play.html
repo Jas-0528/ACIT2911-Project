@@ -13,7 +13,7 @@
   <div class="options">
     {% for answer in answers %}
     {% if mode == "random" %}
-    <form  method="POST" action="{{ url_for('html.play_random_submit', question_id=id) }}"">
+    <form  method="POST" action="{{ url_for('html.play_random_submit')}}"">
     {% else %}
       <form method="POST" action="{{ url_for('html.play_quiz_submit') }}">
       {% endif %}
