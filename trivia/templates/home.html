@@ -2,7 +2,7 @@
 
 {% block content %}
 <div>
-  <img src="{{ url_for('static', filename='logo.png') }}" alt="Trivia Game logo" id="home-logo">
+  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Trivia Game logo" id="home-logo">
   <h1>Trivia Game</h1>
   <form method="POST" action="{{ url_for('html.home_submit') }}">
     <label for="category">Category:</label>
