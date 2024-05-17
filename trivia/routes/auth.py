@@ -44,7 +44,7 @@ def login_post():
 # Register page
 @auth_bp.route("/register", methods=["GET"])
 def register():
-    return render_template("register.html")
+    return render_template("register.html"), 200
 
 
 # Register post
@@ -59,8 +59,8 @@ def register_post():
     result = db.session.execute(stmt)
     existing_user = result.scalars().first()
     if existing_user:
-        flash("Email address already exists")
-        return redirect(url_for("auth.register"))
+        flash("User already exists")
+        return redirect(url_for("auth.register")), 302
 
     # Else create new user and hash password
     new_user = User(
@@ -72,7 +72,7 @@ def register_post():
     db.session.add(new_user)
     db.session.commit()
 
-    return redirect(url_for("auth.login"))
+    return redirect(url_for("auth.login")), 302
 
 
 # Logout page
