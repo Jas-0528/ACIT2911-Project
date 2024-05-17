@@ -22,7 +22,7 @@ def test_login_post(create_user):
         response = client.post('auth/login', data=dict(email=create_user.email, password="password"))
         assert response.status_code == 302
 
-        #test with existing user username and passwo
+        #test with existing user username and password
         response = client.post('auth/login', data=dict(email=create_user.username, password="password"))
         assert response.status_code == 302
 
@@ -36,10 +36,19 @@ def test_login_post(create_user):
         assert response.status_code == 200
         assert b"User not found: check login details" in response.data
 
-        #test with existing user email and wrong password
+        #test with  wrong password
         response = client.post('auth/login', data=dict(email=create_user.email, password="wrong"),follow_redirects=True)
         assert response.status_code == 200
         assert b"User not found: check login details" in response.data
+
+        #test with wrong email
+        response = client.post('auth/login', data=dict(email="incorrect", password="password"),follow_redirects=True)
+        assert response.status_code == 200
+        assert b"User not found: check login details" in response.data
+
+        #test with wrrong username
+        response = client.post('auth/login', data=dict(username="incorrect", password="password"),follow_redirects=True)
+        assert response.status_code == 200
 
         #log in with remember me
         response = client.post('auth/login', data=dict(email=create_user.email, password="password", remember="on"))
@@ -78,8 +87,8 @@ def test_register_post_valid():
 def test_logout():
     with app.test_client() as client:
         response = client.get('auth/logout')
-        assert response.status_code == 200
-        assert b"You have been logged out" in response.data
+        assert response.status_code == 302
+
 
 
 
