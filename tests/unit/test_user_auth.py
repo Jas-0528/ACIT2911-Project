@@ -22,7 +22,7 @@ def test_login_post(create_user):
         response = client.post('auth/login', data=dict(email=create_user.email, password="password"))
         assert response.status_code == 302
 
-        #test with existing user username and password
+        #test with existing user username and passwo
         response = client.post('auth/login', data=dict(email=create_user.username, password="password"))
         assert response.status_code == 302
 
@@ -52,7 +52,7 @@ def test_register_page():
         assert response.status_code == 200
 
 #test register post -> check if the user is registered successfully
-def test_register_post(create_user):
+def test_register_post_invalid(create_user):
     with app.test_client() as client:
         #test with existing user email
         response = client.post('auth/register', data=dict(email=create_user.email, password="password", name="test"),follow_redirects=True)
@@ -62,13 +62,17 @@ def test_register_post(create_user):
         response = client.post('auth/register', data=dict(email="tests123@gmail.con", password="password", name=create_user.username),follow_redirects=True)
         assert response.status_code != 200
 
+def test_register_post_invalid_email(create_user):
+    with app.test_client() as client:
         #test with invalid email
         response = client.post('auth/register', data=dict(email="invalid", password="password", name="test"),follow_redirects=True)
         assert response.status_code != 200
 
-        #test with new user email and username
-        response = client.post('auth/register', data=dict(email="valid@gmail.com", password="password", name="test2"),follow_redirects=True)
-        assert response.status_code == 200
+def test_register_post_valid():
+        with app.test_client() as client:
+            #test with new user email and username
+            response = client.post('auth/register', data=dict(email="valid@gmail.com", password="password", name="test2"),follow_redirects=True)
+            assert response.status_code == 200
 
 #test logout function
 def test_logout():
