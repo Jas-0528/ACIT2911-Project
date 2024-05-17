@@ -42,7 +42,7 @@ def test_register_post_existing_user(create_user):
     with app.test_client() as client:
         #response will be a redirect to register page
         response = client.post('auth/register', data=dict(email="testing@gmail.com", password="password", username="test123"))
-        assert response.status_code == 302
+        assert response.status_code == 302 
 
 
 
