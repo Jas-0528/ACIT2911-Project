@@ -4,23 +4,27 @@
 <div class="container">
   <img src="{{ url_for('static', filename='logo.png') }}" alt="Trivia Game logo" id="home-logo">
   <h1>Trivia Game</h1>
+
   <form method="POST" action="{{ url_for('html.home_submit') }}">
-    <label for="category">Category:</label>
+    <div> <input type="submit" value="Play Quiz" class="play_button">
+      </div>
+   <div> <label for="category">Category:</label>
     <select id="category" name="category">
       <option value="all">All</option>
       {% for category in categories %}
       <option value="{{ category }}">{{ category }}</option>
       {% endfor %}
-    </select>
+    </select> </div>
 
-    <label for="difficulty">Difficulty:</label>
+    <div> <label for="difficulty">Difficulty:</label>
     <select id="difficulty" name="difficulty">
       <option value="all">All</option>
       <option value="easy">Easy</option>
       <option value="medium">Medium</option>
       <option value="hard">Hard</option>
-    </select>
-
+    </select> </div>
+  
+    <div>
     <label for="length">Number of Questions:</label>
     <select id="length" name="length">
       <option value="1">1</option>
@@ -33,9 +37,8 @@
       <option value="8">8</option>
       <option value="9">9</option>
       <option value="10">10</option>
-    </select>
-
-    <input type="submit" value="Play Quiz">
+    </select> 
+              </div>
   </form>
 </div>
 {% endblock %}
