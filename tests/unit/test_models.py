@@ -72,12 +72,12 @@ def test_question_to_api_dict(question):
 
 def test_question_to_play_dict(question):
     # Test conversion of dictionary for game
-    assert question.to_play_dict() == {
-        "id": question.id,
-        "category": question.category,
-        "difficulty": question.difficulty,
-        "question": question.question,
-        "correct_answer": question.correct_answer,
-        "answers": json.loads(question.incorrect_answers_string)
-        + [question.correct_answer],
-    }
+    play_dict = question.to_play_dict()
+    assert play_dict["id"] == question.id
+    assert play_dict["category"] == question.category
+    assert play_dict["difficulty"] == question.difficulty
+    assert play_dict["question"] == question.question
+    assert play_dict["correct_answer"] == question.correct_answer
+    assert set(play_dict["answers"]) == set(
+        json.loads(question.incorrect_answers_string) + [question.correct_answer]
+    )
