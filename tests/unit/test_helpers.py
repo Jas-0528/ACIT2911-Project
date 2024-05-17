@@ -12,6 +12,7 @@ class MockDB:
     def get_or_404(self, model, id, description):
         pass
 
+
 def mock_db(monkeypatch):
     mock_db_instance = MagicMock()
     monkeypatch.setattr('trivia.db', mock_db_instance)
@@ -25,6 +26,7 @@ def test_retrieval_functions():
     with pytest.raises(Exception):  
         
         get_question(456) 
+
 
 def test_get_categories(mock_db):
     expected_categories = ['category1', 'category2']
