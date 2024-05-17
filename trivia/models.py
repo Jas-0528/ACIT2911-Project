@@ -1,4 +1,5 @@
 import json
+import random
 from flask_login import UserMixin
 from sqlalchemy import (
     ForeignKey,
@@ -41,6 +42,7 @@ class Question(db.Model):
     incorrect_answers_string = mapped_column(String(600), nullable=False)
     quizzes = relationship("QuizQuestion", cascade="all, delete-orphan")
 
+    # For use with api routes
     def to_api_dict(self):
         return {
             "id": self.id,
@@ -51,15 +53,17 @@ class Question(db.Model):
             "incorrect_answers": json.loads(self.incorrect_answers_string),
         }
 
+    # For use with html routes
     def to_play_dict(self):
+        answers = json.loads(self.incorrect_answers_string) + [self.correct_answer]
+        random.shuffle(answers)
         return {
             "id": self.id,
             "category": self.category,
             "difficulty": self.difficulty,
             "question": self.question,
             "correct_answer": self.correct_answer,
-            "answers": json.loads(self.incorrect_answers_string)
-            + [self.correct_answer],
+            "answers": answers,
         }
 
 

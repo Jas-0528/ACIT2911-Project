@@ -3,18 +3,19 @@
 
 body {
     font-family: Manjari Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin: 0; /* remove default margin */
+    margin: 0;
+    /* remove default margin */
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-   
+  
     /* changed the background colour to purple. use an image of the stars to cover the page, each url with different locations each time.
-        background does not repeat! */
+          background does not repeat! */
     background-color: #2A2030;
-    background-image: url(star.png), url(TriviaStars2.png), url(StarDot.png), url(StarDot.png), url(TriviaStars2.png);
+    background-image: url(../images/star.png), url(../images/trivia_stars_2.png), url(../images/star_dot.png), url(../images/star_dot.png), url(../images/trivia_stars_2.png);
     background-position: right, top left, center bottom, calc(2cm) calc(100% - 2cm), calc(100% - 6cm) calc(100% - 2cm);
     background-repeat: no-repeat;
-}
+  }
 
 
 /* Manjari isn't a font available in css. i downloaded it, declared it with @font-face and can call it later */
@@ -86,7 +87,7 @@ a {
 
 
 /* don't need to specify grid-row for any of the nav options becasue there's only one row */
-#Navlogo {
+#nav-logo {
     display: grid;
     grid-column: 1 / 2;
     height: 100px;
@@ -112,6 +113,7 @@ a {
     justify-content: center;
     grid-column: 5 / 6;
 }
+
 
 
 #scoreboard {
@@ -339,3 +341,37 @@ footer, footer i {
     display: flex;
     justify-content: center;
 }
+
+.play_button {
+  text-align: center; /* Center the form on the page */
+  font-family: 'Manjari Bold', sans-serif;
+  color: #BC9B47;
+  font-size: 1.5em;
+  margin-top: 50px;
+  border-radius: 15px;
+  font-weight: 700;
+
+}
+
+#home-logo {
+  border-radius: 50%;
+
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  text-align: center; /* Center the form on the page */
+  font-family: 'Manjari Bold', sans-serif;
+  color: #BC9B47;
+  font-size: 1.5em;
+}
+
+.category {
+  text-align: center; /* Center the form on the page */
+  font-family: 'Manjari Bold', sans-serif;
+  color: #BC9B47;
+  font-size: 1.5em;
+}
+
+
