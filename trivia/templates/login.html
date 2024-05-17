@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block css %}
-<link rel="stylesheet" href="../static/login.css">
+<link rel="stylesheet" href="../static/css/login.css">
 <!--Google Font for Playfair Display-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +21,10 @@
   <h3 class="login">Log In</h3>
   <form method="POST" action="{{ url_for('auth.login') }}">
     <div>
-      <input class="Username" type="text" name="login_method" placeholder="Your Email" autofocus="">
+      <input class="username" type="text" name="login_method" placeholder="Your Email" autofocus="">
     </div>
     <div>
-      <input class="Password" type="password" name="password" placeholder="Your Password">
+      <input class="password" type="password" name="password" placeholder="Your Password">
     </div>
     <div>
       <label class="checkbox">
@@ -32,7 +32,7 @@
         Remember me
       </label>
     </div>
-    <button class="Submit">Log In</button>
+    <button class="submit">Log In</button>
   </form>
   {% with messages = get_flashed_messages() %}
   {% if messages %}

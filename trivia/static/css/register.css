@@ -20,9 +20,10 @@
 body {
   width: 100%;
   background-color: var(--Goated-Purple);
+  position: relative;
 }
 
-.login {
+.create-account {
   display: flex;
   text-align: center;
   height: 100px;
@@ -45,7 +46,7 @@ section {
 
 }
 
-.Username {
+.username {
   margin-top: 50px;
   margin-left: 85px;
   background-color: #FFFFFF;
@@ -62,7 +63,24 @@ section {
   border-style: solid;
 }
 
-.Password {
+.email {
+  margin-top: 50px;
+  margin-left: 85px;
+  background-color: #FFFFFF;
+  border-radius: 380px;
+  height: 40px;
+  width: 400px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-family: "Manjari", sans-serif;
+  box-shadow: 1px 0px 8px 2px gray inset;
+  border: #2A2030;
+  border-style: solid;
+}
+
+.password {
   margin-top: 50px;
   margin-left: 85px;
   background-color: #FFFFFF;
@@ -78,15 +96,8 @@ section {
   border-style: solid;
 }
 
-.Forgot-Password {
-  color: var(--Goated-Pink);
-  font-size: 15px;
-  margin-top: 5px;
-  margin-left: 85px;
-}
-
-.Submit {
-  margin-top: 50px;
+.submit {
+  margin-top: 30px;
   margin-left: 200px;
   background-color: #FFFFFF;
   border-radius: 380px;
@@ -101,19 +112,8 @@ section {
   box-shadow: 4px 6px gray inset;
 }
 
-.Create-Account {
-  color: var(--Goated-Pink);
-  font-size: 15px;
-  margin-top: 5px;
-  margin-left: 235px;
-  text-decoration: underline;
-}
-
-.checkbox{
-  margin-left: 80px;
-  color: var(--Goated-Pink);
-}
-
-.Username, .Password, .Submit {
+.username, .password, .submit, .email {
   border-color: var(--Goated-Pink);
 }
+
+

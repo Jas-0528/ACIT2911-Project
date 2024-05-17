@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block css %}
-<link rel="stylesheet" href="../static/register.css">
+<link rel="stylesheet" href="../static/css/register.css">
 <!--Google Font for Playfair Display-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,19 +17,19 @@
 {% endblock %}
 
 {% block content %}
-<section class="block">
+<section>
   <div class="create-account">Register</div>
   <form method="POST" action="register">
     <div>
-      <input class="Email" type="email" name="email" placeholder="Email" autofocus="">
+      <input class="email" type="email" name="email" placeholder="Email" autofocus="">
     </div>
     <div>
-      <input class="Username" type="text" name="name" placeholder="Username" autofocus="">
+      <input class="username" type="text" name="name" placeholder="Username" autofocus="">
     </div>
     <div>
-      <input class="Password" type="password" name="password" placeholder="Password">
+      <input class="password" type="password" name="password" placeholder="Password">
     </div>
-    <button class="Submit">Register</button>
+    <button class="submit">Register</button>
   </form>
 </section>
 {% endblock %}

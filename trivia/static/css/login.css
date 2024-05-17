@@ -20,10 +20,9 @@
 body {
   width: 100%;
   background-color: var(--Goated-Purple);
-  position: relative;
 }
 
-.create-account {
+.login {
   display: flex;
   text-align: center;
   height: 100px;
@@ -46,7 +45,7 @@ section {
 
 }
 
-.Username {
+.username {
   margin-top: 50px;
   margin-left: 85px;
   background-color: #FFFFFF;
@@ -63,24 +62,7 @@ section {
   border-style: solid;
 }
 
-.Email {
-  margin-top: 50px;
-  margin-left: 85px;
-  background-color: #FFFFFF;
-  border-radius: 380px;
-  height: 40px;
-  width: 400px;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  font-family: "Manjari", sans-serif;
-  box-shadow: 1px 0px 8px 2px gray inset;
-  border: #2A2030;
-  border-style: solid;
-}
-
-.Password {
+.password {
   margin-top: 50px;
   margin-left: 85px;
   background-color: #FFFFFF;
@@ -96,15 +78,15 @@ section {
   border-style: solid;
 }
 
-.Forgot-Password {
+.forgot-password {
   color: var(--Goated-Pink);
   font-size: 15px;
   margin-top: 5px;
   margin-left: 85px;
 }
 
-.Submit {
-  margin-top: 30px;
+.submit {
+  margin-top: 50px;
   margin-left: 200px;
   background-color: #FFFFFF;
   border-radius: 380px;
@@ -119,8 +101,11 @@ section {
   box-shadow: 4px 6px gray inset;
 }
 
-.Username, .Password, .Submit, .Email {
-  border-color: var(--Goated-Pink);
+.checkbox{
+  margin-left: 80px;
+  color: var(--Goated-Pink);
 }
 
-
+.username, .password, .submit {
+  border-color: var(--Goated-Pink);
+}
