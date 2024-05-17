@@ -9,7 +9,7 @@ def user():
     return user
 
 
-def test_new_user(user):
+def test_new_user():
     # Check attributes and password hashing (pass/fail)
     user = User(username="Lethamyr", email="leth@psyonix.com", password="rokt_l33g")
     assert user.role == "user"
