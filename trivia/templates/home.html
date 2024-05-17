@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container">
-  <img src="{{ url_for('static', filename='logo.png') }}" alt="Trivia Game logo" id="home-logo">
+  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Trivia Game logo" id="home-logo">
 
   <form method="POST" action="{{ url_for('html.home_submit') }}">
     <div> <input type="submit" value="Play Quiz" class="play_button">
