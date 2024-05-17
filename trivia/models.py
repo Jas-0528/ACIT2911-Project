@@ -1,4 +1,5 @@
 import json
+import random
 from flask_login import UserMixin
 from sqlalchemy import (
     ForeignKey,
@@ -52,14 +53,15 @@ class Question(db.Model):
         }
 
     def to_play_dict(self):
+        answers = json.loads(self.incorrect_answers_string) + [self.correct_answer]
+        random.shuffle(answers)
         return {
             "id": self.id,
             "category": self.category,
             "difficulty": self.difficulty,
             "question": self.question,
             "correct_answer": self.correct_answer,
-            "answers": json.loads(self.incorrect_answers_string)
-            + [self.correct_answer],
+            "answers": answers,
         }
 
 
