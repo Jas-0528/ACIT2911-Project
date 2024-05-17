@@ -74,7 +74,7 @@ def create_quiz(user, category, difficulty, length):
         db.session.add(quiz_question)
 
     db.session.commit()
-    return
+    return quiz
 
 
 # Homepage
