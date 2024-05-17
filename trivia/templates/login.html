@@ -1,30 +1,45 @@
 {% extends "base.html" %}
 
+{% block css %}
+<link rel="stylesheet" href="../static/css/login.css">
+<!--Google Font for Playfair Display-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+  rel="stylesheet">
+
+<!--Google Font for Manjari-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+  rel="stylesheet">
+{% endblock %}
+
 {% block content %}
-<div>
-  <h3>Log In</h3>
-  <div>
-    <form method="POST" action="{{ url_for('auth.login') }}">
-      <div>
-        <input type="text" name="login_method" placeholder="Your Email" autofocus="">
-      </div>
-      <div>
-        <input type="password" name="password" placeholder="Your Password">
-      </div>
-      <label>
+<section>
+  <h3 class="login">Log In</h3>
+  <form method="POST" action="{{ url_for('auth.login') }}">
+    <div>
+      <input class="username" type="text" name="login_method" placeholder="Your Email" autofocus="">
+    </div>
+    <div>
+      <input class="password" type="password" name="password" placeholder="Your Password">
+    </div>
+    <div>
+      <label class="checkbox">
         <input type="checkbox" name="remember">
         Remember me
       </label>
-  </div>
-  <button>Log In</button>
+    </div>
+    <button class="submit">Log In</button>
   </form>
-</div>
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-<div>
-  {{ messages[0] }}
-</div>
-{% endif %}
-{% endwith %}
-</div>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="notification is-danger">
+    {{ messages[0] }}
+  </div>
+  {% endif %}
+  {% endwith %}
+</section>
 {% endblock %}
