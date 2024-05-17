@@ -102,14 +102,14 @@ def create_test_accounts():
     print("Test user and admin created")
 
 
-def create_random_game():
+def create_random_quiz():
     # Find a random user
     user_stmt = db.select(User).order_by(func.random()).limit(1)
     user = db.session.execute(user_stmt).scalar()
 
-    # Make an game
-    game = Quiz(user=user)
-    db.session.add(game)
+    # Make a quiz
+    quiz = Quiz(user=user)
+    db.session.add(quiz)
 
     # Sample 1 to 4 questions from the Question table and create a list of database objects
     random_question_stmt = (
@@ -117,19 +117,19 @@ def create_random_game():
     )
     questions = db.session.execute(random_question_stmt).scalars()
 
-    # Loop over game questions in sample
+    # Loop over quiz questions in sample
     for question in questions:
 
         # Create QuizQuestion objects and add to database
-        game_question = QuizQuestion(
-            game=game,
+        quiz_question = QuizQuestion(
+            quiz=quiz,
             question=question,
         )
-        db.session.add(game_question)
+        db.session.add(quiz_question)
 
     # Commit to database
     db.session.commit()
-    print("Random game created")
+    print("Random quiz created")
 
 
 if __name__ == "__main__":
@@ -140,4 +140,4 @@ if __name__ == "__main__":
         create_all()
         add_questions()
         create_test_accounts()
-        # create_random_game()
+        # create_random_quiz()
