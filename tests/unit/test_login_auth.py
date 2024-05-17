@@ -1,6 +1,5 @@
 from trivia.models import User
 import pytest
-from flask import url_for
 
 def test_login_get():
     assert 'login.html' != ''

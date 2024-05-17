@@ -352,13 +352,25 @@ footer, footer i {
 
 }
 
-.play_button {
+#home-logo {
+  border-radius: 50%;
+
+}
+
+.container {
+  display: grid;
+  place-items: center;
   text-align: center; /* Center the form on the page */
   font-family: 'Manjari Bold', sans-serif;
   color: #BC9B47;
   font-size: 1.5em;
-  margin-top: 50px;
-  border-radius: 15px;
-  font-weight: 700;
-
 }
+
+.category {
+  text-align: center; /* Center the form on the page */
+  font-family: 'Manjari Bold', sans-serif;
+  color: #BC9B47;
+  font-size: 1.5em;
+}
+
+
