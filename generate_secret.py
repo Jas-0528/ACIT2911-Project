@@ -7,4 +7,4 @@ secret_key = secrets.token_hex(32)
 with open(".env", "w") as f:
     f.write(f"SECRET_KEY={secret_key}\n")
 
-print("Secret key written to .env file.")
+print("Secret key written to .env file")
