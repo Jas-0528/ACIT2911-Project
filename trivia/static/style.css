@@ -1,112 +1,341 @@
-:root {
-  --text-color: #ffa791;
-  --background-color: #f9d388;
-  --pink: #ff3186;
-  --bittersweet-pink: #ff725c;
-  --supernova-yellow: #ffb437;
-  --mona-lisa-pink: #ff8f8f;
-  --burgundy-red: #db1049;
-  --star-pink: #f1728b;
-}
+* {margin: 0px;}
 
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 body {
-  margin: 0px;
+    font-family: Manjari Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0; /* remove default margin */
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+   
+    /* changed the background colour to purple. use an image of the stars to cover the page, each url with different locations each time.
+        background does not repeat! */
+    background-color: #2A2030;
+    background-image: url(star.png), url(TriviaStars2.png), url(StarDot.png), url(StarDot.png), url(TriviaStars2.png);
+    background-position: right, top left, center bottom, calc(2cm) calc(100% - 2cm), calc(100% - 6cm) calc(100% - 2cm);
+    background-repeat: no-repeat;
 }
+
+
+/* Manjari isn't a font available in css. i downloaded it, declared it with @font-face and can call it later */
+@font-face {
+    font-family: 'Manjari Bold';
+    src: url('MainFont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* same thing with playfair display */
+@font-face {
+    font-family: 'Playfair Display';
+    src: url(PlayfairDisplay.ttf)
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* CSS for nav starts here */
+
 
 nav {
-  background-color: var(--supernova-yellow);
-  padding: 10px 0;
-  font-size: 2em;
-  display: flex;
-  align-items: center;
+    background-color: #E4E9EF;
+    font-style: italic;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
 }
 
-nav ul {
-  margin: auto;
-  padding-inline: 0;
-}
-
-nav ul li {
-  display: inline-block;
-}
-
-nav a {
-  text-decoration: none;
-  color: black;
-}
+/* Hover option if u want */
 
 nav a:hover {
-  border-radius: 25%;
-  padding: 1rem;
-  background-color: var(--bittersweet-pink);
+    color: black;
+    background-color: #e4e9ef97;
 }
 
-.container {
-  display: grid;
-  place-items: center;
-  height: calc(100vh - 57px);
+#play:hover {
+    background-color: #FCDE93;
 }
 
-#home-logo {
-  margin: auto;
-  height: 500px;
-  border-radius: 50%;
+
+
+/* the nav is displayed in grid. columns are spaced out by different widths so we don't have to use margin or padding. Makes it easier to move them around by their columns  */
+nav, nav div, nav img{
+    display: flex;
+    align-items: center;
 }
 
-h1 {
-  text-align: center;
+
+a {
+    /* aligns content for the 'home', 'play' and 'sign in' to be in the middle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+    text-decoration: none;
+    color: black;
+    height: 100px;
+    width: 12em;
+    font-size: 1.5em;
+
+
+    background-color: #D9D9D9;
+    /* the "home" and "Sign in" backgrounds are gray but not the "play" because i use an id later on to change the backgrnd color */
 }
 
-.play {
-  display: grid;
-  place-items: center;
-  height: calc(100vh - 57px);
+
+/* don't need to specify grid-row for any of the nav options becasue there's only one row */
+#Navlogo {
+    display: grid;
+    grid-column: 1 / 2;
+    height: 100px;
+    border-radius: 600%;
+    align-items: center;
+    justify-content: center;
 }
+
+
+#home {
+    align-items: center;
+    justify-content: center;
+    grid-column: 3 / 4;
+}
+
+#play {
+    grid-column: 4 / 5;
+}
+
+
+#SignIn {
+    align-items: center;
+    justify-content: center;
+    grid-column: 5 / 6;
+}
+
+
+#scoreboard {
+    transform: translateY(30%);/*  centers the scoreboard vertically within the nav */
+    grid-row: 1 / 1;
+    grid-column: 7 / 8;
+    width: 250px;
+    height: 50px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 50px;
+   
+   
+    text-align: left;
+    align-content: center;
+    justify-self: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* To separate user and points */
+    padding: 0 10px; /* Add some padding to separate text from border */
+}
+
+#user {
+    text-align: left;
+}
+
+
+#points {
+    text-align: right;
+    color: orange;
+}
+
+/* profile icon is commented out */
+/* #profile-icon {
+    display: grid;
+    height: 100px;
+    width: 100px;
+    grid-row: 1 / 1;
+    grid-column: 8 / 9;
+    border-radius: 100%;
+    margin-left: 100px;
+} */
+
+
+/* CSS for nav ends here */
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+main {
+    padding: 20px; /* padding inside the main container */
+
+    max-width: 80%; /* limit maximum width */
+    margin: 0 auto; /* center the grid horizontally */
+    display: grid;  
+    grid-template-columns: 1fr;
+    font-family: 'Manjari Bold', sans-serif;
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+
+/* CSS for question card starts here */
+
 
 .card {
-  border: 1.5rem solid var(--supernova-yellow);
-  padding: 2rem;
-  background-color: black;
-  color: white;
-  font-size: 2em;
-  text-align: center;
+    grid-column: 1 / 5;
+    background-color: #f0f0f0; /* background color for the question card */
+    padding: 2rem;
+   
+    border: 1.5rem solid #E16787;
+    border-radius: 10cm;
+    color: white; /* text-color*/
+    font-size: 2em;
+    font-weight: 700;
+    background-color: #BC9B47;
+    text-align: center;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    margin-bottom: 2rem;
 }
+/* CSS for question card ends here  */
 
-/* Make grid for answer options 2 by 2 */
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+/* CSS for the answers start here */
+
+
 .options {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-button {
-  background-color: black;
-  height: 3cm;
-  width: 10cm;
-  color: white;
-  font-size: 1.5em;
-  margin: 5px;
+
+.options button{
+    font-size: 1.5em;
+    color: #2A2030;
+    background-color: #FFFFFF; /* background color for the rectangle cards */
+    border-radius: 380px; /* smoothens it from sharp corners to rounded--more circular */  
+    border: 4px solid#FCDE93;
+    box-shadow: 2px 1px 10px 5px gray inset; /* this adds the shadow to the inside of the answer options. makes it look more 3d*/
+    height: 3cm;
+    width: 12cm;
+    margin: 5px;
 }
 
-button:not(:disabled):hover {
-  transform: scale(1.2);
-  transition-duration: 0.2s;
-  background-color: var(--supernova-yellow);
-}
 
-button:disabled {
-  background-color: #767676;
+.options button:not(:disabled):hover {
+    transform: scale(1.2);
+    transition-duration: 0.4s;
+    background-color: #FCDE93;
+}
+.options button:disabled {
+    background-color: #767676;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
-#play-logo {
-  height: 100px;
-  border-radius: 50%;
+#result {
+    display: grid;
+    grid-column: 1 / 5;
+    grid-row: 2/3;
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center;
+}
+
+#result #correct {
+    color: green;
+
+}
+
+#result #incorrect {
+    color: red;
+}
+
+
+/* CSS for the answers ends here */
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* CSS for API link starts here */
+
+footer, footer i {
+    display: grid;
+    position: fixed;
+    bottom: 1.5cm;
+    left: 2cm;
+}
+
+
+.link {
+    width: fit-content; /* to make all the text appear in one line regardless of how big the font is*/
+    font-size: 1.5em;
+    background-color: transparent; /* removes background applied to the other 'a' tags*/
+    color: white;
+    font-family: 'Playfair', serif;
+    font-style: oblique; /* italics*/
+
+    display: block;
+    margin-left: 20px;
+    /* margin-bottom: 10px; */
+    text-shadow: 2px 2px 2px #E16787; /* adds shadow to the text */
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+/* CSS for API link ends here */
+
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+
+/* CSS for the arrow starts here */
+
+.arrow{
+    color: white;
+    font-size: 12em;
+    margin-top: 5rem;
+    height: 0px;
+    /* add border around the text */
+    text-shadow: 10px 10px 10px #E16787;
+    display: flex;
+    justify-content: center;
+    margin-left: 150px;
+}
+
+.arrow-link {
+    text-decoration: none;
+    background-color: transparent;
+    color: inherit; 
+}
+
+#random-play-button{
+    background-color: #FFFFFF;
+    border: 10px solid #E16787;
+    border-radius: 380px;
+}    
+
+.right-arrow {
+    display: flex;
+    justify-content: center;
 }
