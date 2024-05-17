@@ -1,36 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="column is-4 is-offset-4">
-  <h3 class="title">Log In</h3>
-  <div class="box">
+<div>
+  <h3>Log In</h3>
+  <div>
     <form method="POST" action="{{ url_for('auth.login') }}">
-      <div class="field">
-        <div class="control">
-          <input class="input is-large" type="text" name="login_method" placeholder="Your Email" autofocus="">
-        </div>
+      <div>
+        <input type="text" name="login_method" placeholder="Your Email" autofocus="">
       </div>
-
-      <div class="field">
-        <div class="control">
-          <input class="input is-large" type="password" name="password" placeholder="Your Password">
-        </div>
+      <div>
+        <input type="password" name="password" placeholder="Your Password">
       </div>
-      <div class="field">
-        <label class="checkbox">
-          <input type="checkbox" name="remember">
-          Remember me
-        </label>
-      </div>
-      <button class="button is-block is-info is-large is-fullwidth">Log In</button>
-    </form>
+      <label>
+        <input type="checkbox" name="remember">
+        Remember me
+      </label>
   </div>
-  {% with messages = get_flashed_messages() %}
-  {% if messages %}
-  <div class="notification is-danger">
-    {{ messages[0] }}
-  </div>
-  {% endif %}
-  {% endwith %}
+  <button>Log In</button>
+  </form>
+</div>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div>
+  {{ messages[0] }}
+</div>
+{% endif %}
+{% endwith %}
 </div>
 {% endblock %}

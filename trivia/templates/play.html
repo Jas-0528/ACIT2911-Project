@@ -1,50 +1,51 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="play">
-<main id="play-main">
+<div>
+  <main>
+    <div class="card">{{ question }}</div>
 
-  <div class="card">{{ question }}</div>
+    {% if answered %}
+    {% set disabled = "disabled" %}
+    {% endif %}
 
-  {% if answered %}
-  {% set disabled = "disabled" %}
-  {% endif %}
-
-  <div class="options">
-    {% for answer in answers %}
-    {% if mode == "random" %}
-    <form  method="POST" action="{{ url_for('html.play_random_submit')}}"">
+    <div class="options">
+      {% for answer in answers %}
+      {% if mode == "random" %}
+      <form method="POST" action="{{ url_for('html.play_random_submit')}}"">
     {% else %}
-      <form method="POST" action="{{ url_for('html.play_quiz_submit') }}">
-      {% endif %}
+      <form method=" POST" action="{{ url_for('html.play_quiz_submit') }}">
+        {% endif %}
         <input type="hidden" name="answer" value="{{ answer }}">
         <button type="submit" {{ disabled }}>{{ answer }}</button>
       </form>
       {% endfor %}
-  </div>
+    </div>
 
-<div id="result">
-  {% if answered %}
-  <p id="correct" class="{{ 'hidden' if not correct else '' }}">Correct!</p>
-  <p id="incorrect" class="{{ 'hidden' if correct else '' }}">Sorry. The answer was {{ correct_answer }}.</p>
-  {% else %}
-  <p></p>
-  {% endif %}
-</div>
-</main>
+    <div id="result">
+      {% if answered %}
+      <p id="correct" class="{{ 'hidden' if not correct else '' }}">Correct!</p>
+      <p id="incorrect" class="{{ 'hidden' if correct else '' }}">Sorry. The answer was {{ correct_answer }}.</p>
+      {% else %}
+      <p></p>
+      {% endif %}
+    </div>
+  </main>
 
-{% if mode == "random" %}
+  {% if mode == "random" %}
   <div class="right-arrow">
-  <a id="random-play-button" href="{{ url_for('html.play_random', question_id=random_question_id) }}">Random Question</a>
-</div>
-{% else %}
-<div>
-  <a class="arrow" href="{{ url_for('html.play_quiz') }}"><i>&#8594;</i></a>
-</div>
+    <a id="random-play-button" href="{{ url_for('html.play_random', question_id=random_question_id) }}">Random
+      Question</a>
+  </div>
+  {% else %}
+  <div>
+    <a class="arrow" href="{{ url_for('html.play_quiz') }}"><i>&#8594;</i></a>
+  </div>
   {% endif %}
 
 
 
-<a class="link" href="https://opentdb.com/api_config.php">Questions were obtained from the Open Trivia Database API</a>
+  <a class="link" href="https://opentdb.com/api_config.php">Questions were obtained from the Open Trivia Database
+    API</a>
 
-{% endblock %}
+  {% endblock %}
