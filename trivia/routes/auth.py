@@ -77,5 +77,6 @@ def register_post():
 # Logout page
 @auth_bp.route("/logout", methods=["GET"])
 def logout():
+    # Log user out
     logout_user()
     return redirect(url_for("auth.login"))

@@ -139,12 +139,6 @@ a {
     text-align: left;
 }
 
-
-#points {
-    text-align: right;
-    color: orange;
-}
-
 /* profile icon is commented out */
 /* #profile-icon {
     display: grid;
@@ -169,11 +163,8 @@ a {
 
 main {
     padding: 20px; /* padding inside the main container */
-
     max-width: 80%; /* limit maximum width */
-    margin: 0 auto; /* center the grid horizontally */
-    display: grid;  
-    grid-template-columns: 1fr;
+    margin: 0 auto; /* center the grid horizontally */ 
     font-family: 'Manjari Bold', sans-serif;
 }
 
@@ -281,14 +272,6 @@ main {
 
 /* CSS for API link starts here */
 
-footer, footer i {
-    display: grid;
-    position: fixed;
-    bottom: 1.5cm;
-    left: 2cm;
-}
-
-
 .link {
     width: fit-content; /* to make all the text appear in one line regardless of how big the font is*/
     font-size: 1.5em;
@@ -321,12 +304,6 @@ footer, footer i {
     display: flex;
     justify-content: center;
     margin-left: 150px;
-}
-
-.arrow-link {
-    text-decoration: none;
-    background-color: transparent;
-    color: inherit; 
 }
 
 #random-play-button{
