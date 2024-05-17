@@ -104,25 +104,26 @@ def play_random(question_id):
     # Create dictionary to be passed to Flask template
     question_data = question.to_play_dict()
     question_data.update({"answered": False, "correct": False, "mode": "random"})
+
+    # Store question_data in session
+    session["question_data"] = question_data
+
     return render_template("play.html", **question_data)
 
 
 # Play random post
-@html_bp.route("/play/random/<int:question_id>", methods=["POST"])
+@html_bp.route("/play/random/submit", methods=["POST"])
 @login_required
-def play_random_submit(question_id):
-    # Retrieve question from database based on id in URL
-    question = get_question(question_id)
-
-    # Retrieve user-submited answer
+def play_random_submit():
+    # Retrieve user-submitted answer
     answer = request.form.get("answer")
 
-    # Create dictionary and pass to Flask template
-    question_data = question.to_play_dict()
+    # Retrieve question_data from session
+    question_data = session.get("question_data")
     question_data.update(
         {
             "answered": True,
-            "correct": False if question.correct_answer != answer else True,
+            "correct": False if question_data['correct_answer'] != answer else True,
             "mode": "random",
         }
     )
@@ -151,7 +152,7 @@ def play_quiz():
         db.session.commit()
         return redirect(url_for("html.home"))
 
-    # Store ID QuizQuestion ID in session for POST route
+    # Store ID QuizQuestion ID in session
     session["quiz_question_id"] = quiz_question.id
 
     # Create dictionary and pass to Flask template
