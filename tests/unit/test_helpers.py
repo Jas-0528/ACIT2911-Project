@@ -12,7 +12,7 @@ class MockDB:
     def get_or_404(self, model, id, description):
         pass
 
-
+@pytest.fixture
 def mock_db(monkeypatch):
     mock_db_instance = MagicMock()
     monkeypatch.setattr('trivia.db', mock_db_instance)
@@ -27,7 +27,7 @@ def test_retrieval_functions():
         
         get_question(456) 
 
-
+@pytest.fixture
 def test_get_categories(mock_db):
     expected_categories = ['category1', 'category2']
     mock_db.select.return_value = MagicMock(
