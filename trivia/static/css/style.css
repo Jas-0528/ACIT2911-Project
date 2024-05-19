@@ -2,9 +2,6 @@
   margin: 0px;
 }
 
-
-
-
 body {
   font-family: Manjari Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   margin: 0;
@@ -38,18 +35,9 @@ body {
   src: url(PlayfairDisplay.ttf)
 }
 
-
-
-
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 
-
-
-
 /* CSS for nav starts here */
-
-
-
 
 nav {
   background-color: #E4E9EF;
@@ -60,23 +48,16 @@ nav {
 }
 
 
-/* Hover option if u want */
 
 
-nav a:hover {
+  nav a:hover {
   color: black;
   background-color: #e4e9ef97;
 }
 
-
 #play:hover {
   background-color: #FCDE93;
 }
-
-
-
-
-
 
 /* the nav is displayed in grid. columns are spaced out by different widths so we don't have to use margin or padding. Makes it easier to move them around by their columns  */
 nav,
@@ -85,9 +66,6 @@ nav img {
   display: flex;
   align-items: center;
 }
-
-
-
 
 a {
   /* aligns content for the 'home', 'play' and 'sign in' to be in the middle */
@@ -102,16 +80,9 @@ a {
   height: 100px;
   width: 12em;
   font-size: 1.5em;
-
-
-
-
   background-color: #D9D9D9;
   /* the "home" and "Sign in" backgrounds are gray but not the "play" because i use an id later on to change the backgrnd color */
 }
-
-
-
 
 /* don't need to specify grid-row for any of the nav options becasue there's only one row */
 #nav-logo {
@@ -123,36 +94,34 @@ a {
   justify-content: center;
 }
 
-
-
-
 #home {
   align-items: center;
   justify-content: center;
   grid-column: 3 / 4;
+  grid-row: 1/2
 }
-
 
 #play {
   grid-column: 4 / 5;
+  grid-row: 1/2
 }
-
-
-
 
 #SignIn {
   align-items: center;
   justify-content: center;
   grid-column: 5 / 6;
+  grid-row: 1/2;
 }
 
+#random {
+  grid-row: 1 / 2;
+}
 
-
-
-#scoreboard {
-  transform: translateY(30%);
+/* scoreboard is commented out...can add in later this sprint */
+/* #scoreboard {
+  transform: translateY(30%); */
   /*  centers the scoreboard vertically within the nav */
-  grid-row: 1 / 1;
+  /* grid-row: 1 / 1;
   grid-column: 7 / 8;
   width: 250px;
   height: 50px;
@@ -160,25 +129,21 @@ a {
   border: 3px solid black;
   border-radius: 50px;
 
-
-
-
   text-align: left;
   align-content: center;
   justify-self: center;
   justify-content: center;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; */
   /* To separate user and points */
-  padding: 0 10px;
+  /* padding: 0 10px; */
   /* Add some padding to separate text from border */
-}
+/* } */
 
-
-#user {
+/* #user {
   text-align: left;
-}
+} */
 
 
 /* profile icon is commented out */
@@ -192,26 +157,9 @@ a {
     margin-left: 100px;
 } */
 
-
-
-
 /* CSS for nav ends here */
 
-
-
-
-
-
-
-
 /* ////////////////////////////////////////////////////////////////////////////////////// */
-
-
-
-
-
-
-
 
 main {
   padding: 20px;
@@ -224,23 +172,16 @@ main {
 }
 
 
-
-
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 
 
 /* CSS for question card starts here */
 
-
-
-
-
-
 div.card {
   grid-column: 1 / 5;
+  grid-row: 2 / 3;
   background-color: #f0f0f0; /* background color for the question card */
   padding: 2rem;
- 
   border: 1.5rem solid #E16787;
   border-radius: 10cm;
   color: white; /* text-color*/
@@ -251,27 +192,13 @@ div.card {
  
   margin-top: 0.5em;
 }
+
+
 /* CSS for question card ends here  */
-
-
-
-
-
-
-
 
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 
-
-
-
-
-
-
-
 /* CSS for the answers start here */
-
-
 
 
 .options {
@@ -285,9 +212,6 @@ div.card {
   text-align: center;
 }
 
-
-
-
 .options button{
   font-size: 1.5em;
   color: #2A2030;
@@ -300,8 +224,6 @@ div.card {
 }
 
 
-
-
 .options button:not(:disabled):hover {
   transform: scale(1.2);
   transition-duration: 0.4s;
@@ -311,7 +233,6 @@ div.card {
   background-color: #767676;
 }
 
-
 .hidden {
   display: none;
 }
@@ -319,18 +240,13 @@ div.card {
 
 #result {
   display: grid;
-  grid-column: 1 / 5;
-  grid-row: 2/3;
   font-size: 2em;
   font-weight: 700;
   text-align: center;
 }
 
-
 #result #correct {
   color: green;
-
-
 }
 
 
@@ -351,18 +267,9 @@ div.card {
   margin-bottom: 0px;
 }
 
-
-
-
 /* CSS for the answers ends here */
 
-
-
-
 /* ////////////////////////////////////////////////////////////////////////////////////// */
-
-
-
 
 /* CSS for API link starts here */
 
@@ -373,9 +280,6 @@ footer, footer i {
   bottom: 1.5cm;
   left: 2cm;
 }
-
-
-
 
 .link {
   width: fit-content; /* to make all the text appear in one line regardless of how big the font is*/
@@ -429,12 +333,10 @@ a.link {
 
 #random-play-button{
   background-color: #FFFFFF;
-  border: 10px solid #E16787;
+  border: 5px solid #E16787;
   border-radius: 380px;
   position: absolute;
   top: 600px; /* positions it at the bottom.*/
-  left: 50%;
-  transform: translateX(-50%);
 }    
 
 
@@ -447,5 +349,6 @@ a.link {
 /* i targets the next button arrow */
 i {
   position: absolute;
-  top: 375px
+  top: 510px;
+  right: 200px
 }
