@@ -1,19 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div>
-  <main>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<main id="play-main">
+  <div class="play">
+    {% if mode != "random" %}
+    <div class="score">
+      <div id="scoreboard">
+        <p id="points">Score: {{ score }}</p>
+      </div>
+    </div>
+    {% endif %}
 
-    <div class="play">
-      <main id="play-main">
-        {% if mode != "random" %}
-          <div class="score">
-            <div id="scoreboard">
-              <p id="points">Score: {{ score }}</p>
-            </div>
-        {% endif %}
-      
     <div class="card">{{ question }}</div>
 
     {% if answered %}
@@ -41,20 +38,21 @@
       <p></p>
       {% endif %}
     </div>
-  </main>
-
-  {% if mode == "random" %}
-  <div class="right-arrow">
-    <a id="random-play-button" href="{{ url_for('html.play_random', question_id=random_question_id) }}">Random
-      Question</a>
   </div>
-  {% else %}
-  <div>
-    <a class="arrow" href="{{ url_for('html.play_quiz') }}"><i>&#8594;</i></a>
-  </div>
-  {% endif %}
+</main>
 
-  <a class="link" href="https://opentdb.com/api_config.php">Questions were obtained from the Open Trivia Database
-    API</a>
+{% if mode == "random" %}
+<div class="right-arrow">
+  <a id="random-play-button" href="{{ url_for('html.play_random', question_id=random_question_id) }}">Random
+    Question</a>
+</div>
+{% else %}
+<div>
+  <a class="arrow" href="{{ url_for('html.play_quiz') }}"><i>&#8594;</i></a>
+</div>
+{% endif %}
 
-  {% endblock %}
+<a class="link" href="https://opentdb.com/api_config.php">Questions were obtained from the Open Trivia Database
+  API</a>
+
+{% endblock %}
