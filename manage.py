@@ -1,4 +1,4 @@
-import html, json, random, requests
+import html, json, random, requests, time
 from sqlalchemy.sql import functions as func
 from trivia.db import db
 from app import app
@@ -80,26 +80,24 @@ def add_questions():
     print("All questions added")
 
 
-# Create test user and admin
+# Create test users
 def create_test_accounts():
-    user = User(
-        role="user",
+    user_1 = User(
         email="user1@example.com",
         username="user1",
         password="password1",
     )
-    db.session.add(user)
-    admin = User(
-        role="admin",
-        email="admin1@example.com",
-        username="admin1",
-        password="password1",
+    db.session.add(user_1)
+    user_2 = User(
+        email="user2@example.com",
+        username="user2",
+        password="password2",
     )
-    db.session.add(admin)
+    db.session.add(user_2)
 
     # Once all users have been added, commit
     db.session.commit()
-    print("Test user and admin created")
+    print("Test users created")
 
 
 def create_random_quiz():
@@ -135,7 +133,9 @@ def create_random_quiz():
 if __name__ == "__main__":
     with app.app_context():
         # write_to_json()
-        # append_to_json()
+        # for _ in range(20):
+        #     append_to_json()
+        #     time.sleep(5)
         drop_all()
         create_all()
         add_questions()

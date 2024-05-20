@@ -7,7 +7,7 @@
 </head>
 
 {% block css %}
-<link rel="stylesheet" href="../static/css/register.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
 <!--Google Font for Playfair Display-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,4 +38,11 @@
     <button class="submit">Register</button>
   </form>
 </section>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="notification is-danger">
+  {{ messages[0] }}
+</div>
+{% endif %}
+{% endwith %}
 {% endblock %}

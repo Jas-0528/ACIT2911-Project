@@ -32,9 +32,13 @@ def login_post():
         result = db.session.execute(stmt)
         user = result.scalars().first()
 
-    # If no user found or password doesn't match, flash error message and redirect to login page
-    if not user or not check_password_hash(user.password_hashed, password):
-        flash("User not found: check login details")
+    # If no user found, redirect to login page and flash no user found
+    if not user:
+        flash("No user found with that email or username")
+        return redirect(url_for("auth.login"))
+    # If user is found, check password
+    if not check_password_hash(user.password_hashed, password):
+        flash("Incorrect password, try again")
         return redirect(url_for("auth.login"))
 
     # If user is found, log them in
@@ -56,12 +60,20 @@ def register_post():
     password = request.form.get("password")
     username = request.form.get("name")
 
-    # Check if user already exists
+    # Check if user email already exists
     stmt = db.select(User).where(User.email == email)
     result = db.session.execute(stmt)
     existing_user = result.scalars().first()
     if existing_user:
-        flash("Email address already exists")
+        flash("Email address already in use")
+        return redirect(url_for("auth.register"))
+
+    # Check if username already exists
+    stmt = db.select(User).where(User.username == username)
+    result = db.session.execute(stmt)
+    existing_user = result.scalars().first()
+    if existing_user:
+        flash("Username already exists")
         return redirect(url_for("auth.register"))
 
     # Else create new user and hash password
