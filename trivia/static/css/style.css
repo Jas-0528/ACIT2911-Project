@@ -355,6 +355,7 @@ footer, footer i {
 
 #home-logo {
   border-radius: 50%;
+  margin-top: 5px;
 
 }
 
@@ -365,6 +366,7 @@ footer, footer i {
   font-family: 'Manjari Bold', sans-serif;
   color: #BC9B47;
   font-size: 1.5em;
+  margin-bottom: 2%;
 }
 
 .category {
@@ -374,4 +376,66 @@ footer, footer i {
   font-size: 1.5em;
 }
 
+/* CSS for smaller screens */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 0.8em;
+    }
 
+    .options {
+        grid-template-columns: 1fr;
+    }
+
+    .options button {
+        width: 60%;
+        height: 20%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    .card, #result {
+        font-size: 1.5em;
+        width: 60%;
+        height: 40%;
+        margin-bottom: 1%;
+    }
+
+    #home-logo {
+        width: 80%;
+        margin-top: 10%;
+
+      }
+
+    .container {
+        margin-bottom: 50%;
+    
+    }
+    .play_button {
+        margin-top: 5%;
+        margin-bottom: 2%;
+    }
+
+    #category, #difficulty, #length {
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+}
+
+/* CSS for larger screens */
+@media only screen and (min-width: 601px) {
+    body {
+        font-size: 1em;
+    }
+
+    .options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .options button {
+        width: 12cm;
+    }
+
+    .card, #result {
+        font-size: 2em;
+    }
+}
