@@ -304,7 +304,7 @@ a.link {
 
 /* i targets the next button arrow */
 i {
-  position: absolute;
+  position: fixed;
   top: 510px;
   right: 200px
 }
@@ -433,8 +433,8 @@ body {
 
 i {
   /* making the next button appear at the very bototm of the page. bottom: 0px makes it appear at the very bottom, but z-index is incase the other css messes w/ it */
-  bottom: 0px;
   position: fixed;
+  bottom: 0px;
   z-index: 9999;
 }
 }
