@@ -8,9 +8,7 @@ body {
   /* remove default margin */
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
-
-
+  overflow: scroll;
   /* changed the background colour to purple. use an image of the stars to cover the page, each url with different locations each time.
         background does not repeat! */
   background-color: #2A2030;
@@ -19,7 +17,6 @@ body {
   background-repeat: no-repeat;
 }
 
-
 /* Manjari isn't a font available in css. i downloaded it, declared it with @font-face and can call it later */
 @font-face {
   font-family: 'Manjari Bold';
@@ -27,7 +24,6 @@ body {
   font-weight: bold;
   font-style: normal;
 }
-
 
 /* same thing with playfair display */
 @font-face {
@@ -46,9 +42,6 @@ nav {
   display: flex;
   justify-content: center;
 }
-
-
-
 
   nav a:hover {
   color: black;
@@ -73,11 +66,9 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
-
-
   text-decoration: none;
   color: black;
-  height: 100px;
+  height: 5rem;
   width: 12em;
   font-size: 1.5em;
   background-color: #D9D9D9;
@@ -117,45 +108,29 @@ a {
   grid-row: 1 / 2;
 }
 
-/* scoreboard is commented out...can add in later this sprint */
-/* #scoreboard {
-  transform: translateY(30%); */
-  /*  centers the scoreboard vertically within the nav */
-  /* grid-row: 1 / 1;
+#scoreboard {
+  grid-row: 1 / 2;
   grid-column: 7 / 8;
   width: 250px;
   height: 50px;
   background-color: white;
   border: 3px solid black;
   border-radius: 50px;
-
-  text-align: left;
-  align-content: center;
-  justify-self: center;
-  justify-content: center;
   display: flex;
-  align-items: center;
-  justify-content: space-between; */
-  /* To separate user and points */
-  /* padding: 0 10px; */
-  /* Add some padding to separate text from border */
-/* } */
+  justify-content: space-between; /* To separate user and points */
+  padding: 0 10px;   /* Add some padding to separate text from border */
+}
 
-/* #user {
+/* this targets the users name (e.g. #NA User) */
+#user {
   text-align: left;
-} */
+}
 
-
-/* profile icon is commented out */
-/* #profile-icon {
-    display: grid;
-    height: 100px;
-    width: 100px;
-    grid-row: 1 / 1;
-    grid-column: 8 / 9;
-    border-radius: 100%;
-    margin-left: 100px;
-} */
+/* targers the points the user has (e.g. 1025) */
+#points {
+  text-align: right;
+  color: orange;
+}
 
 /* CSS for nav ends here */
 
@@ -171,9 +146,7 @@ main {
   font-family: 'Manjari Bold', sans-serif;
 }
 
-
 /* ////////////////////////////////////////////////////////////////////////////////////// */
-
 
 /* CSS for question card starts here */
 
@@ -193,20 +166,18 @@ div.card {
   margin-top: 0.5em;
 }
 
-
 /* CSS for question card ends here  */
 
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 
 /* CSS for the answers start here */
 
-
 .options {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-row-gap: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -220,15 +191,15 @@ div.card {
   border: 4px solid#FCDE93;
   box-shadow: 2px 1px 10px 5px gray inset; /* this adds the shadow to the inside of the answer options. makes it look more 3d*/
   height: 3cm;
-  width: 8cm;
+  width: 20em;
 }
-
 
 .options button:not(:disabled):hover {
   transform: scale(1.2);
   transition-duration: 0.4s;
   background-color: #FCDE93;
 }
+
 .options button:disabled {
   background-color: #767676;
 }
@@ -236,7 +207,6 @@ div.card {
 .hidden {
   display: none;
 }
-
 
 #result {
   display: grid;
@@ -249,16 +219,14 @@ div.card {
   color: green;
 }
 
-
 #result #incorrect {
   color: red;
 }
 
-
 /* targetting the answer options. making them a grid and adding spaces between them */
 .options {
   display: grid;
-  grid-template-columns: 7cm 7cm; /* 2 columns with equal width. Answer is now split into to a 2x2 square */
+  grid-template-columns: 30em 30em; /* 2 columns with equal width. Answer is now split into to a 2x2 square */
   grid-template-rows: 3cm 3cm; /* the rows divide them so two answers are displayed in each row*/
   gap: 40px; /* gap between grid items */
   margin-left: 35px; /* to center the answer options with respect to the question card*/
@@ -272,7 +240,6 @@ div.card {
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 
 /* CSS for API link starts here */
-
 
 footer, footer i {
   display: grid;
@@ -288,8 +255,6 @@ footer, footer i {
   color: white;
   font-family: 'Playfair', serif;
   font-style: oblique; /* italics*/
-
-
   display: block;
   margin-left: 20px;
   text-shadow: 2px 2px 2px #E16787; /* adds shadow to the text */
@@ -297,19 +262,15 @@ footer, footer i {
   margin-bottom: 2rem;
 }
 
-
 a.link {
-  position: absolute;
-  top: 675px
+  z-index: 9999;
+  position: relative;
 }
 /* CSS for API link ends here */
 
-
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 
-
 /* CSS for the arrow starts here */
-
 
 .arrow{
   color: white;
@@ -323,32 +284,156 @@ a.link {
   margin-left: 150px;
 }
 
-
 .arrow-link {
   text-decoration: none;
   background-color: transparent;
   color: inherit;
 }
 
-
 #random-play-button{
   background-color: #FFFFFF;
   border: 5px solid #E16787;
   border-radius: 380px;
-  position: absolute;
-  top: 600px; /* positions it at the bottom.*/
 }    
-
 
 .right-arrow {
   display: flex;
   justify-content: center;
 }
 
-
 /* i targets the next button arrow */
 i {
   position: absolute;
   top: 510px;
   right: 200px
+}
+
+
+/* CSS for mobile screens? */
+@media only screen and (max-width: 600px) {
+  body {
+      font-size: 0.8em;
+  }
+
+  nav {
+    overflow: scroll;
+  }
+
+  main#play-main {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* grid-template-rows: 5cm repeat(3, 2cm); */
+      gap: 0px; /* remove the gap between grid items */
+  }
+
+  button {
+     overflow: scroll;
+  }
+
+  .options {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 1.5cm);
+      margin: 0px;
+      display: grid;
+      grid-row-gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 25px; /* adds a grid gap between the answer options so they're spaced out vertically */
+    }
+   
+    .options button {
+      width: 60%;
+      height: 20%;
+      margin-top: 1%;
+      margin-bottom: 2%;
+      border: solid 5px #E16787;  
+      background-color: white;
+      overflow: scroll;
+      box-shadow: none;
+      gap: 100px
+    }
+
+  div {
+    display: block;
+    max-width: 100%;
+  }
+ 
+  #result {
+    display: flex;
+   
+    font-size: 2em;
+    width: 60%;
+    height: 40%;      
+    margin-bottom: 1%;
+    }
+   
+    div.card {
+    grid-row: 1 / 2;
+    padding-top: 4px;
+    border: solid 5px #E16787;
+    width: 60%;
+    height: 40%;
+    display: flex;
+    justify-self: center;
+    overflow: scroll; /* scroll to see the remainder of the question--did this so the overflowing text doesn't spill out of the question card and affect the answer options */
+    text-overflow: initial;
+  }
+ 
+  #home-logo {
+    width: 80%;
+    margin-top: 10%;
+  }
+ 
+  .play_button {
+    margin-top: 5%;
+    margin-bottom: 2%;
+  }
+ 
+  #category, #difficulty, #length {
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+ 
+  #random-play-button {
+    grid-row: 3/4;
+  }
+ 
+  a.link {
+  z-index: 9999;
+  position: relative;
+  }
+ 
+  i {
+    /* making the next button appear at the very bototm of the page. bottom: 0px makes it appear at the very bottom, but z-index is incase the other css messes w/ it */
+    bottom: 0px;
+    /* position: fixed; */
+    z-index: 9999;
+  }
+}
+
+/* CSS for desktop screens */
+@media only screen and (min-width: 601px) {
+body {
+    font-size: 1em;
+}
+
+.options {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.options button {
+    width: 12cm;
+}
+
+.card, #result {
+    font-size: 2em;
+}
+
+i {
+  /* making the next button appear at the very bototm of the page. bottom: 0px makes it appear at the very bottom, but z-index is incase the other css messes w/ it */
+  bottom: 0px;
+  position: fixed;
+  z-index: 9999;
+}
 }
