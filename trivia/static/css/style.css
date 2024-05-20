@@ -117,11 +117,9 @@ a {
   grid-row: 1 / 2;
 }
 
-/* scoreboard is commented out...can add in later this sprint */
-/* #scoreboard {
-  transform: translateY(30%); */
-  /*  centers the scoreboard vertically within the nav */
-  /* grid-row: 1 / 1;
+#scoreboard {
+   /* centers the scoreboard vertically within the nav */
+  grid-row: 1 / 2;
   grid-column: 7 / 8;
   width: 250px;
   height: 50px;
@@ -129,33 +127,27 @@ a {
   border: 3px solid black;
   border-radius: 50px;
 
-  text-align: left;
-  align-content: center;
-  justify-self: center;
-  justify-content: center;
   display: flex;
-  align-items: center;
-  justify-content: space-between; */
+  justify-content: space-between;
+
   /* To separate user and points */
-  /* padding: 0 10px; */
+  padding: 0 10px;
   /* Add some padding to separate text from border */
-/* } */
+}
 
-/* #user {
+/* this targets the users name (e.g. #NA User) */
+#user {
   text-align: left;
-} */
+}
+
+/* targers the points the user has (e.g. 1025) */
+#points {
+  text-align: right;
+  color: orange;
+}
 
 
-/* profile icon is commented out */
-/* #profile-icon {
-    display: grid;
-    height: 100px;
-    width: 100px;
-    grid-row: 1 / 1;
-    grid-column: 8 / 9;
-    border-radius: 100%;
-    margin-left: 100px;
-} */
+
 
 /* CSS for nav ends here */
 
