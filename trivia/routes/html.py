@@ -156,7 +156,13 @@ def play_quiz():
 
     # Create dictionary and pass to Flask template
     question_data = question.to_play_dict()
-    question_data.update({"answered": False, "correct": False, "mode": "challenge"})
+    question_data.update(
+        {
+            "answered": False, 
+            "correct": False, 
+            "mode": "challenge",
+            "score": quiz.score,
+            })
 
     # Store question_data and quiz_question ID in session
     session["question_data"] = question_data
@@ -179,6 +185,19 @@ def play_quiz_submit():
     # Retrieve user-submited answer
     answer = request.form.get("answer")
 
+    # Update quiz score if answer is correct
+    question = get_question(quiz_question.question_id)
+    quiz = get_quiz(quiz_question.quiz_id)
+    if question.correct_answer == answer:
+        #check the question difficulty
+        if question.difficulty == "easy":
+            quiz.score += 1
+        elif question.difficulty == "medium":
+            quiz.score += 2
+        else:
+            quiz.score += 3
+        db.session.commit()
+
     # Retrieve question_data from session and update
     question_data = session.get("question_data")
     question_data.update(
@@ -186,6 +205,7 @@ def play_quiz_submit():
             "answered": True,
             "correct": False if question_data["correct_answer"] != answer else True,
             "mode": "challenge",
+            "score": quiz.score,
         }
     )
     return render_template("play.html", **question_data)

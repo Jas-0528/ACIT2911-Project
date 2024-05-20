@@ -3,19 +3,20 @@
 }
 
 body {
-  font-family: Manjari Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  margin: 0;
-  /* remove default margin */
-  height: 100vh;
-  width: 100vw;
-  overflow: scroll;
-  /* changed the background colour to purple. use an image of the stars to cover the page, each url with different locations each time.
-        background does not repeat! */
-  background-color: #2A2030;
-  background-image: url(../images/star.png), url(../images/trivia_stars_2.png), url(../images/star_dot.png), url(../images/star_dot.png), url(../images/trivia_stars_2.png);
-  background-position: right, top left, center bottom, calc(2cm) calc(100% - 2cm), calc(100% - 6cm) calc(100% - 2cm);
-  background-repeat: no-repeat;
-}
+    font-family: Manjari Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0;
+    /* remove default margin */
+    height: 100vh;
+    width: 100vw;
+    overflow: scroll;
+  
+    /* changed the background colour to purple. use an image of the stars to cover the page, each url with different locations each time.
+          background does not repeat! */
+    background-color: #2A2030;
+    background-image: url(../images/star.png), url(../images/trivia_stars_2.png), url(../images/star_dot.png), url(../images/star_dot.png), url(../images/trivia_stars_2.png);
+    background-position: right, top left, center bottom, calc(2cm) calc(100% - 2cm), calc(100% - 6cm) calc(100% - 2cm);
+    background-repeat: no-repeat;
+  }
 
 /* Manjari isn't a font available in css. i downloaded it, declared it with @font-face and can call it later */
 @font-face {
