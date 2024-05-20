@@ -22,13 +22,8 @@
     <a href="{{ url_for('auth.login') }}">Log In</a>
     {% else %}
     <a href="{{ url_for('auth.logout') }}">Log Out</a>
+    <p id="user">{{ current_user.username }}</p>
     {% endif %}
-    
-    <div id="scoreboard">
-      <p id="user">#NA User</p>  
-      <p id="points">1025</p>
-     
-  </div>
 
   </nav>
 

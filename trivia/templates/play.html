@@ -6,6 +6,13 @@
 
 <div class="play">
 <main id="play-main">
+  {% if mode != "random" %}
+    <div class="score">
+      <div id="scoreboard">
+        <p id="points">Score: {{ score }}</p>
+      </div>
+  {% endif %}
+
 
   <div class="card">{{ question }}</div>
 
@@ -19,11 +26,11 @@
     <form  method="POST" action="{{ url_for('html.play_random_submit') }}">
     {% else %}
       <form method="POST" action="{{ url_for('html.play_quiz_submit') }}">
-      {% endif %}
+    {% endif %}
         <input type="hidden" name="answer" value="{{ answer }}">
         <button type="submit" {{ disabled }}>{{ answer }}</button>
       </form>
-      {% endfor %}
+    {% endfor %}
   </div>
 
 <div id="result">

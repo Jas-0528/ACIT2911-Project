@@ -50,9 +50,23 @@ nav {
 
 
 
-  nav a:hover {
+nav a:hover {
   color: black;
   background-color: #e4e9ef97;
+}
+
+nav p {
+  font-size: 1.5em;
+  color: black;
+  background-color: white;
+  height: 5rem;
+  width: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 3px solid black;
+  border-radius: 50px;
 }
 
 #play:hover {
@@ -117,7 +131,7 @@ a {
   grid-row: 1 / 2;
 }
 
-#scoreboard {
+#scoreboard{
    /* centers the scoreboard vertically within the nav */
   grid-row: 1 / 2;
   grid-column: 7 / 8;
@@ -133,11 +147,6 @@ a {
   /* To separate user and points */
   padding: 0 10px;
   /* Add some padding to separate text from border */
-}
-
-/* this targets the users name (e.g. #NA User) */
-#user {
-  text-align: left;
 }
 
 /* targers the points the user has (e.g. 1025) */

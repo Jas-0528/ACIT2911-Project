@@ -31,6 +31,7 @@ class Quiz(db.Model):
     user_id = mapped_column(Integer, ForeignKey(User.id), nullable=False, unique=True)
     user = relationship("User", back_populates="quiz")
     questions = relationship("QuizQuestion", cascade="all, delete-orphan")
+    score = mapped_column(Integer, nullable=False, default=0)
 
 
 class Question(db.Model):
