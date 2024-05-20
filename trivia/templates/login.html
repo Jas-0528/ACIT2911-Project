@@ -33,6 +33,9 @@
       </label>
     </div>
     <button class="submit">Log In</button>
+    <div class="register">
+      <a href="{{ url_for('auth.register') }}">Don't have an account? Register here.</a>
+    </div>
   </form>
   {% with messages = get_flashed_messages() %}
   {% if messages %}
