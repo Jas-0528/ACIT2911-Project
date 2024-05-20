@@ -7,7 +7,7 @@ body {
     /* remove default margin */
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow: scroll;
   
     /* changed the background colour to purple. use an image of the stars to cover the page, each url with different locations each time.
           background does not repeat! */
