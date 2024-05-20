@@ -1,5 +1,21 @@
 {% extends "base.html" %}
 
+{% block css %}
+<link rel="stylesheet" href="../static/css/login.css">
+<!--Google Font for Playfair Display-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+  rel="stylesheet">
+
+<!--Google Font for Manjari-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+  rel="stylesheet">
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 <div>
@@ -16,16 +32,15 @@
         <input type="checkbox" name="remember">
         Remember me
       </label>
-  </div>
-  <button>Log In</button>
+    </div>
+    <button class="submit">Log In</button>
   </form>
-</div>
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-<div>
-  {{ messages[0] }}
-</div>
-{% endif %}
-{% endwith %}
-</div>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="notification is-danger">
+    {{ messages[0] }}
+  </div>
+  {% endif %}
+  {% endwith %}
+</section>
 {% endblock %}
