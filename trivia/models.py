@@ -13,14 +13,12 @@ from trivia.db import db
 
 class User(UserMixin, db.Model):
     id = mapped_column(Integer, primary_key=True)
-    role = mapped_column(String(20), nullable=False, default="user")
     email = mapped_column(String(50), nullable=False, unique=True)
     username = mapped_column(String(50), nullable=False, unique=True)
     password_hashed = mapped_column(String(50), nullable=False)
     quiz = relationship("Quiz", uselist=False, cascade="all, delete-orphan")
 
-    def __init__(self, email, username, password, role="user"):
-        self.role = role
+    def __init__(self, email, username, password):
         self.email = email
         self.username = username
         self.password_hashed = generate_password_hash(password, method="pbkdf2:sha256")
