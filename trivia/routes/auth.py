@@ -36,9 +36,9 @@ def login_post():
     if not user:
         flash("No user found with that email or username")
         return redirect(url_for("auth.login"))
-    #if user is found, check password
+    # If user is found, check password
     if not check_password_hash(user.password_hashed, password):
-        flash("Incorrect password, Try Again.")
+        flash("Incorrect password, try again")
         return redirect(url_for("auth.login"))
 
     # If user is found, log them in
@@ -67,7 +67,7 @@ def register_post():
     if existing_user:
         flash("Email address already in use")
         return redirect(url_for("auth.register"))
-    
+
     # Check if username already exists
     stmt = db.select(User).where(User.username == username)
     result = db.session.execute(stmt)
