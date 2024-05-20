@@ -80,26 +80,18 @@ def add_questions():
     print("All questions added")
 
 
-# Create test user and admin
+# Create test user
 def create_test_accounts():
     user = User(
-        role="user",
         email="user1@example.com",
         username="user1",
         password="password1",
     )
     db.session.add(user)
-    admin = User(
-        role="admin",
-        email="admin1@example.com",
-        username="admin1",
-        password="password1",
-    )
-    db.session.add(admin)
 
     # Once all users have been added, commit
     db.session.commit()
-    print("Test user and admin created")
+    print("Users created")
 
 
 def create_random_quiz():
