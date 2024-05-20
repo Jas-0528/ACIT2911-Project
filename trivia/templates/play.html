@@ -3,6 +3,17 @@
 {% block content %}
 <div>
   <main>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <div class="play">
+      <main id="play-main">
+        {% if mode != "random" %}
+          <div class="score">
+            <div id="scoreboard">
+              <p id="points">Score: {{ score }}</p>
+            </div>
+        {% endif %}
+      
     <div class="card">{{ question }}</div>
 
     {% if answered %}
