@@ -1,4 +1,4 @@
-import html, json, random, requests
+import html, json, random, requests, time
 from sqlalchemy.sql import functions as func
 from trivia.db import db
 from app import app
@@ -133,7 +133,9 @@ def create_random_quiz():
 if __name__ == "__main__":
     with app.app_context():
         # write_to_json()
-        # append_to_json()
+        # for _ in range(20):
+        #     append_to_json()
+        #     time.sleep(5)
         drop_all()
         create_all()
         add_questions()
