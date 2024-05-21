@@ -101,12 +101,33 @@ section {
   box-shadow: 4px 6px gray inset;
 }
 
+.register a{
+  background-color: white;
+  border-radius: 20px;
+  font: 12px;
+  height: 25px;
+  width: 200px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 6px gray inset;
+  border-style: solid;
+  margin-left: 177px;
+  margin-top: 40px;
+  font-family: "Manjari", sans-serif;
+  color: var(--Goated-Gold);
+}
+
+.register, a{
+  font-size: 11px;
+}
+
 .checkbox{
   margin-left: 80px;
   color: var(--Goated-Pink);
 }
 
-.username, .password, .submit {
+.username, .password, .submit, .register a{
   border-color: var(--Goated-Pink);
 }
 
@@ -118,22 +139,33 @@ section {
 
   .username, .password {
     height: 25px;
-    width: 250px;
-    margin-left: 70px;
+    width: 300px;
+    margin-left: 50px;
     margin-top: 25px;
   }
+
   .submit{
     height: 30px;
     width: 80px;
     margin-left: 155px;
     margin-top: 25px;
   }
+
   .login{
     font-size: 30px;
   }
+
   .checkbox{
-    margin-left: 67px;
+    margin-left: 45px;
     color: var(--Goated-Pink);
     font-size: 12px;
+  }
+  
+  .register a{
+    margin-left: 133px;
+    height: 30px;
+    width: 120px;
+    margin-top: 20px;
+    font-size: 9px;
   }
 }
