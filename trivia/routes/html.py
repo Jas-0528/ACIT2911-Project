@@ -9,25 +9,27 @@ html_bp = Blueprint("html", __name__)
 
 # Helper functions
 def get_user(user_id):
-    return db.get_or_404(User, user_id, description=f"User {user_id} does not exist")
+    stmt = db.select(User).where(User.id == user_id)
+    user = db.session.execute(stmt).scalar()
+    return user
 
 
 def get_question(question_id):
-    return db.get_or_404(
-        Question, question_id, description=f"Question {question_id} does not exist"
-    )
+    stmt = db.select(Question).where(Question.id == question_id)
+    question = db.session.execute(stmt).scalar()
+    return question
 
 
 def get_quiz(quiz_id):
-    return db.get_or_404(Quiz, quiz_id, description=f"Quiz {quiz_id} does not exist")
+    stmt = db.select(Quiz).where(Quiz.id == quiz_id)
+    quiz = db.session.execute(stmt).scalar()
+    return quiz
 
 
 def get_quiz_question(quiz_question_id):
-    return db.get_or_404(
-        QuizQuestion,
-        quiz_question_id,
-        description=f"QuizQuestion {quiz_question_id} does not exist",
-    )
+    stmt = db.select(QuizQuestion).where(QuizQuestion.id == quiz_question_id)
+    quiz_question = db.session.execute(stmt).scalar()
+    return quiz_question
 
 
 # Get categories (can be used in user category selection)
@@ -81,18 +83,23 @@ def create_quiz(user, category, difficulty, length):
 @html_bp.route("/", methods=["GET"])
 @login_required
 def home():
-    return render_template("home.html", categories=get_categories())
+    # Retrieve currently logged in user and pass a boolean to the template representing if they have a quiz
+    user = get_user(current_user.id)
+    return render_template(
+        "home.html", categories=get_categories(), quiz_exists=bool(user.quiz)
+    )
 
 
 # Homepage post (create new quiz)
 @html_bp.route("/", methods=["POST"])
 @login_required
 def home_submit():
-    category = request.form.get("category")
-    difficulty = request.form.get("difficulty")
-    length = request.form.get("length")
     user = get_user(current_user.id)
-    create_quiz(user, category, difficulty, length)
+    if not user.quiz:
+        category = request.form.get("category")
+        difficulty = request.form.get("difficulty")
+        length = request.form.get("length")
+        create_quiz(user, category, difficulty, length)
     return redirect(url_for("html.play_quiz"))
 
 
@@ -136,23 +143,25 @@ def play_random_submit():
 @html_bp.route("/play/quiz", methods=["GET"])
 @login_required
 def play_quiz():
-    # Retrieve quiz of currently logged in user
+    # Retrieve currently logged in user
     user = get_user(current_user.id)
 
     # Redirect if there is no quiz to play
     if user.quiz is None:
         return redirect(url_for("html.home"))
 
+    # Retrieve their quiz
     quiz = get_quiz(user.quiz.id)
 
     # Play the next unanswered question
-    try:
-        quiz_question = next(qq for qq in quiz.questions if qq.answered == 0)
-        question = get_question(quiz_question.question_id)
-    except StopIteration:
+    quiz_question = next((qq for qq in quiz.questions if qq.answered == 0), None)
+    if quiz_question is None:
         db.session.delete(quiz)
         db.session.commit()
         return redirect(url_for("html.home"))
+
+    # Get the question associated with quiz_question
+    question = get_question(quiz_question.question_id)
 
     # Create dictionary and pass to Flask template
     play_data = question.to_play_dict()
@@ -176,9 +185,15 @@ def play_quiz():
 @html_bp.route("/play/quiz/submit", methods=["POST"])
 @login_required
 def play_quiz_submit():
-    # Retrieve quiz question and quiz
+    # Retrieve quiz question and redirect home if quiz question doesn't exist
     quiz_question = get_quiz_question(session.get("quiz_question_id"))
+    if quiz_question is None:
+        return redirect(url_for("html.home"))
+
+    # Retrieve quiz and redirect home if quiz doesn't exist
     quiz = get_quiz(quiz_question.quiz_id)
+    if quiz is None:
+        return redirect(url_for("html.home"))
 
     # Update answered attribute
     quiz_question.answered = 1
@@ -209,4 +224,10 @@ def play_quiz_submit():
             "score": quiz.score,
         }
     )
+
+    # Delete quiz if all quiz questions have been answered
+    if all(qq.answered == 1 for qq in quiz.questions):
+        db.session.delete(quiz)
+        db.session.commit()
+
     return render_template("play.html", **play_data)
