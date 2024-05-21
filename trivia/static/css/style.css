@@ -2,17 +2,16 @@
   margin: 0px;
 }
 
-
 body {
-  font-family: Manjari Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Manjari Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   margin: 0;
   /* remove default margin */
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
-
+  overflow: scroll;
+  
   /* changed the background colour to purple. use an image of the stars to cover the page, each url with different locations each time.
-          background does not repeat! */
+  background does not repeat! */
   background-color: #2A2030;
   background-image: url(../images/star.png), url(../images/trivia_stars_2.png), url(../images/star_dot.png), url(../images/star_dot.png), url(../images/trivia_stars_2.png);
   background-position: right, top left, center bottom, calc(2cm) calc(100% - 2cm), calc(100% - 6cm) calc(100% - 2cm);
@@ -121,7 +120,7 @@ a {
 
 
 #scoreboard {
-  transform: translateY(30%);
+  
   /*  centers the scoreboard vertically within the nav */
   grid-row: 1 / 1;
   grid-column: 7 / 8;
@@ -153,17 +152,6 @@ a {
   text-align: right;
   color: orange;
 }
-
-/* profile icon is commented out */
-/* #profile-icon {
-    display: grid;
-    height: 100px;
-    width: 100px;
-    grid-row: 1 / 1;
-    grid-column: 8 / 9;
-    border-radius: 100%;
-    margin-left: 100px;
-} */
 
 
 /* CSS for nav ends here */
@@ -431,5 +419,115 @@ footer i {
   }
 }
 
-/* CSS for desktop screens */
-@media only screen and (min-width: 601px) {}
+/* CSS for mobile screens? */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 0.8em;
+        background-attachment: fixed;
+        background-image: url(../images/star.png), url(../images/trivia_stars_2.png), url(../images/trivia_stars_2.png);
+        background-position: right, top left, calc(100% - 6cm) calc(100% - 2cm);
+    }
+  
+    main#play-main {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* grid-template-rows: 5cm repeat(3, 2cm) 1cm; */
+        gap: 0px; /* remove the gap between grid items */
+    }
+  
+    button {
+       overflow: scroll;
+    }
+  
+    .options {
+        grid-template-columns: 1fr;
+        /* grid-template-rows: repeat(4, 1.5cm); */
+        margin: 0px;
+        display: grid;
+        grid-row-gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 25px; /* adds a grid gap between the answer options so they're spaced out vertically */
+      }
+     
+      .options button {
+        width: 60%;
+        height: 20%;
+        margin-top: 1%;
+        margin-bottom: 2%;
+        border: solid 5px #E16787;  
+        background-color: white;
+        min-height: 1.5cm;
+        max-height: 1.5cm;
+        overflow: scroll;
+        box-shadow: none;
+        gap: 10px
+      }
+   
+    #result {
+    font-size: 1.5em;
+    overflow: auto; /* Add scrollbars if content overflows */
+    min-height: 1em;
+    max-height: 1.5em;
+    min-width: 300px;
+    max-width: 300px;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    /* margin-bottom: 1%; */
+      }
+     
+      div.card {
+      grid-row: 1 / 2;
+      border: solid 5px #E16787;
+      width: 300px;
+      height: 100px;
+      display: flex;
+      justify-self: center;
+      justify-content: center;
+      text-align: center;
+      overflow: scroll; /* scroll to see the remainder of the question--did this so the overflowing text doesn't spill out of the question card and affect the answer options */
+      position: relative;
+    }
+   
+    a.link {
+    bottom: 0px;
+    z-index: 9999;
+    /* position: relative; */
+    }
+   
+    i {
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    }
+  }
+  
+  /* CSS for desktop screens */
+  @media only screen and (min-width: 601px) {
+  body {
+      font-size: 1em;
+  }
+  
+  .options {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .options button {
+      width: 12cm;
+      min-height: 3cm;
+  }
+  
+  #result {
+      font-size: 2em;
+  }
+  
+  i {
+    /* making the next button appear at the very bototm of the page. bottom: 0px makes it appear at the very bottom, but z-index is incase the other css messes w/ it */
+    bottom: 0px;
+    /* position: fixed; */
+    z-index: 9999;
+  }
+  }
+  
