@@ -27,9 +27,9 @@ class User(UserMixin, db.Model):
 class Quiz(db.Model):
     id = mapped_column(Integer, primary_key=True)
     user_id = mapped_column(Integer, ForeignKey(User.id), nullable=False, unique=True)
+    score = mapped_column(Integer, nullable=False, default=0)
     user = relationship("User", back_populates="quiz")
     questions = relationship("QuizQuestion", cascade="all, delete-orphan")
-    score = mapped_column(Integer, nullable=False, default=0)
 
 
 class Question(db.Model):

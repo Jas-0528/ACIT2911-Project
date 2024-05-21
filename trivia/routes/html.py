@@ -104,13 +104,13 @@ def play_random(question_id):
     question = get_question(question_id)
 
     # Create dictionary to be passed to Flask template
-    question_data = question.to_play_dict()
-    question_data.update({"answered": False, "correct": False, "mode": "random"})
+    play_data = question.to_play_dict()
+    play_data.update({"answered": False, "correct": False, "mode": "random"})
 
-    # Store question_data in session
-    session["question_data"] = question_data
+    # Store play_data in session
+    session["play_data"] = play_data
 
-    return render_template("play.html", **question_data)
+    return render_template("play.html", **play_data)
 
 
 # Play random post
@@ -120,16 +120,16 @@ def play_random_submit():
     # Retrieve user-submitted answer
     answer = request.form.get("answer")
 
-    # Retrieve question_data from session and update
-    question_data = session.get("question_data")
-    question_data.update(
+    # Retrieve play_data from session and update
+    play_data = session.get("play_data")
+    play_data.update(
         {
             "answered": True,
-            "correct": False if question_data["correct_answer"] != answer else True,
+            "correct": False if play_data["correct_answer"] != answer else True,
             "mode": "random",
         }
     )
-    return render_template("play.html", **question_data)
+    return render_template("play.html", **play_data)
 
 
 # Play quiz page
@@ -155,57 +155,58 @@ def play_quiz():
         return redirect(url_for("html.home"))
 
     # Create dictionary and pass to Flask template
-    question_data = question.to_play_dict()
-    question_data.update(
+    play_data = question.to_play_dict()
+    play_data.update(
         {
-            "answered": False, 
-            "correct": False, 
+            "answered": False,
+            "correct": False,
             "mode": "challenge",
             "score": quiz.score,
-            })
+        }
+    )
 
-    # Store question_data and quiz_question ID in session
-    session["question_data"] = question_data
+    # Store play_data and quiz_question ID in session
+    session["play_data"] = play_data
     session["quiz_question_id"] = quiz_question.id
 
-    return render_template("play.html", **question_data)
+    return render_template("play.html", **play_data)
 
 
 # Play quiz post
 @html_bp.route("/play/quiz/submit", methods=["POST"])
 @login_required
 def play_quiz_submit():
-    # Retrieve quiz question and corresponding question using session
+    # Retrieve quiz question and quiz
     quiz_question = get_quiz_question(session.get("quiz_question_id"))
+    quiz = get_quiz(quiz_question.quiz_id)
 
-    # Update quiz question answered attribute
+    # Update answered attribute
     quiz_question.answered = 1
     db.session.commit()
 
-    # Retrieve user-submited answer
+    # Retrieve user-submitted answer
     answer = request.form.get("answer")
 
-    # Update quiz score if answer is correct
-    question = get_question(quiz_question.question_id)
-    quiz = get_quiz(quiz_question.quiz_id)
-    if question.correct_answer == answer:
-        #check the question difficulty
-        if question.difficulty == "easy":
+    # Retrieve play_data from session and update
+    play_data = session.get("play_data")
+
+    # If answer is correct, add to score based on difficulty
+    if play_data["correct_answer"] == answer:
+        if play_data["difficulty"] == "easy":
             quiz.score += 1
-        elif question.difficulty == "medium":
+        elif play_data["difficulty"] == "medium":
             quiz.score += 2
         else:
             quiz.score += 3
         db.session.commit()
 
-    # Retrieve question_data from session and update
-    question_data = session.get("question_data")
-    question_data.update(
+    # Update data to be passed to template
+    play_data.update(
         {
             "answered": True,
-            "correct": False if question_data["correct_answer"] != answer else True,
+            "correct": False if play_data["correct_answer"] != answer else True,
             "mode": "challenge",
             "score": quiz.score,
         }
     )
-    return render_template("play.html", **question_data)
+    return render_template("play.html", **play_data)

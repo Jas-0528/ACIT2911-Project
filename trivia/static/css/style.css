@@ -4,19 +4,19 @@
 
 body {
     font-family: Manjari Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin: 0;
-    /* remove default margin */
-    height: 100vh;
-    width: 100vw;
-    overflow: scroll;
+  margin: 0;
+  /* remove default margin */
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll;
   
-    /* changed the background colour to purple. use an image of the stars to cover the page, each url with different locations each time.
-          background does not repeat! */
-    background-color: #2A2030;
-    background-image: url(../images/star.png), url(../images/trivia_stars_2.png), url(../images/star_dot.png), url(../images/star_dot.png), url(../images/trivia_stars_2.png);
-    background-position: right, top left, center bottom, calc(2cm) calc(100% - 2cm), calc(100% - 6cm) calc(100% - 2cm);
-    background-repeat: no-repeat;
-  }
+  /* changed the background colour to purple. use an image of the stars to cover the page, each url with different locations each time.
+  background does not repeat! */
+  background-color: #2A2030;
+  background-image: url(../images/star.png), url(../images/trivia_stars_2.png), url(../images/star_dot.png), url(../images/star_dot.png), url(../images/trivia_stars_2.png);
+  background-position: right, top left, center bottom, calc(2cm) calc(100% - 2cm), calc(100% - 6cm) calc(100% - 2cm);
+  background-repeat: no-repeat;
+}
 
 /* Manjari isn't a font available in css. i downloaded it, declared it with @font-face and can call it later */
 @font-face {
@@ -44,7 +44,7 @@ nav {
   justify-content: center;
 }
 
-  nav a:hover {
+nav a:hover {
   color: black;
   background-color: #e4e9ef97;
 }
@@ -67,11 +67,14 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
+
   text-decoration: none;
   color: black;
-  height: 5rem;
+  height: 100px;
   width: 12em;
   font-size: 1.5em;
+
+
   background-color: #D9D9D9;
   /* the "home" and "Sign in" backgrounds are gray but not the "play" because i use an id later on to change the backgrnd color */
 }
@@ -90,19 +93,16 @@ a {
   align-items: center;
   justify-content: center;
   grid-column: 3 / 4;
-  grid-row: 1/2
 }
 
 #play {
   grid-column: 4 / 5;
-  grid-row: 1/2
 }
 
 #SignIn {
   align-items: center;
   justify-content: center;
   grid-column: 5 / 6;
-  grid-row: 1/2;
 }
 
 #random {
@@ -110,28 +110,26 @@ a {
 }
 
 #scoreboard {
-  grid-row: 1 / 2;
-  grid-column: 7 / 8;
   width: 250px;
   height: 50px;
   background-color: white;
   border: 3px solid black;
   border-radius: 50px;
-  display: flex;
-  justify-content: space-between; /* To separate user and points */
-  padding: 0 10px;   /* Add some padding to separate text from border */
-}
 
-/* this targets the users name (e.g. #NA User) */
-#user {
+  /* aligning the content */
   text-align: left;
+  align-content: center;
+  justify-self: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
-/* targers the points the user has (e.g. 1025) */
 #points {
   text-align: right;
   color: orange;
 }
+
 
 /* CSS for nav ends here */
 
@@ -140,10 +138,13 @@ a {
 main {
   padding: 20px;
   /* padding inside the main container */
+
   max-width: 80%;
   /* limit maximum width */
   margin: 0 auto;
   /* center the grid horizontally */
+  display: grid;
+  grid-template-columns: 1fr;
   font-family: 'Manjari Bold', sans-serif;
 }
 
@@ -151,20 +152,27 @@ main {
 
 /* CSS for question card starts here */
 
-div.card {
+
+.card {
   grid-column: 1 / 5;
-  grid-row: 2 / 3;
-  background-color: #f0f0f0; /* background color for the question card */
+  background-color: #f0f0f0;
+  /* background color for the question card */
   padding: 2rem;
+
   border: 1.5rem solid #E16787;
   border-radius: 10cm;
-  color: white; /* text-color*/
+  color: white;
+  /* text-color*/
   font-size: 2em;
   font-weight: 700;
   background-color: #BC9B47;
   text-align: center;
- 
-  margin-top: 0.5em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  margin-bottom: 2rem;
 }
 
 /* CSS for question card ends here  */
@@ -176,23 +184,28 @@ div.card {
 .options {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1rem;
   grid-row-gap: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.options button{
+.options button {
   font-size: 1.5em;
   color: #2A2030;
-  background-color: #FFFFFF; /* background color for the rectangle cards */
-  border-radius: 380px; /* smoothens it from sharp corners to rounded--more circular */  
+  background-color: #FFFFFF;
+  /* background color for the rectangle cards */
+  border-radius: 380px;
+  /* smoothens it from sharp corners to rounded--more circular */
   border: 4px solid#FCDE93;
-  box-shadow: 2px 1px 10px 5px gray inset; /* this adds the shadow to the inside of the answer options. makes it look more 3d*/
+  box-shadow: 2px 1px 10px 5px gray inset;
+  /* this adds the shadow to the inside of the answer options. makes it look more 3d*/
   height: 3cm;
-  width: 20em;
+  width: 12cm;
+  margin: 5px;
 }
 
 .options button:not(:disabled):hover {
@@ -211,6 +224,8 @@ div.card {
 
 #result {
   display: grid;
+  grid-column: 1 / 5;
+  grid-row: 2/3;
   font-size: 2em;
   font-weight: 700;
   text-align: center;
@@ -218,22 +233,11 @@ div.card {
 
 #result #correct {
   color: green;
+
 }
 
 #result #incorrect {
   color: red;
-}
-
-/* targetting the answer options. making them a grid and adding spaces between them */
-.options {
-  display: grid;
-  grid-template-columns: 30em 30em; /* 2 columns with equal width. Answer is now split into to a 2x2 square */
-  grid-template-rows: 3cm 3cm; /* the rows divide them so two answers are displayed in each row*/
-  gap: 40px; /* gap between grid items */
-  margin-left: 35px; /* to center the answer options with respect to the question card*/
-  column-gap: 100px;
-  margin-right: 40px;
-  margin-bottom: 0px;
 }
 
 /* CSS for the answers ends here */
@@ -242,7 +246,8 @@ div.card {
 
 /* CSS for API link starts here */
 
-footer, footer i {
+footer,
+footer i {
   display: grid;
   position: fixed;
   bottom: 1.5cm;
@@ -250,15 +255,21 @@ footer, footer i {
 }
 
 .link {
-  width: fit-content; /* to make all the text appear in one line regardless of how big the font is*/
+  width: fit-content;
+  /* to make all the text appear in one line regardless of how big the font is*/
   font-size: 1.5em;
-  background-color: transparent; /* removes background applied to the other 'a' tags*/
+  background-color: transparent;
+  /* removes background applied to the other 'a' tags*/
   color: white;
   font-family: 'Playfair', serif;
-  font-style: oblique; /* italics*/
+  font-style: oblique;
+  /* italics*/
+
   display: block;
   margin-left: 20px;
-  text-shadow: 2px 2px 2px #E16787; /* adds shadow to the text */
+  /* margin-bottom: 10px; */
+  text-shadow: 2px 2px 2px #E16787;
+  /* adds shadow to the text */
   margin-top: 0;
   margin-bottom: 2rem;
 }
@@ -273,7 +284,7 @@ a.link {
 
 /* CSS for the arrow starts here */
 
-.arrow{
+.arrow {
   color: white;
   font-size: 12em;
   margin-top: 5rem;
@@ -291,150 +302,192 @@ a.link {
   color: inherit;
 }
 
-#random-play-button{
+#random-play-button {
   background-color: #FFFFFF;
-  border: 5px solid #E16787;
+  border: 10px solid #E16787;
   border-radius: 380px;
-}    
+}
 
 .right-arrow {
   display: flex;
   justify-content: center;
 }
 
-/* i targets the next button arrow */
-i {
-  position: fixed;
-  top: 510px;
-  right: 200px
+.play_button {
+  text-align: center;
+  /* Center the form on the page */
+  font-family: 'Manjari Bold', sans-serif;
+  color: #BC9B47;
+  font-size: 1.5em;
+  margin-top: 50px;
+  border-radius: 15px;
+  font-weight: 700;
 }
 
+#home-logo {
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  /* Center the form on the page */
+  font-family: 'Manjari Bold', sans-serif;
+  color: #BC9B47;
+  font-size: 1.5em;
+  margin-bottom: 2%;
+}
+
+.category {
+  text-align: center;
+  /* Center the form on the page */
+  font-family: 'Manjari Bold', sans-serif;
+  color: #BC9B47;
+  font-size: 1.5em;
+}
 
 /* CSS for mobile screens? */
 @media only screen and (max-width: 600px) {
   body {
-      font-size: 0.8em;
+    font-size: 0.8em;
   }
 
-  nav {
-    overflow: scroll;
-  }
-
-  main#play-main {
-      display: grid;
-      grid-template-columns: 1fr;
-      /* grid-template-rows: 5cm repeat(3, 2cm); */
-      gap: 0px; /* remove the gap between grid items */
-  }
-
-  button {
-     overflow: scroll;
-  }
-
-  .options {
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(4, 1.5cm);
-      margin: 0px;
-      display: grid;
-      grid-row-gap: 1rem;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      gap: 25px; /* adds a grid gap between the answer options so they're spaced out vertically */
-    }
-   
-    .options button {
-      width: 60%;
-      height: 20%;
-      margin-top: 1%;
-      margin-bottom: 2%;
-      border: solid 5px #E16787;  
-      background-color: white;
-      overflow: scroll;
-      box-shadow: none;
-      gap: 100px
-    }
-
-  div {
-    display: block;
-    max-width: 100%;
-  }
- 
-  #result {
-    display: flex;
-   
-    font-size: 2em;
-    width: 60%;
-    height: 40%;      
-    margin-bottom: 1%;
-    }
-   
-    div.card {
-    grid-row: 1 / 2;
-    padding-top: 4px;
-    border: solid 5px #E16787;
-    width: 60%;
-    height: 40%;
-    display: flex;
-    justify-self: center;
-    overflow: scroll; /* scroll to see the remainder of the question--did this so the overflowing text doesn't spill out of the question card and affect the answer options */
-    text-overflow: initial;
-  }
- 
   #home-logo {
     width: 80%;
     margin-top: 10%;
   }
- 
+
+  .container {
+    margin-bottom: 50%;
+  }
+
   .play_button {
     margin-top: 5%;
     margin-bottom: 2%;
   }
- 
-  #category, #difficulty, #length {
+
+  #category,
+  #difficulty,
+  #length {
     margin-top: 1%;
     margin-bottom: 1%;
   }
- 
-  #random-play-button {
-    grid-row: 3/4;
+}
+
+/* CSS for mobile screens? */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 0.8em;
+        background-attachment: fixed;
+        background-image: url(../images/star.png), url(../images/trivia_stars_2.png), url(../images/trivia_stars_2.png);
+        background-position: right, top left, calc(100% - 6cm) calc(100% - 2cm);
+    }
+  
+    main#play-main {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* grid-template-rows: 5cm repeat(3, 2cm) 1cm; */
+        gap: 0px; /* remove the gap between grid items */
+    }
+  
+    button {
+       overflow: scroll;
+    }
+  
+    .options {
+        grid-template-columns: 1fr;
+        /* grid-template-rows: repeat(4, 1.5cm); */
+        margin: 0px;
+        display: grid;
+        grid-row-gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 25px; /* adds a grid gap between the answer options so they're spaced out vertically */
+      }
+     
+      .options button {
+        width: 90%;
+        height: 20%;
+        margin-top: 1%;
+        margin-bottom: 2%;
+        border: solid 5px #E16787;  
+        background-color: white;
+        min-height: 1.5cm;
+        max-height: 1.5cm;
+        overflow: scroll;
+        box-shadow: none;
+        gap: 10px
+      }
+
+    div#scoreboard {
+       transform: translateX(30%); /*align it with the answer options*/
+    }
+
+    #result {
+    font-size: 1.5em;
+    overflow: auto; /* Add scrollbars if content overflows */
+    min-height: 1em;
+    max-height: 1.5em;
+    min-width: 300px;
+    max-width: 300px;
+    z-index: 2;
+    transform: translateX(15%);
+    }
+
+      div.card {
+      grid-row: 1 / 2;
+      border: solid 5px #E16787;
+      min-width: 300px;
+      min-height: 100px;
+      display: grid;
+      justify-self: center;
+      justify-content: center;
+      text-align: center;
+      overflow: scroll; /* scroll to see the remainder of the question--did this so the overflowing text doesn't spill out of the question card and affect the answer options */
+      position: relative;
+    }
+
+    a.link {
+    bottom: 0px;
+    z-index: 9999;
+    /* position: relative; */
+    }
+   
+    i {
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    }
   }
- 
-  a.link {
-  z-index: 9999;
-  position: relative;
+
+  
+  /* CSS for desktop screens */
+  @media only screen and (min-width: 601px) {
+  body {
+      font-size: 1em;
   }
- 
+  
+  .options {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .options button {
+      width: 12cm;
+      min-height: 3cm;
+  }
+  
+  #result {
+      font-size: 2em;
+  }
+  
   i {
     /* making the next button appear at the very bototm of the page. bottom: 0px makes it appear at the very bottom, but z-index is incase the other css messes w/ it */
     bottom: 0px;
     /* position: fixed; */
     z-index: 9999;
   }
-}
-
-/* CSS for desktop screens */
-@media only screen and (min-width: 601px) {
-body {
-    font-size: 1em;
-}
-
-.options {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.options button {
-    width: 12cm;
-}
-
-.card, #result {
-    font-size: 2em;
-}
-
-i {
-  /* making the next button appear at the very bototm of the page. bottom: 0px makes it appear at the very bottom, but z-index is incase the other css messes w/ it */
-  position: fixed;
-  bottom: 0px;
-  z-index: 9999;
-}
-}
+  }
+  
