@@ -120,33 +120,20 @@ a {
 
 
 #scoreboard {
-  
-  /*  centers the scoreboard vertically within the nav */
-  grid-row: 1 / 1;
-  grid-column: 7 / 8;
   width: 250px;
   height: 50px;
   background-color: white;
   border: 3px solid black;
   border-radius: 50px;
 
-
+  /* aligning the content */
   text-align: left;
   align-content: center;
   justify-self: center;
   justify-content: center;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  /* To separate user and points */
-  padding: 0 10px;
-  /* Add some padding to separate text from border */
 }
-
-#user {
-  text-align: left;
-}
-
 
 #points {
   text-align: right;
@@ -156,13 +143,7 @@ a {
 
 /* CSS for nav ends here */
 
-
-
-
 /* ////////////////////////////////////////////////////////////////////////////////////// */
-
-
-
 
 main {
   padding: 20px;
@@ -207,13 +188,7 @@ main {
 
 /* CSS for question card ends here  */
 
-
-
-
 /* ////////////////////////////////////////////////////////////////////////////////////// */
-
-
-
 
 /* CSS for the answers start here */
 
@@ -230,7 +205,6 @@ main {
   text-align: center;
 }
 
-
 .options button {
   font-size: 1.5em;
   color: #2A2030;
@@ -245,7 +219,6 @@ main {
   width: 12cm;
   margin: 5px;
 }
-
 
 .options button:not(:disabled):hover {
   transform: scale(1.2);
@@ -279,12 +252,9 @@ main {
   color: red;
 }
 
-
 /* CSS for the answers ends here */
 
-
 /* ////////////////////////////////////////////////////////////////////////////////////// */
-
 
 /* CSS for API link starts here */
 
@@ -295,7 +265,6 @@ footer i {
   bottom: 1.5cm;
   left: 2cm;
 }
-
 
 .link {
   width: fit-content;
@@ -361,13 +330,11 @@ footer i {
   margin-top: 50px;
   border-radius: 15px;
   font-weight: 700;
-
 }
 
 #home-logo {
   border-radius: 50%;
   margin-top: 5px;
-
 }
 
 .container {
@@ -398,12 +365,10 @@ footer i {
   #home-logo {
     width: 80%;
     margin-top: 10%;
-
   }
 
   .container {
     margin-bottom: 50%;
-
   }
 
   .play_button {
@@ -452,7 +417,7 @@ footer i {
       }
      
       .options button {
-        width: 60%;
+        width: 90%;
         height: 20%;
         margin-top: 1%;
         margin-bottom: 2%;
@@ -464,7 +429,11 @@ footer i {
         box-shadow: none;
         gap: 10px
       }
-   
+
+    div#scoreboard {
+       transform: translateX(30%); /*align it with the answer options*/
+    }
+
     #result {
     font-size: 1.5em;
     overflow: auto; /* Add scrollbars if content overflows */
@@ -472,25 +441,23 @@ footer i {
     max-height: 1.5em;
     min-width: 300px;
     max-width: 300px;
-    position: absolute;
-    top: 30%;
-    left: 20%;
-    /* margin-bottom: 1%; */
-      }
-     
+    z-index: 2;
+    transform: translateX(15%);
+    }
+
       div.card {
       grid-row: 1 / 2;
       border: solid 5px #E16787;
-      width: 300px;
-      height: 100px;
-      display: flex;
+      min-width: 300px;
+      min-height: 100px;
+      display: grid;
       justify-self: center;
       justify-content: center;
       text-align: center;
       overflow: scroll; /* scroll to see the remainder of the question--did this so the overflowing text doesn't spill out of the question card and affect the answer options */
       position: relative;
     }
-   
+
     a.link {
     bottom: 0px;
     z-index: 9999;
@@ -503,6 +470,7 @@ footer i {
     left: 0%;
     }
   }
+
   
   /* CSS for desktop screens */
   @media only screen and (min-width: 601px) {
