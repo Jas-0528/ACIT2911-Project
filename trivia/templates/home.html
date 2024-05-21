@@ -4,15 +4,21 @@
 <div class="container">
   <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Trivia Game logo" id="home-logo">
 
-  <form method="POST" action="{{ url_for('html.home_submit') }}">
-    {% if quiz_exists %}
-    <div>
-      <input type="submit" value="Resume Quiz" class="play_button">
-    </div>
-    {% else %}
-    <div>
-      <input type="submit" value="Play Quiz" class="play_button">
-    </div>
+  {% if quiz_exists %}
+  <!-- Resume Quiz form -->
+  <form method="POST" action="{{ url_for('html.home_submit_resume') }}">
+    <input type="submit" value="Resume Quiz" class="play_button">
+  </form>
+
+  <!-- Delete Quiz form -->
+  <form method="POST" action="{{ url_for('html.home_submit_delete') }}">
+    <input type="submit" value="Delete Quiz" class="play_button">
+  </form>
+
+  {% else %}
+  <!-- Play (create) Quiz form -->
+  <form method="POST" action="{{ url_for('html.home_submit_play') }}">
+    <input type="submit" value="Play Quiz" class="play_button">
     <div>
       <label for="category">Category:</label>
       <select id="category" name="category">

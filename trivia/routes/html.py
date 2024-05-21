@@ -41,7 +41,7 @@ def get_categories():
     return categories
 
 
-# Fetch questions based on specified parameters
+# Fetch questions based on specified parameters, returns them in random order
 def fetch_questions(category="all", difficulty="all", length=5):
     stmt = db.select(Question)
 
@@ -57,13 +57,13 @@ def fetch_questions(category="all", difficulty="all", length=5):
     return questions
 
 
-# Create Quiz with QuizQuestions
+# Create Quiz with QuizQuestions if one does not already exist
 def create_quiz(user, category, difficulty, length):
-    # Return existing quiz if exists
+    # Return if existing quiz exists
     stmt = db.select(Quiz).where(Quiz.user == user)
     existing_quiz = db.session.execute(stmt).scalar()
     if existing_quiz:
-        return existing_quiz
+        return
 
     # Otherwise instantiate new quiz
     quiz = Quiz(user=user)
@@ -90,16 +90,37 @@ def home():
     )
 
 
-# Homepage post (create new quiz)
-@html_bp.route("/", methods=["POST"])
+# Homepage resume Quiz post
+@html_bp.route("/resume-quiz", methods=["POST"])
 @login_required
-def home_submit():
+def home_submit_resume():
+    return redirect(url_for("html.play_quiz"))
+
+
+# Homepage delete Quiz post
+@html_bp.route("/delete-quiz", methods=["POST"])
+@login_required
+def home_submit_delete():
+    # Retrieve currently logged in user
     user = get_user(current_user.id)
-    if not user.quiz:
-        category = request.form.get("category")
-        difficulty = request.form.get("difficulty")
-        length = request.form.get("length")
-        create_quiz(user, category, difficulty, length)
+
+    # Retrieve their quiz and delete
+    quiz = get_quiz(user.quiz.id)
+    db.session.delete(quiz)
+    db.session.commit()
+
+    return redirect(url_for("html.home"))
+
+
+# Homepage play (create) Quiz post
+@html_bp.route("/play", methods=["POST"])
+@login_required
+def home_submit_play():
+    user = get_user(current_user.id)
+    category = request.form.get("category")
+    difficulty = request.form.get("difficulty")
+    length = request.form.get("length")
+    create_quiz(user, category, difficulty, length)
     return redirect(url_for("html.play_quiz"))
 
 
@@ -225,9 +246,15 @@ def play_quiz_submit():
         }
     )
 
+    # Check if all quiz questions have been answered
+    all_answered = all(qq.answered == 1 for qq in quiz.questions)
+
+    # Render the template before deleting the quiz
+    response = render_template("play.html", **play_data)
+
     # Delete quiz if all quiz questions have been answered
-    if all(qq.answered == 1 for qq in quiz.questions):
+    if all_answered:
         db.session.delete(quiz)
         db.session.commit()
 
-    return render_template("play.html", **play_data)
+    return response
