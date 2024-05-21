@@ -5,6 +5,11 @@
   <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Trivia Game logo" id="home-logo">
 
   <form method="POST" action="{{ url_for('html.home_submit') }}">
+    {% if quiz_exists %}
+    <div>
+      <input type="submit" value="Resume Quiz" class="play_button">
+    </div>
+    {% else %}
     <div>
       <input type="submit" value="Play Quiz" class="play_button">
     </div>
@@ -43,6 +48,7 @@
         <option value="10">10</option>
       </select>
     </div>
+    {% endif %}
   </form>
 </div>
 {% endblock %}
