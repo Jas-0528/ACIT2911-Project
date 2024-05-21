@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
-from flask_login import login_user, logout_user
+from flask_login import current_user, login_user, logout_user
 from werkzeug.security import check_password_hash
 from trivia.db import db
 from trivia.models import User
@@ -10,12 +10,16 @@ auth_bp = Blueprint("auth", __name__)
 # Login page
 @auth_bp.route("/login", methods=["GET"])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for("html.home"))
     return render_template("login.html")
 
 
 # Login post
 @auth_bp.route("/login", methods=["POST"])
 def login_post():
+    if current_user.is_authenticated:
+        return redirect(url_for("html.home"))
     # Get form data email and password or name
     password = request.form.get("password")
     remember = True if request.form.get("remember") else False
@@ -50,12 +54,16 @@ def login_post():
 # Register page
 @auth_bp.route("/register", methods=["GET"])
 def register():
+    if current_user.is_authenticated:
+        return redirect(url_for("html.home"))
     return render_template("register.html")
 
 
 # Register post
 @auth_bp.route("/register", methods=["POST"])
 def register_post():
+    if current_user.is_authenticated:
+        return redirect(url_for("html.home"))
     email = request.form.get("email")
     password = request.form.get("password")
     username = request.form.get("name")
