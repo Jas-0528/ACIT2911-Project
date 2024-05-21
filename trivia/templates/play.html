@@ -7,6 +7,10 @@
     <div class="score">
       <div id="scoreboard">
         <p id="points">Score: {{ score }}</p>
+        <p id="question-number">{% if questions_done > questions_total %}{{ questions_total }}/{{
+          questions_total }}{% else %}{{ questions_done }}/{{ questions_total }}{% endif %}</p>
+        <p id="category">Category: {{ category }}</p>
+        <p id="difficulty">Difficulty: {{ difficulty }}</p>
       </div>
     </div>
     {% endif %}
