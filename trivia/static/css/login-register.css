@@ -10,22 +10,23 @@
   --Goated-Gold: #BC9B47;
   --Goated-Yellow: #FCDE93;
   --Goated-Pink: #E16787;
- }
- 
- 
- @font-face {
+}
+
+
+@font-face {
   font-family: "Playfair Display", serif;
   src: url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
- }
- 
- 
- body {
+}
+
+
+body {
   width: 100%;
   background-color: var(--Goated-Purple);
- }
- 
- 
- .login, .create-account {
+}
+
+
+.login,
+.create-account {
   display: flex;
   text-align: center;
   height: 100px;
@@ -34,10 +35,10 @@
   font-size: 55px;
   font-weight: bold;
   font-family: "Playfair Display", serif;
- }
- 
- 
- section {
+}
+
+
+section {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -46,10 +47,10 @@
   width: 950px;
   background-color: var(--Goated-Gold);
   border-radius: 30px;
- }
- 
- 
- .username {
+}
+
+
+.username {
   margin-top: 50px;
   margin-left: 75px;
   background-color: #FFFFFF;
@@ -65,10 +66,10 @@
   border: #2A2030;
   border-style: solid;
   font-size: 20px;
- }
- 
- 
- .password {
+}
+
+
+.password {
   margin-top: 50px;
   margin-left: 75px;
   background-color: #FFFFFF;
@@ -83,10 +84,10 @@
   box-shadow: 1px 0px 8px 2px gray inset;
   border-style: solid;
   font-size: 20px;
- }
- 
- 
- .email {
+}
+
+
+.email {
   margin-top: 50px;
   margin-left: 85px;
   background-color: #FFFFFF;
@@ -105,10 +106,10 @@
   border: var(--Goated-Pink);
   border-style: solid;
   font-size: 20px;
- }
- 
- 
- .submit {
+}
+
+
+.submit {
   margin-top: 50px;
   margin-left: 370px;
   background-color: #FFFFFF;
@@ -123,10 +124,10 @@
   justify-content: center;
   box-shadow: 4px 6px gray inset;
   font-size: 20px;
- }
- 
- 
- .register a{
+}
+
+
+.register a {
   background-color: white;
   border-radius: 20px;
   font: 12px;
@@ -143,104 +144,113 @@
   color: var(--Goated-Purple);
   padding-top: 2px;
   font-size: 14px;
- }
- 
- 
- .checkbox{
+}
+
+
+.checkbox {
   margin-left: 80px;
   color: var(--Goated-Purple);
   font-family: "Manjari", sans-serif;
- }
- 
- 
- .username, .password, .submit, .register a{
+}
+
+
+.username,
+.password,
+.submit,
+.register a {
   border-color: var(--Goated-Pink);
- }
- 
- 
- .notification{
+}
+
+
+.notification {
   color: var(--Goated-Purple);
   font-size: 16px;
   text-align: center;
   margin-top: 15px;
   font-family: "Manjari", sans-serif;
- }
- 
- 
- @media only screen and (min-width:601px) and (max-width: 1024px){
-  section{
+}
+
+
+@media only screen and (min-width:601px) and (max-width: 1024px) {
+  section {
     height: 750px;
     width: 700px;
     margin-top: 100px;
   }
- 
- 
-  .username, .password, .email {
+
+
+  .username,
+  .password,
+  .email {
     height: 60px;
     width: 570px;
     margin-left: 60px;
     margin-top: 90px;
     font-size: 20px;
   }
- 
- 
-  .submit{
+
+
+  .submit {
     height: 60px;
     width: 280px;
     margin-left: 210px;
     margin-top: 75px;
   }
- 
- 
-  .login, .create-account{
+
+
+  .login,
+  .create-account {
     font-size: 50px;
   }
- 
- 
-  .checkbox{
+
+
+  .checkbox {
     margin-left: 60px;
     font-size: 20px;
   }
- 
- 
-  .register a{
+
+
+  .register a {
     margin-left: 210px;
     height: 65px;
     width: 280px;
     margin-top: 60px;
     font-size: 20px;
   }
-   .notification{
+
+  .notification {
     text-align: center;
     margin-top: 20px;
     font-size: 20px;
   }
- }
- 
- 
- 
- 
- /* mobile view, changes to register block sizing and format*/
- 
- 
- @media only screen and (max-width: 600px){
-  section{
+}
+
+
+
+
+/* mobile view, changes to register block sizing and format*/
+
+
+@media only screen and (max-width: 600px) {
+  section {
     height: 400px;
     width: 330px;
     margin-top: 70px;
   }
- 
- 
-  .username, .password, .email{
+
+
+  .username,
+  .password,
+  .email {
     height: 35px;
     width: 260px;
     margin-left: 32px;
     margin-top: 35px;
     font-size: 16px;
   }
- 
- 
-  .submit{
+
+
+  .submit {
     height: 30px;
     width: 100px;
     margin-left: 113px;
@@ -248,9 +258,9 @@
     font-size: 12px;
     box-shadow: 3px 3px gray inset;
   }
- 
- 
-  .register a{
+
+
+  .register a {
     margin-left: 85px;
     height: 30px;
     width: 155px;
@@ -258,25 +268,23 @@
     font-size: 12px;
     box-shadow: 3px 3px gray inset;
   }
- 
- 
-  .checkbox{
+
+
+  .checkbox {
     margin-left: 40px;
     font-size: 15px;
   }
- 
- 
-  .login, .create-account{
+
+
+  .login,
+  .create-account {
     font-size: 30px;
   }
- 
- 
-  .notification{
+
+
+  .notification {
     text-align: center;
     margin-top: 10px;
     font-size: 14px;
   }
- 
- 
- }
- 
+}
