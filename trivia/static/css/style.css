@@ -454,7 +454,7 @@ i {
     text-align: center;
     padding: 0px;
 
-    transform: translate(25%, -20%); /*align it with the answer options*/
+    /* transform: translate(60%, -20%); align it with the answer options */
     margin: 0px;
   }
 
@@ -506,7 +506,7 @@ i {
   }
 
   i {
-    transform: translateX(-480%);
+    transform: translate(-480%, 10%);
     height: 300px;
   }
 
@@ -526,29 +526,44 @@ i {
   }
 }
 
-/* CSS for desktop screens */
-@media only screen and (min-width: 601px) {
-  body {
+
+/* CSS for tablets */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  
+  #scoreboard {
+    /* transform: translateX(100%); */
+  }
+  .card {
+    height: 5%;
+    max-height: 5%;
+    width: 80%;
+    max-width: 80%;
     font-size: 1em;
   }
-
   .options {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 50%;
   }
 
-  .options button {
-    width: 12cm;
-    min-height: 3cm;
+  .options button{
+    min-height: 0%;
+    max-height: 3%;
+    min-width: 100%;
+    max-width: 100%;
+    font-size: 1em;
+    margin: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
   }
-
   #result {
     font-size: 2em;
   }
 
   i {
-    /* making the next button appear at the very bototm of the page. bottom: 0px makes it appear at the very bottom, but z-index is incase the other css messes w/ it */
-    bottom: 0px;
-    /* position: fixed; */
-    z-index: 9999;
+    transform: translateX(-175%);
   }
 }
+
+
+/* centering the scoreboard-- */
