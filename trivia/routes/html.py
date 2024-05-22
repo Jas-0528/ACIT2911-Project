@@ -190,8 +190,10 @@ def play_quiz():
         {
             "answered": False,
             "correct": False,
-            "mode": "challenge",
+            "mode": "quiz",
             "score": quiz.score,
+            "questions_done": quiz_question.id,
+            "questions_total": len(quiz.questions),
         }
     )
 
@@ -241,7 +243,6 @@ def play_quiz_submit():
         {
             "answered": True,
             "correct": False if play_data["correct_answer"] != answer else True,
-            "mode": "challenge",
             "score": quiz.score,
         }
     )

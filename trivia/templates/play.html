@@ -3,13 +3,18 @@
 {% block content %}
 <main id="play-main">
   <div class="play">
-    {% if mode != "random" %}
     <div class="score">
       <div id="scoreboard">
+        {% if mode != "random" %}
         <p id="points">Score: {{ score }}</p>
+        <p id="question-number">
+          {{ questions_done }}/{{ questions_total }}
+        </p>
+        {% endif %}
+        <p id="category">Category: {{ category }}</p>
+        <p id="difficulty">Difficulty: {{ difficulty }}</p>
       </div>
     </div>
-    {% endif %}
 
     <div class="card">{{ question }}</div>
 
