@@ -1,4 +1,4 @@
-from flask import Blueprint, redirect, render_template, request, session, url_for
+from flask import Blueprint, flash, redirect, render_template, request, session, url_for
 from flask_login import login_required, current_user
 from sqlalchemy.sql import functions as func
 from trivia.db import db
@@ -57,26 +57,26 @@ def fetch_questions(category="all", difficulty="all", length=5):
     return questions
 
 
-# Create Quiz with QuizQuestions if one does not already exist
+# Create Quiz and fill with QuizQuestions
 def create_quiz(user, category, difficulty, length):
-    # Return if existing quiz exists
-    stmt = db.select(Quiz).where(Quiz.user == user)
-    existing_quiz = db.session.execute(stmt).scalar()
-    if existing_quiz:
-        return
+    # Fetch questions
+    questions = fetch_questions(category, difficulty, length)
+
+    # Abort if the number of the questions is less than requested
+    if len(questions) < length:
+        return False
 
     # Otherwise instantiate new quiz
     quiz = Quiz(user=user)
     db.session.add(quiz)
     db.session.commit()
 
-    questions = fetch_questions(category, difficulty, length)
     for question in questions:
         quiz_question = QuizQuestion(quiz=quiz, question=question)
         db.session.add(quiz_question)
 
     db.session.commit()
-    return
+    return True
 
 
 # Homepage
@@ -117,10 +117,19 @@ def home_submit_delete():
 @login_required
 def home_submit_play():
     user = get_user(current_user.id)
+
+    # Get quiz mode parameters
     category = request.form.get("category")
     difficulty = request.form.get("difficulty")
-    length = request.form.get("length")
-    create_quiz(user, category, difficulty, length)
+    length = int(request.form.get("length"))
+
+    # Ensure a quiz exists
+    created = create_quiz(user, category, difficulty, length)
+    if not created:
+        flash(
+            "Not enough questions to create a quiz. Please try again with a different category or difficulty."
+        )
+        return redirect(url_for("html.home"))
     return redirect(url_for("html.play_quiz"))
 
 
