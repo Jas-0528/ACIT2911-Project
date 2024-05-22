@@ -23,7 +23,7 @@ def inject_data():
     random_question_id = db.session.execute(stmt).scalar()
 
     # Check if a Quiz exists
-    stmt = db.select(Quiz).first()
+    stmt = db.select(Quiz)
     quiz = db.session.execute(stmt).scalar()
 
     return dict(random_question_id=random_question_id, quiz_exists=bool(quiz))
