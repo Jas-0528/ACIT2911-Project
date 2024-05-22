@@ -51,7 +51,7 @@
   <a id="random-play-button" href="{{ url_for('html.play_random', question_id=random_question_id) }}">Random
     Question</a>
 </div>
-{% else %}
+{% elif answered %}
 <div>
   <a class="arrow" href="{{ url_for('html.play_quiz') }}"><i>&#8594;</i></a>
 </div>
