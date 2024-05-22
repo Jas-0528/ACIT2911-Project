@@ -5,7 +5,7 @@ from flask_login import LoginManager
 from pathlib import Path
 from sqlalchemy.sql import functions as func
 from .db import db
-from .models import Question, User
+from .models import Question, Quiz, User
 from .routes import html_bp, api_questions_bp, auth_bp
 
 # Load environment variables from .env file
@@ -17,10 +17,16 @@ app = Flask(__name__)
 
 # Supply each template with a random question id for Play Random link
 @app.context_processor
-def inject_random_question_id():
+def inject_data():
+    # Get a random question id
     stmt = db.select(Question.id).order_by(func.random())
     random_question_id = db.session.execute(stmt).scalar()
-    return dict(random_question_id=random_question_id)
+
+    # Check if a Quiz exists
+    stmt = db.select(Quiz)
+    quiz = db.session.execute(stmt).scalar()
+
+    return dict(random_question_id=random_question_id, quiz_exists=bool(quiz))
 
 
 app.instance_path = Path(__file__).parent.parent / "data"

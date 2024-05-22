@@ -96,11 +96,7 @@ def update_score(quiz, play_data, answer):
 @html_bp.route("/", methods=["GET"])
 @login_required
 def home():
-    # Retrieve currently logged in user and pass a boolean to the template representing if they have a quiz
-    user = get_user(current_user.id)
-    return render_template(
-        "home.html", categories=get_categories(), quiz_exists=bool(user.quiz)
-    )
+    return render_template("home.html", categories=get_categories())
 
 
 # Homepage resume Quiz post
