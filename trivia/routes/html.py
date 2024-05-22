@@ -79,6 +79,19 @@ def create_quiz(user, category, difficulty, length):
     return True
 
 
+# If answer is correct, update score based on difficulty
+def update_score(quiz, play_data, answer):
+    if play_data["correct_answer"] == answer:
+        if play_data["difficulty"] == "easy":
+            quiz.score += 1
+        elif play_data["difficulty"] == "medium":
+            quiz.score += 2
+        else:
+            quiz.score += 3
+        db.session.commit()
+
+
+# Routes
 # Homepage
 @html_bp.route("/", methods=["GET"])
 @login_required
@@ -227,27 +240,19 @@ def play_quiz_submit():
     if quiz is None:
         return redirect(url_for("html.home"))
 
+    # Retrieve user-submitted answer and play_data from session
+    answer = request.form.get("answer")
+    play_data = session.get("play_data")
+
+    # Update score
+    if quiz_question.answered == 0:
+        update_score(quiz, play_data, answer)
+
     # Update answered attribute
     quiz_question.answered = 1
     db.session.commit()
 
-    # Retrieve user-submitted answer
-    answer = request.form.get("answer")
-
-    # Retrieve play_data from session and update
-    play_data = session.get("play_data")
-
-    # If answer is correct, add to score based on difficulty
-    if play_data["correct_answer"] == answer:
-        if play_data["difficulty"] == "easy":
-            quiz.score += 1
-        elif play_data["difficulty"] == "medium":
-            quiz.score += 2
-        else:
-            quiz.score += 3
-        db.session.commit()
-
-    # Update data to be passed to template
+    # Update data to be passed to template and render the template
     play_data.update(
         {
             "answered": True,
@@ -255,15 +260,10 @@ def play_quiz_submit():
             "score": quiz.score,
         }
     )
-
-    # Check if all quiz questions have been answered
-    all_answered = all(qq.answered == 1 for qq in quiz.questions)
-
-    # Render the template before deleting the quiz
     response = render_template("play.html", **play_data)
 
     # Delete quiz if all quiz questions have been answered
-    if all_answered:
+    if all(qq.answered == 1 for qq in quiz.questions):
         db.session.delete(quiz)
         db.session.commit()
 
