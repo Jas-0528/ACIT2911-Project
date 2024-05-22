@@ -3,38 +3,41 @@
 }
 
 body {
-    font-family: Manjari Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Manjari Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   margin: 0;
   /* remove default margin */
   height: 100vh;
   width: 100vw;
   overflow: scroll;
   overflow-x: hidden;
-  
+
   /* changed the background colour to purple. use an image of the stars to cover the page, each url with different locations each time.
   background does not repeat! */
-  background-color: #2A2030;
-  background-image: url(../images/star.png), url(../images/trivia_stars_2.png), url(../images/star_dot.png), url(../images/star_dot.png), url(../images/trivia_stars_2.png);
-  background-position: right, top left, center bottom, calc(2cm) calc(100% - 2cm), calc(100% - 6cm) calc(100% - 2cm);
+  background-color: #2a2030;
+  background-image: url(../images/star.png), url(../images/trivia_stars_2.png),
+    url(../images/star_dot.png), url(../images/star_dot.png),
+    url(../images/trivia_stars_2.png);
+  background-position: right, top left, center bottom,
+    calc(2cm) calc(100% - 2cm), calc(100% - 6cm) calc(100% - 2cm);
   background-repeat: no-repeat;
 }
 
-main a{
-  overflow: scroll
+main a {
+  overflow: scroll;
 }
 
 /* Manjari isn't a font available in css. i downloaded it, declared it with @font-face and can call it later */
 @font-face {
-  font-family: 'Manjari Bold';
-  src: url('MainFont.woff') format('woff');
+  font-family: "Manjari Bold";
+  src: url("MainFont.woff") format("woff");
   font-weight: bold;
   font-style: normal;
 }
 
 /* same thing with playfair display */
 @font-face {
-  font-family: 'Playfair Display';
-  src: url(PlayfairDisplay.ttf)
+  font-family: "Playfair Display";
+  src: url(PlayfairDisplay.ttf);
 }
 
 /* ////////////////////////////////////////////////////////////////////////////////////// */
@@ -42,7 +45,7 @@ main a{
 /* CSS for nav starts here */
 
 nav {
-  background-color: #E4E9EF;
+  background-color: #e4e9ef;
   font-style: italic;
   font-weight: 200;
   display: flex;
@@ -55,7 +58,7 @@ nav a:hover {
 }
 
 #play:hover {
-  background-color: #FCDE93;
+  background-color: #fcde93;
 }
 
 /* the nav is displayed in grid. columns are spaced out by different widths so we don't have to use margin or padding. Makes it easier to move them around by their columns  */
@@ -79,8 +82,7 @@ a {
   width: 12em;
   font-size: 1.5em;
 
-
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   /* the "home" and "Sign in" backgrounds are gray but not the "play" because i use an id later on to change the backgrnd color */
 }
 
@@ -135,7 +137,6 @@ a {
   color: orange;
 }
 
-
 /* CSS for nav ends here */
 
 /* ////////////////////////////////////////////////////////////////////////////////////// */
@@ -150,13 +151,12 @@ main {
   /* center the grid horizontally */
   display: grid;
   grid-template-columns: 1fr;
-  font-family: 'Manjari Bold', sans-serif;
+  font-family: "Manjari Bold", sans-serif;
 }
 
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 
 /* CSS for question card starts here */
-
 
 .card {
   grid-column: 1 / 5;
@@ -164,13 +164,13 @@ main {
   /* background color for the question card */
   padding: 2rem;
 
-  border: 1.5rem solid #E16787;
+  border: 1.5rem solid #e16787;
   border-radius: 10cm;
   color: white;
   /* text-color*/
   font-size: 2em;
   font-weight: 700;
-  background-color: #BC9B47;
+  background-color: #bc9b47;
   text-align: center;
 
   display: flex;
@@ -200,8 +200,8 @@ main {
 
 .options button {
   font-size: 1.5em;
-  color: #2A2030;
-  background-color: #FFFFFF;
+  color: #2a2030;
+  background-color: #ffffff;
   /* background color for the rectangle cards */
   border-radius: 380px;
   /* smoothens it from sharp corners to rounded--more circular */
@@ -216,7 +216,7 @@ main {
 .options button:not(:disabled):hover {
   transform: scale(1.2);
   transition-duration: 0.4s;
-  background-color: #FCDE93;
+  background-color: #fcde93;
 }
 
 .options button:disabled {
@@ -238,7 +238,6 @@ main {
 
 #result #correct {
   color: green;
-
 }
 
 #result #incorrect {
@@ -266,14 +265,14 @@ footer i {
   background-color: transparent;
   /* removes background applied to the other 'a' tags*/
   color: white;
-  font-family: 'Playfair', serif;
+  font-family: "Playfair", serif;
   font-style: oblique;
   /* italics*/
 
   display: block;
   margin-left: 20px;
   /* margin-bottom: 10px; */
-  text-shadow: 2px 2px 2px #E16787;
+  text-shadow: 2px 2px 2px #e16787;
   /* adds shadow to the text */
   margin-top: 0;
   margin-bottom: 2rem;
@@ -294,14 +293,14 @@ a.link {
   font-size: 12em;
   height: 0px;
   /* add border around the text */
-  text-shadow: 10px 10px 10px #E16787;
+  text-shadow: 10px 10px 10px #e16787;
   display: flex;
   justify-content: center;
 }
 
 #random-play-button {
-  background-color: #FFFFFF;
-  border: 10px solid #E16787;
+  background-color: #ffffff;
+  border: 10px solid #e16787;
   border-radius: 380px;
 }
 
@@ -317,8 +316,8 @@ i {
 .play_button {
   text-align: center;
   /* Center the form on the page */
-  font-family: 'Manjari Bold', sans-serif;
-  color: #BC9B47;
+  font-family: "Manjari Bold", sans-serif;
+  color: #bc9b47;
   font-size: 1.5em;
   margin-top: 50px;
   border-radius: 15px;
@@ -335,8 +334,8 @@ i {
   place-items: center;
   text-align: center;
   /* Center the form on the page */
-  font-family: 'Manjari Bold', sans-serif;
-  color: #BC9B47;
+  font-family: "Manjari Bold", sans-serif;
+  color: #bc9b47;
   font-size: 1.5em;
   margin-bottom: 2%;
 }
@@ -344,8 +343,8 @@ i {
 .category {
   text-align: center;
   /* Center the form on the page */
-  font-family: 'Manjari Bold', sans-serif;
-  color: #BC9B47;
+  font-family: "Manjari Bold", sans-serif;
+  color: #bc9b47;
   font-size: 1.5em;
 }
 
@@ -354,34 +353,46 @@ i {
   body {
     font-size: 0.8em;
     background-attachment: fixed;
-    background-image: url(../images/star.png), url(../images/trivia_stars_2.png), url(../images/trivia_stars_2.png);
-    background-position: right, top left, calc(100% - 6cm) calc(100% - 2cm);
-    grid-template-columns: 1fr;
+    background-image: url(../images/star.png), url(../images/trivia_stars_2.png),
+      url(../images/trivia_stars_2.png);
     overflow: hidden;
   }
-  
+
   /* homepage */
   #home-logo {
     width: 80%;
     margin-top: 10%;
   }
-  
+
+  #nav-logo {
+    height: 80%;
+  }
+
+  nav{
+    width: 100%;
+    height: 10%;
+  }
+
+  a{
+    height: 80%;
+  }
+
   .container {
     margin-bottom: 50%;
   }
-  
+
   .play_button {
     margin-top: 5%;
     margin-bottom: 2%;
   }
-  
+
   #category,
   #difficulty,
   #length {
     margin-top: 1%;
     margin-bottom: 1%;
   }
-  
+
   /* CSS for mobile screens--gamepage */
   #play-main {
     display: flex;
@@ -389,7 +400,7 @@ i {
     align-items: center;
     overflow-x: hidden;
   }
-  
+
   #centering-game {
     display: flex;
     flex-direction: column;
@@ -405,35 +416,35 @@ i {
   }
 
   button {
-     overflow: hidden;
+    overflow: hidden;
   }
 
   .options {
-      grid-template-columns: 1fr;
-      margin: 0px;
-      gap: 10px; /* adds a grid gap between the answer options so they're spaced out vertically */
-    }
-   
-    .options button {
+    grid-template-columns: 1fr;
+    margin: 0px;
+    gap: 10px; /* adds a grid gap between the answer options so they're spaced out vertically */
+  }
+
+  .options button {
     min-height: 100px;
     max-height: 100px;
     min-width: 300px;
     max-width: 300px;
     margin: 0px;
     transform: translate(2%, -80%);
-      border: solid 5px #E16787;  
-      background-color: white;
-      min-height: 1.5cm;
-      max-height: 1.5cm;
-      overflow: hidden;
-      box-shadow: none;
-      gap: 10px
-    }
+    border: solid 5px #e16787;
+    background-color: white;
+    min-height: 1.5cm;
+    max-height: 1.5cm;
+    overflow: hidden;
+    box-shadow: none;
+    gap: 10px;
+  }
 
   div#scoreboard {
     all: unset; /* remove all previous styling*/
     height: 55px;
-    width: 255px;
+    width: 150px;
     background-color: white;
     border-radius: 10cm;
     color: orange;
@@ -443,52 +454,65 @@ i {
     text-align: center;
     padding: 0px;
 
-     transform: translate(25%, -20%); /*align it with the answer options*/
-     margin: 0px;
+    transform: translate(25%, -20%); /*align it with the answer options*/
+    margin: 0px;
+  }
+
+  div#logged-in-user{
+    all: unset; /* remove all previous styling*/
+    height: 80%;
+    width: 80%;
+    background-color: white;
+    border-radius: 10cm;
+    color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
   }
 
   #result {
-  font-size: 1.25em;
-  overflow: hidden;
-  min-height: 1em;
-  max-height: 2.25em;
-  min-width: 300px;
-  max-width: 300px;
-  transform: translate(10%, -102%);
+    font-size: 1.25em;
+    overflow: hidden;
+    min-height: 1em;
+    max-height: 2.25em;
+    min-width: 300px;
+    max-width: 300px;
+    transform: translate(10%, -102%);
   }
 
-    div.card {
-      border: solid 3px #E16787;
-      font-size: 1.25em;
-      font-weight: normal;
-      padding: 0px;
-      min-width: 355px;
-      max-width: 355px;
-      min-height: 80px;
-      max-height: 100px;
+  div.card {
+    border: solid 3px #e16787;
+    font-size: 1.25em;
+    font-weight: normal;
+    padding: 0px;
+    min-width: 20em;
+    max-width: 30em;
+    min-height: 80px;
+    max-height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     transform: translate(2%, -40%);
-    overflow: hidden; 
-    }
+    overflow: hidden;
+  }
 
   a.link {
-  font-size: 1.25em;
-  max-width: 350px;
-  transform: translate(5%, 0%);
-  bottom: 0px;
+    font-size: 1.25em;
+    max-width: 90%;
+    bottom: 0px;
   }
- 
+
   i {
-  font-size: 1.25em;
-  max-width: 350px;
-  transform: translate(-250%, 0%);
-  bottom: 0px;
+    transform: translateX(-480%);
+    height: 300px;
   }
 
   #random-play-button {
-    transform: translate(5%, -35%);
+    padding: 0.5em;
+    max-width: 100%;
   }
 }
 
@@ -498,35 +522,33 @@ i {
   }
 
   a.link {
-  transform: translate(35%, 0%);
-  
+    transform: translate(35%, 0%);
   }
 }
 
-  
-  /* CSS for desktop screens */
-  @media only screen and (min-width: 601px) {
+/* CSS for desktop screens */
+@media only screen and (min-width: 601px) {
   body {
-      font-size: 1em;
+    font-size: 1em;
   }
-  
+
   .options {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .options button {
-      width: 12cm;
-      min-height: 3cm;
+    width: 12cm;
+    min-height: 3cm;
   }
-  
+
   #result {
-      font-size: 2em;
+    font-size: 2em;
   }
-  
+
   i {
     /* making the next button appear at the very bototm of the page. bottom: 0px makes it appear at the very bottom, but z-index is incase the other css messes w/ it */
     bottom: 0px;
     /* position: fixed; */
     z-index: 9999;
   }
-  }
+}
