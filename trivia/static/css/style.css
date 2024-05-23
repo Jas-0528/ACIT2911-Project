@@ -2,6 +2,20 @@
   margin: 0px;
 }
 
+:root {
+  --text-color: #ffa791;
+  --background-color: #f9d388;
+  --pink: #ff3186;
+  --Bittersweet-pink: #ff725c;
+  --Supernova-yellow: #ffb437;
+  --Mona-lisa-pink: #ff8f8f;
+  --Burgundy-red: #db1049;
+  --Goated-Purple: #2A2030;
+  --Goated-Gold: #BC9B47;
+  --Goated-Yellow: #FCDE93;
+  --Goated-Pink: #E16787;
+}
+
 
 body {
   font-family: Manjari Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
