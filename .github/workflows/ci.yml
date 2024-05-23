@@ -32,3 +32,5 @@ jobs:
 
       - name: Run tests with coverage
         run: coverage run -m pytest; coverage report
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
