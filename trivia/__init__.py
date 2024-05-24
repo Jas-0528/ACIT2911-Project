@@ -29,9 +29,17 @@ def inject_data():
     return dict(random_question_id=random_question_id, quiz_exists=bool(quiz))
 
 
-app.instance_path = Path(__file__).parent.parent / "data"
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///trivia.db"
-app.secret_key = os.getenv("SECRET_KEY")
+app.instance_path = (Path(__file__).parent.parent / "data").resolve()
+if os.getenv("TESTING"):
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///test_trivia.db"
+else:
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///trivia.db"
+
+# Retrieve secret key
+secret_key = os.getenv("SECRET_KEY")
+if secret_key is None:
+    raise ValueError("No SECRET_KEY set for Flask application")
+app.secret_key = secret_key
 
 # Initialize database
 db.init_app(app)

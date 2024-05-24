@@ -1,7 +1,7 @@
-import html, json, random, requests, time
+import argparse, html, json, random, requests, time
 from sqlalchemy.sql import functions as func
-from trivia.db import db
 from app import app
+from trivia.db import db
 from trivia.models import User, Quiz, Question, QuizQuestion
 
 
@@ -130,14 +130,30 @@ def create_random_quiz():
     print("Random quiz created")
 
 
+def setup_database():
+    drop_all()
+    create_all()
+    add_questions()
+    create_test_accounts()
+
+
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-w", "--write-to-json", action="store_true")
+    parser.add_argument("-a", "--append-to-json", type=int)
+    parser.add_argument("-q", "--create-random-quiz", action="store_true")
+    args = parser.parse_args()
+
+    # Call write and append to JSON based on command-line arguments
+    if args.write_to_json:
+        write_to_json()
+    if args.append_to_json:
+        for _ in range(args.append_to_json):
+            append_to_json()
+            time.sleep(5)
+
+    # Setup the database and conditionally create random quizzes
     with app.app_context():
-        # write_to_json()
-        # for _ in range(20):
-        #     append_to_json()
-        #     time.sleep(5)
-        drop_all()
-        create_all()
-        add_questions()
-        create_test_accounts()
-        # create_random_quiz()
+        setup_database()
+        if args.create_random_quiz:
+            create_random_quiz()
