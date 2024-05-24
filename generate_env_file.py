@@ -3,7 +3,7 @@ import secrets
 
 # Argument parsing
 parser = argparse.ArgumentParser()
-parser.add_argument("-p", "--port", type=int, default=8000)
+parser.add_argument("-p", "--port", type=int, default=8888)
 args = parser.parse_args()
 
 # Generate a new secret key
