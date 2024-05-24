@@ -4,40 +4,76 @@
 <div class="container">
   <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Trivia Game logo" id="home-logo">
 
-  <form method="POST" action="{{ url_for('html.home_submit') }}">
-    <div> <input type="submit" value="Play Quiz" class="play_button">
-      </div>
-   <div> <label for="category">Category:</label>
-    <select id="category" name="category">
-      <option value="all">All</option>
-      {% for category in categories %}
-      <option value="{{ category }}">{{ category }}</option>
-      {% endfor %}
-    </select> </div>
-
-    <div> <label for="difficulty">Difficulty:</label>
-    <select id="difficulty" name="difficulty">
-      <option value="all">All</option>
-      <option value="easy">Easy</option>
-      <option value="medium">Medium</option>
-      <option value="hard">Hard</option>
-    </select> </div>
-  
-    <div>
-    <label for="length">Number of Questions:</label>
-    <select id="length" name="length">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5" selected>5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select> 
-              </div>
+  {% if quiz_exists %}
+  <!-- Resume Quiz form -->
+  <form method="POST" action="{{ url_for('html.home_submit_resume') }}">
+    <input type="submit" value="Resume Quiz" class="play_button">
   </form>
+
+  <!-- Delete Quiz form -->
+  <form method="POST" action="{{ url_for('html.home_submit_delete') }}">
+    <input type="submit" value="Delete Quiz" class="play_button">
+  </form>
+
+  {% else %}
+  <!-- Play (create) Quiz form -->
+  <form method="POST" action="{{ url_for('html.home_submit_play') }}">
+    <input type="submit" value="Play Quiz" class="play_button">
+    <div>
+      <label for="category">Category:</label>
+      <select id="category" name="category">
+        <option value="all">All</option>
+        {% for category in categories %}
+        <option value="{{ category }}">{{ category }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div>
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty" name="difficulty">
+        <option value="all">All</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="length">Number of Questions:</label>
+      <select id="length" name="length">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+      </select>
+    </div>
+    {% endif %}
+  </form>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul class=flashes>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
 </div>
 {% endblock %}

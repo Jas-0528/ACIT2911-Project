@@ -4,23 +4,23 @@ from werkzeug.security import check_password_hash
 from trivia.models import Question, Quiz, QuizQuestion, User
 
 
+# Basic User fixture
 @pytest.fixture
 def user():
-    # Basic User fixture
-    user = User(username="drai_29", email="dleon@oilers.ca", password="gooilersgo")
+    user = User(username="user9", email="user9@example.com", password="password9")
     return user
 
 
+# Basic Quiz fixture
 @pytest.fixture
 def quiz(user):
-    # Basic Quiz fixture
     quiz = Quiz(user=user)
     return quiz
 
 
+# Basic Question fixture
 @pytest.fixture
 def question():
-    # Basic Question fixture
     question = Question(
         category="Geography",
         difficulty="hard",
@@ -31,35 +31,40 @@ def question():
     return question
 
 
+# Basic QuizQuestion fixture
 @pytest.fixture
 def quiz_question(question, quiz):
-    # Basic QuizQuestion fixture
     quiz_question = QuizQuestion(question=question, quiz=quiz)
     return quiz_question
 
 
+# Test User attributes
 def test_new_user(user):
-    # Test User attributes
-    assert user.role == "user"
-    assert user.username == "drai_29"
-    assert user.email == "dleon@oilers.ca"
-    assert user.password_hashed != "gooilersgo"
+    assert user.username == "user9"
+    assert user.email == "user9@example.com"
+    assert user.password_hashed != "password9"
     assert user.password_hashed is not None
 
 
+# Test password hashing
 def test_password_hashing(user):
-    # Test password hashing
-    assert check_password_hash(user.password_hashed, "gooilersgo")
+    assert check_password_hash(user.password_hashed, "password9")
 
 
+# Test relationship between User and Quiz
 def test_quiz_user_relationship(user, quiz):
-    # Test relationship between User and Quiz
     assert quiz.user == user
     assert user.quiz == quiz
 
 
+# Test relationship between Quiz and QuizQuestion
+def test_quiz_quiz_question_relationship(quiz, question, quiz_question):
+    assert quiz_question.quiz == quiz
+    assert quiz_question.question == question
+
+
+# Test conversion of dictionary for api
 def test_question_to_api_dict(question):
-    # Test conversion of dictionary for api
     assert question.to_api_dict() == {
         "id": question.id,
         "category": question.category,
@@ -70,8 +75,8 @@ def test_question_to_api_dict(question):
     }
 
 
+# Test conversion of dictionary for game
 def test_question_to_play_dict(question):
-    # Test conversion of dictionary for game
     play_dict = question.to_play_dict()
     assert play_dict["id"] == question.id
     assert play_dict["category"] == question.category

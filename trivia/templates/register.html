@@ -1,21 +1,45 @@
 {% extends "base.html" %}
 
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login-register.css') }}">
+<!--Google Font for Playfair Display-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+  rel="stylesheet">
+
+
+<!--Google Font for Manjari-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+  rel="stylesheet">
+{% endblock %}
+
+
 {% block content %}
-<div>
-  <h3>Register</h3>
-  <div>
-    <form method="POST" action="register">
-      <div>
-        <input type="email" name="email" placeholder="Email" autofocus="">
-      </div>
-      <div>
-        <input type="text" name="name" placeholder="Name" autofocus="">
-      </div>
-      <div>
-        <input type="password" name="password" placeholder="Password">
-      </div>
-      <button>Register</button>
-    </form>
-  </div>
+<section>
+  <div class="create-account">Register</div>
+  <form method="POST" action="register">
+    <div>
+      <input class="email" type="email" name="email" placeholder="Email" autofocus="">
+    </div>
+    <div>
+      <input class="username" type="text" name="username" placeholder="Username" autofocus="">
+    </div>
+    <div>
+      <input class="password" type="password" name="password" placeholder="Password">
+    </div>
+    <button class="submit">Register</button>
+  </form>
+</section>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="notification is-danger">
+  {{ messages[0] }}
 </div>
+{% endif %}
+{% endwith %}
 {% endblock %}
