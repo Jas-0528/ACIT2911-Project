@@ -20,7 +20,7 @@ def login():
 def login_post():
     if current_user.is_authenticated:
         return redirect(url_for("html.home"))
-    # Get form data email and password or name
+    # Get form data email and password or username
     password = request.form.get("password")
     remember = True if request.form.get("remember") else False
     login_method = request.form.get("login_method")
@@ -66,7 +66,7 @@ def register_post():
         return redirect(url_for("html.home"))
     email = request.form.get("email")
     password = request.form.get("password")
-    username = request.form.get("name")
+    username = request.form.get("username")
 
     # Check if user email already exists
     stmt = db.select(User).where(User.email == email)
