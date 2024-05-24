@@ -1,9 +1,9 @@
 import pytest
 from trivia.routes import auth
 from trivia import app
-
-
-
+from trivia.db import db
+from trivia.models import User
+from flask import url_for
 
 # Create user for testing
 @pytest.fixture
@@ -25,7 +25,9 @@ def create_user():
 #test if user is in the database
 def test_user_in_db(create_user):
     with app.app_context():
-        user = auth.User.query.filter_by(email="testing@gmail.com").first()
+        stmt = db.select(User).where(User.username == "test")
+        result = db.session.execute(stmt)
+        user = result.scalars().first()
         assert user is not None
         assert user.username == "test"
 
@@ -36,10 +38,32 @@ def test_login_page():
         assert response.status_code == 200
 
 #test if current user is authenticated
-def test_current_user_authenticated(create_user):
-    with app.app_context():
-        user = auth.User.query.filter_by(email="testing@gmail.com").first()
-        assert user.is_authenticated == False
+def test_login_authenticated_user(create_user):
+    with app.test_client() as client:
+        # Log in the user
+        client.post('/auth/login', data=dict(
+            username=create_user.username,
+            password=create_user.password
+        ), follow_redirects=True)
+
+        # Check if user is redirected to home
+        response = client.get('/login')
+        assert response.status_code == 302
+        assert 'html.home' in response.location
+
+def test_login_authenticated_user(create_user):
+    with app.test_client() as client:
+        # Log in the user
+        client.post('/auth/login', data=dict(
+            username=create_user.username,
+            password_hashed=create_user.password_hashed
+        ), follow_redirects=True)
+
+        # Check if user is redirected to home
+        response = client.get('auth/login')
+        assert response.status_code == 200
+        print(response.data)
+        assert b"Home" in response.data
 
 # Test login post -> check if the user is logged in successfully
 def test_login_post(create_user):
