@@ -23,7 +23,7 @@ def mock_session(monkeypatch):
 def test_get_user(mock_session):
     # Set up a user with ID 123
     mock_user = User(
-        email="user123@example.com", username="user123", password="password123"
+        email="user123@example.com", username="user123", password="Pa55word"
     )
     mock_user.id = 123
     mock_session.execute.return_value.scalar.return_value = mock_user

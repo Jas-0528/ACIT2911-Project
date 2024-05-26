@@ -25,7 +25,7 @@ def setup_user():
             auth.db.session.delete(user)
             auth.db.session.commit()
         user = auth.User(
-            username="test", email="testing@gmail.com", password="password"
+            username="test", email="testing@gmail.com", password="Pa55word"
         )
         auth.db.session.add(user)
         auth.db.session.commit()

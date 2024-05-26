@@ -85,13 +85,13 @@ def create_test_accounts():
     user_1 = User(
         email="user1@example.com",
         username="user1",
-        password="password1",
+        password="Pa55word",
     )
     db.session.add(user_1)
     user_2 = User(
         email="user2@example.com",
         username="user2",
-        password="password2",
+        password="Pa55word",
     )
     db.session.add(user_2)
 

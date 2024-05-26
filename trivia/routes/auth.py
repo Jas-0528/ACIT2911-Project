@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, redirect, url_for, request, flash
+import re
+from flask import Blueprint, flash, redirect, render_template, request, url_for
 from flask_login import current_user, login_user, logout_user
 from werkzeug.security import check_password_hash
 from trivia.db import db
@@ -64,9 +65,23 @@ def register():
 def register_post():
     if current_user.is_authenticated:
         return redirect(url_for("html.home"))
+
+    # Get form data
     email = request.form.get("email")
     password = request.form.get("password")
     username = request.form.get("username")
+
+    # Check that all fields have input
+    if not email or not username or not password:
+        flash("All fields are required")
+        return redirect(url_for("auth.register"))
+
+    # Check if password meets criteria
+    if not re.match(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$", password):
+        flash(
+            "Password must contain at least one uppercase letter, one lowercase letter, one number, and be at least 8 characters long"
+        )
+        return redirect(url_for("auth.register"))
 
     # Check if user email already exists
     stmt = db.select(User).where(User.email == email)

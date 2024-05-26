@@ -24,22 +24,22 @@
   <div class="create-account">Register</div>
   <form method="POST" action="register">
     <div>
-      <input class="email" type="email" name="email" placeholder="Email" autofocus="">
+      <input class="email" type="email" name="email" placeholder="Email" autofocus="" required>
     </div>
     <div>
-      <input class="username" type="text" name="username" placeholder="Username" autofocus="">
+      <input class="username" type="text" name="username" placeholder="Username" required>
     </div>
     <div>
-      <input class="password" type="password" name="password" placeholder="Password">
+      <input class="password" type="password" name="password" placeholder="Password" required>
     </div>
     <button class="submit">Register</button>
   </form>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="notification is-danger">
+    {{ messages[0] }}
+  </div>
+  {% endif %}
+  {% endwith %}
 </section>
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-<div class="notification is-danger">
-  {{ messages[0] }}
-</div>
-{% endif %}
-{% endwith %}
 {% endblock %}
