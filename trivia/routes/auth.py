@@ -65,9 +65,13 @@ def register():
 def register_post():
     if current_user.is_authenticated:
         return redirect(url_for("html.home"))
+
+    # Get form data
     email = request.form.get("email")
     password = request.form.get("password")
     username = request.form.get("username")
+
+    # Check that all fields have input
     if not email or not username or not password:
         flash("All fields are required")
         return redirect(url_for("auth.register"))
