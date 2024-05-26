@@ -23,6 +23,7 @@
     <!-- Show Log In or Log Out button depending if user is authenticated -->
     {% if not current_user.is_authenticated %}
     <a href="{{ url_for('auth.login') }}">Log In</a>
+    {{ current_user.username}}
     {% else %}
     <a href="{{ url_for('auth.logout') }}">Log Out</a>
     {% endif %}

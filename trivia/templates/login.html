@@ -11,7 +11,7 @@
   <h3 class="login">Log In</h3>
   <form method="POST" action="{{ url_for('auth.login') }}">
     <div>
-      <input class="username" type="text" name="login_method" placeholder="Your Email" autofocus="">
+      <input class="username" type="text" name="login_method" placeholder="Your Email/Username" autofocus="">
     </div>
     <div>
       <input class="password" type="password" name="password" placeholder="Your Password">
@@ -29,7 +29,7 @@
   </form>
   {% with messages = get_flashed_messages() %}
   {% if messages %}
-  <div class="notification is-danger">
+  <div id="login-error" class="notification is-danger">
     {{ messages[0] }}
   </div>
   {% endif %}

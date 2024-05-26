@@ -2,25 +2,12 @@
 
 
 {% block css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/login-register.css') }}">
-<!--Google Font for Playfair Display-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-  rel="stylesheet">
-
-
-<!--Google Font for Manjari-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-  href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-  rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styk.css') }}">
 {% endblock %}
 
 
 {% block content %}
-<section>
+<section class="register-block">
   <div class="create-account">Register</div>
   <form method="POST" action="register">
     <div>
