@@ -140,7 +140,7 @@ def test_create_quiz_existing_quiz(mock_session):
     mock_user.id = 123
     mock_user._sa_instance_state = MagicMock()
 
-    # Set up mock_session to return a mock Quiz object when execute().scalar() is called
+    # Set up mock_session to return a mock Quiz object (an existing quiz was found)
     mock_session.execute.return_value.scalar.return_value = MagicMock(spec=Quiz)
 
     # Call create_quiz with the mock User object
@@ -148,7 +148,7 @@ def test_create_quiz_existing_quiz(mock_session):
         user=mock_user, category="Geography", difficulty="easy", length=3
     )
 
-    # Assert that create_quiz returned True (because an existing quiz was found)
+    # Assert that create_quiz returned True (an existing quiz can be played)
     assert result is True
 
     # Assert that create_quiz did not call session.add or .commit
@@ -162,7 +162,7 @@ def test_create_quiz_no_existing_quiz(mock_session):
     mock_user.id = 123
     mock_user._sa_instance_state = MagicMock()
 
-    # Set up mock_session to return None when execute().scalar() is called
+    # Set up mock_session to return None (no existing quiz was found)
     mock_session.execute.return_value.scalar.return_value = None
 
     # Mock the fetch_questions function to return a list of 3 mock questions
@@ -177,7 +177,7 @@ def test_create_quiz_no_existing_quiz(mock_session):
             user=mock_user, category="Geography", difficulty="easy", length=3
         )
 
-    # Assert that create_quiz returned True
+    # Assert that create_quiz returned True (an newly created quiz can be played)
     assert result is True
 
     # Assert that create_quiz called session.add four times and session.commit twice
@@ -190,6 +190,9 @@ def test_create_quiz_insufficient_questions(mock_session):
     mock_user = MagicMock(spec=User)
     mock_user.id = 123
     mock_user._sa_instance_state = MagicMock()
+
+    # Set up mock_session to return None (no existing quiz was found)
+    mock_session.execute.return_value.scalar.return_value = None
 
     # Mock the fetch_questions function to return a list of 2 mock questions
     with patch(
