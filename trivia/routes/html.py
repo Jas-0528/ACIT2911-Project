@@ -1,4 +1,13 @@
-from flask import Blueprint, flash, redirect, render_template, request, session, url_for
+from flask import (
+    after_this_request,
+    Blueprint,
+    flash,
+    redirect,
+    render_template,
+    request,
+    session,
+    url_for,
+)
 from flask_login import login_required, current_user
 from sqlalchemy.sql import functions as func
 from trivia.db import db
@@ -59,6 +68,12 @@ def fetch_questions(category="all", difficulty="all", length=5):
 
 # Create Quiz and fill with QuizQuestions
 def create_quiz(user, category, difficulty, length):
+    # Check for existing quiz skip creation if true
+    stmt = db.select(Quiz).where(Quiz.user_id == user.id)
+    existing_quiz = db.session.execute(stmt).scalar()
+    if existing_quiz:
+        return True
+
     # Fetch questions
     questions = fetch_questions(category, difficulty, length)
 
@@ -146,6 +161,12 @@ def home_submit_play():
 @html_bp.route("/play/random/<int:question_id>", methods=["GET"])
 @login_required
 def play_random(question_id):
+    # Prevent page caching
+    @after_this_request
+    def add_header(response):
+        response.headers["Cache-Control"] = "no-store"
+        return response
+
     # Retrieve question from database based on id in URL
     question = get_question(question_id)
 
@@ -172,7 +193,6 @@ def play_random_submit():
         {
             "answered": True,
             "correct": False if play_data["correct_answer"] != answer else True,
-            "mode": "random",
         }
     )
     return render_template("play.html", **play_data)
@@ -182,6 +202,12 @@ def play_random_submit():
 @html_bp.route("/play/quiz", methods=["GET"])
 @login_required
 def play_quiz():
+    # Prevent page caching
+    @after_this_request
+    def add_header(response):
+        response.headers["Cache-Control"] = "no-store"
+        return response
+
     # Retrieve currently logged in user
     user = get_user(current_user.id)
 
