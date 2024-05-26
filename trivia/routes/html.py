@@ -69,7 +69,7 @@ def fetch_questions(category="all", difficulty="all", length=5):
 # Create Quiz and fill with QuizQuestions
 def create_quiz(user, category, difficulty, length):
     # Check for existing quiz skip creation if true
-    stmt = db.select(Quiz)
+    stmt = db.select(Quiz).where(Quiz.user_id == user.id)
     existing_quiz = db.session.execute(stmt).scalar()
     if existing_quiz:
         return True

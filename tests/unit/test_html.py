@@ -134,11 +134,36 @@ def test_fetch_questions(mock_session):
     assert len(questions) == 3
 
 
-def test_create_quiz(mock_session):
+def test_create_quiz_existing_quiz(mock_session):
     # Set up a mock User object
     mock_user = MagicMock(spec=User)
     mock_user.id = 123
     mock_user._sa_instance_state = MagicMock()
+
+    # Set up mock_session to return a mock Quiz object when execute().scalar() is called
+    mock_session.execute.return_value.scalar.return_value = MagicMock(spec=Quiz)
+
+    # Call create_quiz with the mock User object
+    result = create_quiz(
+        user=mock_user, category="Geography", difficulty="easy", length=3
+    )
+
+    # Assert that create_quiz returned True (because an existing quiz was found)
+    assert result is True
+
+    # Assert that create_quiz did not call session.add or .commit
+    assert mock_session.add.call_count == 0
+    assert mock_session.commit.call_count == 0
+
+
+def test_create_quiz_no_existing_quiz(mock_session):
+    # Set up a mock User object
+    mock_user = MagicMock(spec=User)
+    mock_user.id = 123
+    mock_user._sa_instance_state = MagicMock()
+
+    # Set up mock_session to return None when execute().scalar() is called
+    mock_session.execute.return_value.scalar.return_value = None
 
     # Mock the fetch_questions function to return a list of 3 mock questions
     with patch(
@@ -152,12 +177,12 @@ def test_create_quiz(mock_session):
             user=mock_user, category="Geography", difficulty="easy", length=3
         )
 
-        # Assert that create_quiz returned True
-        assert result is True
+    # Assert that create_quiz returned True
+    assert result is True
 
-        # Assert that create_quiz called session.add four times and session.commit twice
-        assert mock_session.add.call_count == 4
-        mock_session.commit.call_count == 2
+    # Assert that create_quiz called session.add four times and session.commit twice
+    assert mock_session.add.call_count == 4
+    assert mock_session.commit.call_count == 2
 
 
 def test_create_quiz_insufficient_questions(mock_session):
