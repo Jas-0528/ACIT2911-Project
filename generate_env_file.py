@@ -3,7 +3,14 @@ import secrets
 
 # Argument parsing
 parser = argparse.ArgumentParser()
-parser.add_argument("-p", "--port", type=int, default=8888)
+parser.add_argument(
+    "-p",
+    "--port",
+    type=int,
+    default=8888,
+    metavar="N",
+    help="specify PORT environment variable",
+)
 args = parser.parse_args()
 
 # Generate a new secret key

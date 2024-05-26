@@ -139,9 +139,25 @@ def setup_database():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-w", "--write-to-json", action="store_true")
-    parser.add_argument("-a", "--append-to-json", type=int)
-    parser.add_argument("-q", "--create-random-quiz", action="store_true")
+    parser.add_argument(
+        "-w",
+        "--write-to-json",
+        action="store_true",
+        help="write (clobber) 50 questions to JSON database",
+    )
+    parser.add_argument(
+        "-a",
+        "--append-to-json",
+        type=int,
+        metavar="N",
+        help="append N times 50 questions to JSON",
+    )
+    parser.add_argument(
+        "-q",
+        "--create-random-quiz",
+        action="store_true",
+        help="create a random quiz for a random user",
+    )
     args = parser.parse_args()
 
     # Call write and append to JSON based on command-line arguments
