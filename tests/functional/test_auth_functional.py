@@ -72,7 +72,20 @@ def test_login_wrong_password(client, setup_user):
     assert not current_user.is_authenticated
 
 
-# Test register post -> check if the user is not registered with existing email
+# Test login post -> check if the email or username exists
+def test_login_non_existent_email_or_username(client):
+    # Test unsuccessful login with non-existent email or username
+    response = client.post(
+        url_for("auth.login"),
+        data=dict(login_method="notindatabase", password="Pa55word"),
+        follow_redirects=True,
+    )
+    assert response.status_code == 200
+    assert b"No user found with that email or username" in response.data
+    assert not current_user.is_authenticated
+
+
+# Test register post -> check if the user is trying to register with existing email
 def test_register_existing_email(client, setup_user):
     # Test with existing user email
     response = client.post(
@@ -84,7 +97,7 @@ def test_register_existing_email(client, setup_user):
     assert b"Email address already in use" in response.data
 
 
-# Test register post -> check if the user is not registered with existing username
+# Test register post -> check if the user is trying to register with existing username
 def test_register_existing_username(client, setup_user):
     # Test with existing user username
     response = client.post(
@@ -97,7 +110,7 @@ def test_register_existing_username(client, setup_user):
         follow_redirects=True,
     )
     assert response.status_code == 200
-    assert b"Username already exists" in response.data
+    assert b"Username already in use" in response.data
 
 
 # Test register post -> check if the password is too weak
