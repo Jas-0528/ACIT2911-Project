@@ -113,7 +113,7 @@ def test_register_weak_password(client):
         follow_redirects=True,
     )
     assert response.status_code == 200
-    assert b"Password must contain" in response.data
+    assert b"Password must be 8+ characters" in response.data
 
 
 # Test register post -> check all fields are filled

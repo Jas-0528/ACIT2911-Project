@@ -82,7 +82,7 @@ def register_post():
         password,
     ):
         flash(
-            "Password must contain at least one uppercase letter, one lowercase letter, one number, one special character (!, @, #, $, %, ^, &, *), and be at least 8 characters long"
+            "Password must be 8+ characters with at least one uppercase, one lowercase, one number, and one of these special characters: !, @, #, $, %, ^, &, *. Other special characters are not allowed."
         )
         return redirect(url_for("auth.register"))
 
