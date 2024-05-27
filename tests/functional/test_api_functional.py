@@ -26,13 +26,13 @@ def test_question_list(client):
     assert isinstance(data, list)
 
     # Check the structure of each item in the list
-    for item in data:
-        assert "id" in item
-        assert "category" in item
-        assert "difficulty" in item
-        assert "question" in item
-        assert "correct_answer" in item
-        assert "incorrect_answers" in item
+    for question_json in data:
+        assert "id" in question_json
+        assert "category" in question_json
+        assert "difficulty" in question_json
+        assert "question" in question_json
+        assert "correct_answer" in question_json
+        assert "incorrect_answers" in question_json
 
         # Check that incorrect_answers is a list
-        assert isinstance(item["incorrect_answers"], list)
+        assert isinstance(question_json["incorrect_answers"], list)

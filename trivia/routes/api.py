@@ -6,7 +6,7 @@ api_bp = Blueprint("api", __name__)
 
 
 # Return list of question jsons
-@api_bp.route("/", methods=["GET"])
+@api_bp.route("/questions", methods=["GET"])
 def question_list():
     stmt = db.select(Question).order_by(Question.id)
     questions = db.session.execute(stmt).scalars()

@@ -15,7 +15,7 @@ from trivia.routes.html import (
 
 # Session fixture
 @pytest.fixture
-def mock_session(monkeypatch):
+def mock_session():
     with patch("trivia.db.db.session") as mock_session:
         yield mock_session
 

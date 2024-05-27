@@ -57,6 +57,6 @@ def load_user(user_id):
     return db.session.get(User, int(user_id))
 
 
-app.register_blueprint(api_bp, url_prefix="/api/questions")
+app.register_blueprint(api_bp, url_prefix="/api")
 app.register_blueprint(html_bp, url_prefix="/")
 app.register_blueprint(auth_bp, url_prefix="/auth")
