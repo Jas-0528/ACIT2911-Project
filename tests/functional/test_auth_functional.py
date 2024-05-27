@@ -24,7 +24,7 @@ def setup_user():
             auth.db.session.delete(user)
             auth.db.session.commit()
         user = auth.User(
-            username="test", email="testing@gmail.com", password="Pa55word"
+            username="test", email="testing@gmail.com", password="P@ssw0rd!"
         )
         auth.db.session.add(user)
         auth.db.session.commit()
@@ -38,7 +38,7 @@ def test_login_email(client, setup_user):
     # Test successful login with correct email and password
     response = client.post(
         url_for("auth.login"),
-        data=dict(login_method=setup_user.email, password="Pa55word"),
+        data=dict(login_method=setup_user.email, password="P@ssw0rd!"),
         follow_redirects=False,
     )
     assert response.status_code == 302
@@ -51,7 +51,7 @@ def test_login_username(client, setup_user):
     # Test successful login with correct username and password
     response = client.post(
         url_for("auth.login"),
-        data=dict(login_method=setup_user.username, password="Pa55word"),
+        data=dict(login_method=setup_user.username, password="P@ssw0rd!"),
         follow_redirects=False,
     )
     assert response.status_code == 302
@@ -64,7 +64,7 @@ def test_login_wrong_password(client, setup_user):
     # Test unsuccessful login with incorrect password
     response = client.post(
         url_for("auth.login"),
-        data=dict(login_method=setup_user.email, password="wr0ngPa55word"),
+        data=dict(login_method=setup_user.email, password="wr0ngP@ssw0rd!"),
         follow_redirects=True,
     )
     assert response.status_code == 200
@@ -77,7 +77,7 @@ def test_register_existing_email(client, setup_user):
     # Test with existing user email
     response = client.post(
         url_for("auth.register"),
-        data=dict(email=setup_user.email, password="Pa55word", username="test"),
+        data=dict(email=setup_user.email, password="P@ssw0rd!", username="test"),
         follow_redirects=True,
     )
     assert response.status_code == 200
@@ -91,7 +91,7 @@ def test_register_existing_username(client, setup_user):
         url_for("auth.register"),
         data=dict(
             email="tests123@gmail.com",
-            password="Pa55word",
+            password="P@ssw0rd!",
             username=setup_user.username,
         ),
         follow_redirects=True,
@@ -113,10 +113,7 @@ def test_register_weak_password(client):
         follow_redirects=True,
     )
     assert response.status_code == 200
-    assert (
-        b"Password must contain at least one uppercase letter, one lowercase letter, one number, and be at least 8 characters long"
-        in response.data
-    )
+    assert b"Password must be 8+ characters" in response.data
 
 
 # Test register post -> check all fields are filled
@@ -140,7 +137,7 @@ def test_register_post_valid(client):
     # Test with new user email, username, and password, and don't save in database
     response = client.post(
         url_for("auth.register"),
-        data=dict(email="test2@gmail.com", username="test2", password="Pa55word"),
+        data=dict(email="test2@gmail.com", username="test2", password="P@ssw0rd!"),
         follow_redirects=True,
     )
     assert response.status_code == 200
