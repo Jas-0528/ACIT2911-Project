@@ -1,4 +1,5 @@
 <!-- A: This shouldn't be in the root directory and should be named more semantically. -->
+<!-- A: Is this the user-targeted or dev-targeted doc? If it is the user-targeted one, add instructions to clone the repository -->
 
 # Trivia Game Website - Backend Instructions <!-- A: Consider renaming this heading "Trivia Game File Structure and Guide" or something similarly more meaningful... like the filename. -->
 
