@@ -2,6 +2,9 @@
 <!-- A: Is this the user-targeted or dev-targeted doc? If it is the user-targeted one, add instructions to clone the repository -->
 
 # Trivia Game Website - Backend Instructions <!-- A: Consider renaming this heading "Trivia Game File Structure and Guide" or something similarly more meaningful... like the filename. -->
+# Trivia Game Website - Backend Instructions (HTML Files)
+
+Welcome to the backend instructions for understanding your Trivia Game website. Follow these steps to get started!
 
 Welcome to the backend instructions <!-- A: Backend instructions don't really mean anything and the content as of this comment aren't really instructions --> for setting up and running your Trivia Game website. Follow these steps to get started:
 
@@ -14,6 +17,7 @@ Welcome to the backend instructions <!-- A: Backend instructions don't really me
 <!-- A: The primary instruction should be to open a web browser and enter localhost:<PORT> or 127.0.0.1:<PORT>. Information on which port should also be provided.>
 
 <!-- A: Please explain the generate_env_file.py script and its options/flags. -->
+> You can also enter in the webiste's URL (http://127.0.0.1:8888)
 
 ## HTML Templates
 
@@ -58,6 +62,10 @@ Welcome to the backend instructions <!-- A: Backend instructions don't really me
   - Difficulty selection
   - Length of quiz
 - Users can also select "Random Mode" from the navigation bar. <!-- It's not "Random Mode" but we can change that if we want. -->
+- Users can also select "Random Mode" from the navigation bar.
+
+> The home page appearance varies based on whether a quiz needs to be resumed or not.
+
 
 ### 5. play.html
 
@@ -78,8 +86,12 @@ Welcome to the backend instructions <!-- A: Backend instructions don't really me
 <!-- pending--haven't revised it after comment -->
 
 The `app.py` file defines the game and runs it locally on `localhost` on port `8888`.
+## App.py
+`app.py` serves as the main application code. It defines routes, handles requests, and is in charge the application's functionality. 
+Our `app,py` runs a development server on local host (`port = 8888`) to test the application.
 
-## Models.py <!-- A: Should not be capitalized. Some OSes are case sensitive. -->
+
+## Models.py
 
 `models.py` is responsible for handling the database operations. It utilizes SQLAlchemy, which allows SQL statements to be mapped to relational database operations using Python objects.
 
