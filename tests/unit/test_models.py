@@ -7,7 +7,7 @@ from trivia.models import Question, Quiz, QuizQuestion, User
 # Basic User fixture
 @pytest.fixture
 def user():
-    user = User(username="user9", email="user9@example.com", password="Pa55word")
+    user = User(username="user9", email="user9@example.com", password="P@ssw0rd!")
     return user
 
 
@@ -42,13 +42,13 @@ def quiz_question(question, quiz):
 def test_new_user(user):
     assert user.username == "user9"
     assert user.email == "user9@example.com"
-    assert user.password_hashed != "Pa55word"
+    assert user.password_hashed != "P@ssw0rd!"
     assert user.password_hashed is not None
 
 
 # Test password hashing
 def test_password_hashing(user):
-    assert check_password_hash(user.password_hashed, "Pa55word")
+    assert check_password_hash(user.password_hashed, "P@ssw0rd!")
 
 
 # Test relationship between User and Quiz

@@ -77,9 +77,12 @@ def register_post():
         return redirect(url_for("auth.register"))
 
     # Check if password meets criteria
-    if not re.match(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$", password):
+    if not re.match(
+        r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$",
+        password,
+    ):
         flash(
-            "Password must contain at least one uppercase letter, one lowercase letter, one number, and be at least 8 characters long"
+            "Password must contain at least one uppercase letter, one lowercase letter, one number, one special character (!, @, #, $, %, ^, &, *), and be at least 8 characters long"
         )
         return redirect(url_for("auth.register"))
 
