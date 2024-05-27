@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from flask import Flask
-from flask_login import LoginManager
+from flask_login import current_user, LoginManager
 from pathlib import Path
 from sqlalchemy.sql import functions as func
 from .db import db
@@ -23,8 +23,11 @@ def inject_data():
     random_question_id = db.session.execute(stmt).scalar()
 
     # Check if a Quiz exists
-    stmt = db.select(Quiz)
-    quiz = db.session.execute(stmt).scalar()
+    if current_user.is_authenticated:
+        stmt = db.select(Quiz).where(Quiz.user_id == current_user.id)
+        quiz = db.session.execute(stmt).scalar()
+    else:
+        quiz = None
 
     return dict(random_question_id=random_question_id, quiz_exists=bool(quiz))
 
