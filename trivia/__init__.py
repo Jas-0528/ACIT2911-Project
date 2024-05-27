@@ -6,7 +6,7 @@ from pathlib import Path
 from sqlalchemy.sql import functions as func
 from .db import db
 from .models import Question, Quiz, User
-from .routes import html_bp, api_questions_bp, auth_bp
+from .routes import html_bp, api_bp, auth_bp
 
 # Load environment variables from .env file
 load_dotenv()
@@ -57,6 +57,6 @@ def load_user(user_id):
     return db.session.get(User, int(user_id))
 
 
-app.register_blueprint(api_questions_bp, url_prefix="/api/questions")
+app.register_blueprint(api_bp, url_prefix="/api/questions")
 app.register_blueprint(html_bp, url_prefix="/")
 app.register_blueprint(auth_bp, url_prefix="/auth")

@@ -2,7 +2,8 @@ import os, pytest
 from flask import url_for
 from flask_login import current_user
 from app import app
-from trivia.routes import auth
+from trivia.db import db
+from trivia.models import User
 
 
 # Client fixture with SERVER_NAME and PORT
@@ -19,18 +20,18 @@ def client():
 @pytest.fixture
 def setup_user():
     with app.app_context():
-        user = auth.User.query.filter_by(username="test").first()
+        user = User.query.filter_by(username="test").first()
         if user:
-            auth.db.session.delete(user)
-            auth.db.session.commit()
-        user = auth.User(
+            db.session.delete(user)
+            db.session.commit()
+        user = User(
             username="test", email="testing@gmail.com", password="P@ssw0rd!"
         )
-        auth.db.session.add(user)
-        auth.db.session.commit()
+        db.session.add(user)
+        db.session.commit()
         yield user
-        auth.db.session.delete(user)
-        auth.db.session.commit()
+        db.session.delete(user)
+        db.session.commit()
 
 
 # Test login post -> check if the user is logged in successfully with email
@@ -202,12 +203,12 @@ def test_register_post_valid(client):
         follow_redirects=True,
     )
     assert response.status_code == 200
-    user = auth.User.query.filter_by(email="test2@gmail.com").first()
+    user = User.query.filter_by(email="test2@gmail.com").first()
     assert user is not None
     assert user.email == "test2@gmail.com"
     assert user.username == "test2"
-    auth.db.session.delete(user)
-    auth.db.session.commit()
+    db.session.delete(user)
+    db.session.commit()
 
 
 # Test logout function
