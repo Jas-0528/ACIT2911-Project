@@ -72,7 +72,20 @@ def test_login_wrong_password(client, setup_user):
     assert not current_user.is_authenticated
 
 
-# Test register post -> check if the user is not registered with existing email
+# Test login post -> check if the email or username exists
+def test_login_non_existent_email_or_username(client):
+    # Test unsuccessful login with non-existent email or username
+    response = client.post(
+        url_for("auth.login"),
+        data=dict(login_method="notindatabase", password="P@ssw0rd!"),
+        follow_redirects=True,
+    )
+    assert response.status_code == 200
+    assert b"No user found with that email or username" in response.data
+    assert not current_user.is_authenticated
+
+
+# Test register post -> check if the user is trying to register with existing email
 def test_register_existing_email(client, setup_user):
     # Test with existing user email
     response = client.post(
@@ -84,7 +97,7 @@ def test_register_existing_email(client, setup_user):
     assert b"Email address already in use" in response.data
 
 
-# Test register post -> check if the user is not registered with existing username
+# Test register post -> check if the user is trying to register with existing username
 def test_register_existing_username(client, setup_user):
     # Test with existing user username
     response = client.post(
@@ -97,7 +110,7 @@ def test_register_existing_username(client, setup_user):
         follow_redirects=True,
     )
     assert response.status_code == 200
-    assert b"Username already exists" in response.data
+    assert b"Username already in use" in response.data
 
 
 # Test register post -> check if the password is too weak
@@ -116,15 +129,63 @@ def test_register_weak_password(client):
     assert b"Password must be 8+ characters" in response.data
 
 
-# Test register post -> check all fields are filled
-def test_register_empty_fields(client):
+# Test register post -> check if the password uses invalid characters
+def test_register_invalid_password(client):
+    # Test with invalid password
+    response = client.post(
+        url_for("auth.register"),
+        data=dict(
+            email="user421@gmail.com",
+            password="Pa55word?",
+            username="user421",
+        ),
+        follow_redirects=True,
+    )
+    assert response.status_code == 200
+    assert b"Password must be 8+ characters" in response.data
+
+
+# Test register post -> check all fields are filled (missing email)
+def test_register_empty_email(client):
     # Test with empty email field
     response = client.post(
         url_for("auth.register"),
         data=dict(
             email="",
-            password="password",
+            password="P@ssw0rd!",
             username="user69",
+        ),
+        follow_redirects=True,
+    )
+    assert response.status_code == 200
+    assert b"All fields are required" in response.data
+
+
+# Test register post -> check all fields are filled (missing password)
+def test_register_empty_password(client):
+    # Test with empty password field
+    response = client.post(
+        url_for("auth.register"),
+        data=dict(
+            email="user70@example.com",
+            password="",
+            username="user70",
+        ),
+        follow_redirects=True,
+    )
+    assert response.status_code == 200
+    assert b"All fields are required" in response.data
+
+
+# Test register post -> check all fields are filled (missing username)
+def test_register_empty_username(client):
+    # Test with empty username field
+    response = client.post(
+        url_for("auth.register"),
+        data=dict(
+            email="user42@hotmail.com",
+            password="P@ssw0rd!",
+            username="",
         ),
         follow_redirects=True,
     )
