@@ -12,6 +12,8 @@ Welcome to the file structure instructions for understanding your Trivia Game we
 
 ## Launching the Game
 
+<!-- AN: Not sure where you're planning to include it but instructions for creating a venv and installing packages from requirements.txt is crucial -->
+
 1. **Open Terminal** <!-- AN: Any terminal can be used, not just Terminal -->: Open your terminal and navigate to your project directory.
 
 2. **Run the Manage Script**: Enter the command `python manage.py` to set up your environment. <!-- AN: Please mention and describe the options/flags, including -h. manage.py does not set up the environment. python/py/python3 -m venv <venv_directory_name> does. Please also mention that. -->
@@ -25,6 +27,7 @@ Welcome to the file structure instructions for understanding your Trivia Game we
 <!-- AN: Information on which port should also be provided. -->
 <!-- AN: Please explain the generate_env_file.py script and its options/flags. -->
 <!-- AF: philip should have that on his file -->
+<!-- AN: This should be in the user docs (as well) -->
 
 ## HTML Templates
 
