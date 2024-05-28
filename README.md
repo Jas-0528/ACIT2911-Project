@@ -6,7 +6,7 @@ Welcome to the Trivia Game website! Follow these steps to start playing: <!-- A:
 _An account is needed to play the game_
 <!-- A: Do you need an account to play? -->
 <!-- AF: added in the note "an account is needed to play the game" -->
-
+<!-- J: the heading sizes are a bit confusing. maybe make creating an account the main title and make log in the same size as regisreation. Or put login below registration-->
 ## Log In
 **Log In**: If you have previously created an account, you can log in  using your login credentials. 
 - Tick the "Remember me" checkbox to avoid needing to login each time you access the website!
@@ -19,11 +19,12 @@ _An account is needed to play the game_
 **Register**: To make an account, click on the "Don't have an account? Register here" link. You will be redirected to the __Registration__ page. 
 
 **Create** an account by entering:
+<!-- J: emails also need to be unique -->
 - Your email
 - A unique username
     - Usernames need to be unique, no two users can have the same username.
 - Password
-    - Passwords need at least **one uppercase letter**, **lowercase letter**, **one special character**, and needs to be at least __eight__ characters long.
+    - Passwords need at least **one uppercase letter**, **lowercase letter**, **one special character**, and need to be at least __eight__ characters long.
 
 <!-- A: You cannot create an account on the login page. Also need a step telling them to sit some button. Also consider telling them the password requirements. -->
 <!-- AF: added a line saying users need to click on the "Don't have an acc..." button -->
@@ -46,6 +47,7 @@ Select this mode to get questions from all categories and difficulties.
   - In this mode, the specific category and difficulty of each question are displayed.
   - Note: Scores are not tracked in random mode.
 
+<!-- J: you can also click play random on the nav bar -->
 **Next Random Question**: Click on the “Random Question” button to generate a new question.
 
 ___
@@ -78,3 +80,5 @@ While playing, the scoreboard displays:
 ___
 
 >  Questions were taken from Open Trivia DB API (https://opentdb.com/api_config.php)
+
+<!-- add an ending note like have fun playing or smt -->
