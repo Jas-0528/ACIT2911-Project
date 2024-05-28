@@ -1,41 +1,5 @@
 import json
-import pytest
 from werkzeug.security import check_password_hash
-from trivia.models import Question, Quiz, QuizQuestion, User
-
-
-# Basic User fixture
-@pytest.fixture
-def user():
-    user = User(username="user9", email="user9@example.com", password="P@ssw0rd!")
-    return user
-
-
-# Basic Quiz fixture
-@pytest.fixture
-def quiz(user):
-    quiz = Quiz(user=user)
-    return quiz
-
-
-# Basic Question fixture
-@pytest.fixture
-def question():
-    question = Question(
-        category="Geography",
-        difficulty="hard",
-        question="Which is not a country in Africa?",
-        correct_answer="Guyana",
-        incorrect_answers_string=json.dumps(["Senegal", "Liberia", "Somalia"]),
-    )
-    return question
-
-
-# Basic QuizQuestion fixture
-@pytest.fixture
-def quiz_question(question, quiz):
-    quiz_question = QuizQuestion(question=question, quiz=quiz)
-    return quiz_question
 
 
 # Test User attributes
