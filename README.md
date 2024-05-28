@@ -1,12 +1,16 @@
 # Trivia Game Website Instructions 🚀<!-- A: "Website" Instructions? Consider just using "Trivia Game" or "Trivia Game Web Application"? -->
 
-Welcome to the Trivia Game website! Follow these steps to start playing: <!-- A: Steps? What steps? -->
+Welcome to the Trivia Game website! Follow these instructions to start playing
+<!-- A: Steps? What steps? -->
+<!-- AF: changed from "steps" to instructions -->
 
-## Creating an Account
+# Creating an Account
 _An account is needed to play the game_
 <!-- A: Do you need an account to play? -->
 <!-- AF: added in the note "an account is needed to play the game" -->
-<!-- J: the heading sizes are a bit confusing. maybe make creating an account the main title and make log in the same size as regisreation. Or put login below registration-->
+
+<!-- J: the heading sizes are a bit confusing. maybe make creating an account the main title and make log in the same size as registration. Or put login below registration-->
+<!-- AF: made it an h1 tag instead of an h2 -->
 ## Log In
 **Log In**: If you have previously created an account, you can log in  using your login credentials. 
 - Tick the "Remember me" checkbox to avoid needing to login each time you access the website!
@@ -20,7 +24,7 @@ _An account is needed to play the game_
 
 **Create** an account by entering:
 <!-- J: emails also need to be unique -->
-- Your email
+- Your email— needs to be unique and cannot be repeated twice
 - A unique username
     - Usernames need to be unique, no two users can have the same username.
 - Password
@@ -48,7 +52,8 @@ Select this mode to get questions from all categories and difficulties.
   - Note: Scores are not tracked in random mode.
 
 <!-- J: you can also click play random on the nav bar -->
-**Next Random Question**: Click on the “Random Question” button to generate a new question.
+<!-- AF: added that in! -->
+**Next Random Question**: Click on the “Random Question” button— on the homepage or on the navigation bar— to generate a new question.
 
 ___
 
@@ -81,4 +86,8 @@ ___
 
 >  Questions were taken from Open Trivia DB API (https://opentdb.com/api_config.php)
 
-<!-- add an ending note like have fun playing or smt -->
+<!-- J: add an ending note like have fun playing or smt -->
+<!-- AF: added one! -->
+___
+
+### Enjoy your Trivia adventure!
