@@ -25,17 +25,15 @@ def login_post():
     password = request.form.get("password")
     remember = True if request.form.get("remember") else False
     login_method = request.form.get("login_method")
+    user = None
 
     # Search database for matching username or email to login_method
-    stmt = db.select(User).where(User.email == login_method)
-    result = db.session.execute(stmt)
-    user = result.scalars().first()
-
-    # If no user found with matching email, find user with matching username
-    if not user:
-        stmt = db.select(User).where(User.username == login_method)
+    for attr in [User.email, User.username]:
+        stmt = db.select(User).where(attr == login_method)
         result = db.session.execute(stmt)
-        user = result.scalars().first()
+        user = result.scalar()
+        if user:
+            break
 
     # If no user found, redirect to login page and flash no user found
     if not user:

@@ -3,16 +3,6 @@ from flask import url_for
 from app import app
 
 
-# Client fixture with SERVER_NAME and PORT
-@pytest.fixture
-def client():
-    port = os.getenv("PORT", "8888")
-    app.config["SERVER_NAME"] = f"localhost:{port}"
-    with app.app_context():
-        with app.test_client() as client:
-            yield client
-
-
 def test_question_list(client):
     response = client.get(url_for("api.question_list"))
 

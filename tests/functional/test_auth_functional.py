@@ -1,45 +1,15 @@
-import os, pytest
 from flask import url_for
 from flask_login import current_user
-from app import app
 from trivia.db import db
 from trivia.models import User
 
 
-# Client fixture with SERVER_NAME and PORT
-@pytest.fixture
-def client():
-    port = os.getenv("PORT", "8888")
-    app.config["SERVER_NAME"] = f"localhost:{port}"
-    with app.app_context():
-        with app.test_client() as client:
-            yield client
-
-
-# Create user for testing
-@pytest.fixture
-def setup_user():
-    with app.app_context():
-        user = User.query.filter_by(username="test").first()
-        if user:
-            db.session.delete(user)
-            db.session.commit()
-        user = User(
-            username="test", email="testing@gmail.com", password="P@ssw0rd!"
-        )
-        db.session.add(user)
-        db.session.commit()
-        yield user
-        db.session.delete(user)
-        db.session.commit()
-
-
 # Test login post -> check if the user is logged in successfully with email
-def test_login_email(client, setup_user):
+def test_login_email(client, db_user):
     # Test successful login with correct email and password
     response = client.post(
         url_for("auth.login"),
-        data=dict(login_method=setup_user.email, password="P@ssw0rd!"),
+        data=dict(login_method=db_user.email, password="P@ssw0rd!"),
         follow_redirects=False,
     )
     assert response.status_code == 302
@@ -48,11 +18,11 @@ def test_login_email(client, setup_user):
 
 
 # Test login post -> check if the user is logged in successfully with username
-def test_login_username(client, setup_user):
+def test_login_username(client, db_user):
     # Test successful login with correct username and password
     response = client.post(
         url_for("auth.login"),
-        data=dict(login_method=setup_user.username, password="P@ssw0rd!"),
+        data=dict(login_method=db_user.username, password="P@ssw0rd!"),
         follow_redirects=False,
     )
     assert response.status_code == 302
@@ -61,11 +31,11 @@ def test_login_username(client, setup_user):
 
 
 # Test login post -> check if the user is not logged in with an incorrect password
-def test_login_wrong_password(client, setup_user):
+def test_login_wrong_password(client, db_user):
     # Test unsuccessful login with incorrect password
     response = client.post(
         url_for("auth.login"),
-        data=dict(login_method=setup_user.email, password="wr0ngP@ssw0rd!"),
+        data=dict(login_method=db_user.email, password="wr0ngP@ssw0rd!"),
         follow_redirects=True,
     )
     assert response.status_code == 200
@@ -87,11 +57,11 @@ def test_login_non_existent_email_or_username(client):
 
 
 # Test register post -> check if the user is trying to register with existing email
-def test_register_existing_email(client, setup_user):
+def test_register_existing_email(client, db_user):
     # Test with existing user email
     response = client.post(
         url_for("auth.register"),
-        data=dict(email=setup_user.email, password="P@ssw0rd!", username="test"),
+        data=dict(email=db_user.email, password="P@ssw0rd!", username="test"),
         follow_redirects=True,
     )
     assert response.status_code == 200
@@ -99,14 +69,14 @@ def test_register_existing_email(client, setup_user):
 
 
 # Test register post -> check if the user is trying to register with existing username
-def test_register_existing_username(client, setup_user):
+def test_register_existing_username(client, db_user):
     # Test with existing user username
     response = client.post(
         url_for("auth.register"),
         data=dict(
             email="tests123@gmail.com",
             password="P@ssw0rd!",
-            username=setup_user.username,
+            username=db_user.username,
         ),
         follow_redirects=True,
     )
