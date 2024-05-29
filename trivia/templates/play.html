@@ -47,17 +47,18 @@
 </main>
 
 <div class="end-links">
-<a class="link" href="https://opentdb.com/api_config.php">Questions were obtained from the Open Trivia Database
-    API</a>
-{% if mode == "random" %}
-<div class="right-arrow">
-  <a id="random-play-button" href="{{ url_for('html.play_random', question_id=random_question_id) }}">RANDOM QUESTION</a>
-</div>
-{% elif answered %}
-<div>
-  <a class="arrow" href="{{ url_for('html.play_quiz') }}"><i>NEXT</i></a>
-</div>
-{% endif %}
-
+  <a class="link" href="https://opentdb.com/api_config.php">
+    Questions were obtained from the <b>Open Trivia DatabaseAPI</b>
+  </a>
+  {% if mode == "random" %}
+  <div class="right-arrow">
+    <a id="random-play-button" href="{{ url_for('html.play_random', question_id=random_question_id) }}">RANDOM
+      QUESTION</a>
+  </div>
+  {% elif answered %}
+  <div>
+    <a class="arrow" href="{{ url_for('html.play_quiz') }}"><i>NEXT</i></a>
+  </div>
+  {% endif %}
 </div>
 {% endblock %}
