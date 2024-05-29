@@ -2,66 +2,78 @@
 
 /* set colors */
 :root {
-    --text-color: #ffa791;
-    --background-color: #f9d388;
-    --pink: #ff3186;
-    --Bittersweet-pink: #ff725c;
-    --Supernova-yellow: #ffb437;
-    --Mona-lisa-pink: #ff8f8f;
-    --Burgundy-red: #db1049;
-    --Goated-Purple: #2A2030;
-    --Goated-Yellow: #FCDE93;
-    --Goated-Pink: #E16787;
+  --text-color: #ffa791;
+  --background-color: #f9d388;
+  --pink: #ff3186;
+  --Bittersweet-pink: #ff725c;
+  --Supernova-yellow: #ffb437;
+  --Mona-lisa-pink: #ff8f8f;
+  --Burgundy-red: #db1049;
+  --Goated-Purple: #2A2030;
+  --Goated-Yellow: #FCDE93;
+  --Goated-Pink: #E16787;
 }
 
-body{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    background-color:var(--Goated-Purple);
-    overflow: scroll;
-    color: var(--Goated-Purple);
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: var(--Goated-Purple);
+  overflow: scroll;
+  color: var(--Goated-Purple);
+  margin: 0;
 }
 
 /* css for navbar across all pages */
-nav{
-    top: 0;
-    display: flex;
-    justify-content: center;
+nav {
+  top: 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
 }
 
-nav a{
-    background-color: rgba(220, 220, 220, 0);
-    text-decoration: none;
-    color: snow;
-    font-size: 1.2em;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    padding: 1% 5%;
+#nav-links {
+  display: flex;
+  justify-content: center;
+  min-width: 60vw;
 }
 
-nav a:hover{
-    background-color: #fc6a91;
-    border-radius: 325px;
+#nav-links a {
+  background-color: rgba(220, 220, 220, 0);
+  text-decoration: none;
+  color: snow;
+  font-size: 1.2em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  padding: 1% 5%;
 }
 
-#nav-logo{
-    border-radius: 600%;
-    min-width: 6%;
-    max-width: 5%;
-    min-height: 3%;
-    max-height: 2%;
-    margin-right: 2%;
-  }
+#nav-links a:hover {
+  background-color: #fc6a91;
+  border-radius: 325px;
+}
+
+#nav-logo {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  margin-right: 2%;
+}
+
+#nav-burger {
+  display: none;
+}
 
 /* css for login page */
-.login-block, .register-block{
+.login-block,
+.register-block {
   margin-left: auto;
   margin-right: auto;
   margin-top: 2%;
   width: 30%;
   background-color: snow;
   border-radius: 30px;
-  border:15px solid #fc6a91;
+  border: 15px solid #fc6a91;
   padding: 5%;
   padding-bottom: 5%;
   display: flex;
@@ -69,25 +81,28 @@ nav a:hover{
   align-items: center;
 }
 
-.login, .create-account{
+.login,
+.create-account {
   font-weight: 900;
   font-size: 200%;
 }
 
-#login-error{
+#login-error {
   font-size: 110%;
   margin-top: 5%;
   background-color: var(--Goated-Purple);
   padding: 2%;
   color: snow;
-} 
+}
 
-.create-account{
+.create-account {
   margin-top: 5%;
   margin-bottom: 10%;
 }
 
-.username, .password, .email{
+.username,
+.password,
+.email {
   width: 100%;
   font-size: 110%;
   margin-bottom: 5%;
@@ -95,7 +110,7 @@ nav a:hover{
   padding: 2%;
 }
 
-.submit{
+.submit {
   background-color: #fc6a91;
   color: snow;
   font-size: 110%;
@@ -106,45 +121,46 @@ nav a:hover{
   cursor: pointer;
 }
 
-.submit:hover{
+.submit:hover {
   background-color: var(--Goated-Purple);
 }
 
-.register{
+.register {
   margin-top: 5%;
   cursor: pointer;
 }
 
-.register a{
+.register a {
   color: #fc6a91;
   color: var(--Goated-Purple);
   text-decoration: none;
 }
 
-.register a:hover{
+.register a:hover {
   color: #fc6a91;
 }
 
 /* css for the home page */
-.container img{
+.container img {
   border-radius: 100%;
   min-width: 12%;
   max-width: 5%;
-  min-height:100%;
+  min-height: 100%;
   max-height: 80%;
 }
 
 .container {
+  padding-top: 10px;
   display: grid;
   place-items: center;
   text-align: center;
 }
 
-.random_button{
+.random_button {
   background-color: #f9c252;
   color: snow;
   font-size: 1.5em;
-  padding:0.6% 1.5%;
+  padding: 0.6% 1.5%;
   border-radius: 5px;
   border: 2px solid snow;
   cursor: pointer;
@@ -152,12 +168,12 @@ nav a:hover{
   text-decoration: none;
 }
 
-.random_button:hover{
+.random_button:hover {
   background-color: var(--Goated-Purple);
   padding: 0.8% 1.7%;
 }
 
-.play_button{
+.play_button {
   background-color: #fc6a91;
   color: snow;
   font-size: 1.5em;
@@ -170,28 +186,32 @@ nav a:hover{
   padding: 2% 3%;
 }
 
-#resume{
+#resume {
   margin-top: 30%;
 }
 
-#resume, #delete{
+#resume,
+#delete {
   padding: 0.5%;
-  width:100%;
+  width: 100%;
   border: 5px solid #fc6a91;
 }
 
-#resume:hover, #delete:hover{
+#resume:hover,
+#delete:hover {
   background-color: var(--Goated-Purple);
   padding: 0.6%;
   border: 5px solid var(--Goated-Purple);
 }
 
-.play_button:hover{
+.play_button:hover {
   background-color: var(--Goated-Purple);
   padding: 2.2% 5.2%;
 }
 
-#category, #difficulty, #length{
+#category,
+#difficulty,
+#length {
   width: 100%;
   font-size: 110%;
   border: 2px solid #fc6a91;
@@ -199,18 +219,18 @@ nav a:hover{
   margin-bottom: 2%;
 }
 
-label{
+label {
   color: snow;
 }
 
-#error-code{
+#error-code {
   color: snow;
   list-style-type: none;
 }
 
 /* css for the trivia game */
 /*scoreboard*/
-#scoreboard{
+#scoreboard {
   width: 80%;
   display: flex;
   justify-content: space-between;
@@ -284,7 +304,7 @@ main {
 
 .options button:disabled {
   background-color: rgb(195, 195, 195);
-  border:0;
+  border: 0;
 }
 
 .hidden {
@@ -308,7 +328,8 @@ main {
   color: #fc6a91;
 }
 
-.arrow, #random-play-button{
+.arrow,
+#random-play-button {
   color: white;
   /* add border around the text */
   text-shadow: 10px 10px 10px #fc6a91;
@@ -317,39 +338,39 @@ main {
   font-size: 2.2rem;
 }
 
-.arrow{
+.arrow {
   font-size: 3rem;
 }
 
-.arrow:hover{
+.arrow:hover {
   font-size: 3.4rem;
 }
 
-#random-play-button:hover{
+#random-play-button:hover {
   font-size: 2.8rem;
 }
 
-.link{
+.link {
   color: snow;
   font-size: 1em;
   margin-top: 2%;
 }
 
-.end-links{
+.end-links {
   display: flex;
   justify-content: space-between;
   width: 90%;
   margin: 0 auto;
 }
 
-@media screen and (max-width: 1280px) {
-/* log in page = is fine at this width*/
+@media screen and (max-width: 1279px) {
+  /* log in page = is fine at this width*/
 
-/* register page = is fine at this width*/
+  /* register page = is fine at this width*/
 
-/* home page = is fine at this width*/
+  /* home page = is fine at this width*/
 
-/* trivia game */
+  /* trivia game */
   main {
     max-width: 80%;
   }
@@ -359,19 +380,25 @@ main {
     background-color: #FCDE93;
   }
 
-  #points, #question-number, #score-category, #score-difficulty{
+  #points,
+  #question-number,
+  #score-category,
+  #score-difficulty {
     font-size: 95%;
   }
 
-  .arrow, #random-play-button{
+  .arrow,
+  #random-play-button {
     font-size: 2rem;
   }
 
-}
+  #nav-links {
+    min-width: 85vw;
+  }
 
-@media screen and (min-width: 769px) and (max-width: 1279px) {
   /* log in page*/
-  .login-block, .register-block{
+  .login-block,
+  .register-block {
     margin-top: 7%;
     padding-left: 8%;
     padding-right: 8%;
@@ -385,7 +412,10 @@ main {
     max-width: 90%;
   }
 
-  #points, #question-number, #score-category, #score-difficulty{
+  #points,
+  #question-number,
+  #score-category,
+  #score-difficulty {
     font-size: 80%;
   }
 
@@ -401,27 +431,88 @@ main {
     font-size: 1.3em;
   }
 
-  .arrow, #random-play-button{
+  .arrow,
+  #random-play-button {
     font-size: 2rem;
   }
 
-  .arrow:hover{
+  .arrow:hover {
     font-size: 2.2rem;
   }
 
-  #random-play-button:hover{
+  #random-play-button:hover {
     font-size: 2.2rem;
   }
 
-  .link{
+  .link {
     width: 40%;
   }
 
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (max-width: 767px) {
+  nav {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    z-index: 9999;
+    overflow: visible;
+  }
+
+  #nav-links {
+    background-color: var(--background-color);
+    display: none;
+    position: absolute;
+    top: 48px;
+    width: 100%;
+    padding-block: 10px;
+  }
+
+  #nav-logo {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 3px;
+    top: 3px;
+  }
+
+  #nav-links a {
+    color: black;
+    display: block;
+    font-size: 24px;
+    text-align: center;
+    padding-block: 12px;
+    margin: 5px;
+  }
+
+  #nav-links a:hover {
+    color: white;
+  }
+
+  #nav-burger {
+    text-align: center;
+    display: block;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    right: 0;
+    top: 0;
+  }
+
+  #nav-burger i {
+    color: white;
+    font-size: 40px;
+    width: 48px;
+    height: 48px;
+  }
+
+  #nav-burger i:hover {
+    background-color: var(--Goated-Pink);
+  }
+
   /* log in page */
-  .login-block, .register-block{
+  .login-block,
+  .register-block {
     width: 60%;
     margin-top: 7%;
     padding-left: 10%;
@@ -429,48 +520,53 @@ main {
     padding-bottom: 5%;
   }
 
-  .login, .create-account{
+  .login,
+  .create-account {
     font-size: 150%;
   }
 
-  #login-error{
+  #login-error {
     font-size: 90%;
   }
 
-  .username, .password, .email{
+  .username,
+  .password,
+  .email {
     font-size: 90%;
   }
 
-  .submit{
+  .submit {
     font-size: 100%;
   }
 
-  .register{
+  .register {
     font-size: 80%;
   }
 
-  .checkbox{
+  .checkbox {
     font-size: 90%;
   }
 
-  .random_button{
+  .random_button {
     font-size: 1.2em;
   }
 
   /* home page */
-  .play_button{
+  .play_button {
     font-size: 1.2em;
   }
 
-  #category, #difficulty, #length{
+  #category,
+  #difficulty,
+  #length {
     font-size: 90%;
   }
 
-  .container img{
+  .container img {
     border-radius: 100%;
     min-width: 12%;
     max-width: 20%;
-    min-height:100%;
+    min-height: 100%;
     max-height: 80%;
   }
 
@@ -480,7 +576,10 @@ main {
     max-width: 90%;
   }
 
-  #points, #question-number, #score-category, #score-difficulty{
+  #points,
+  #question-number,
+  #score-category,
+  #score-difficulty {
     font-size: 70%;
   }
 
@@ -505,33 +604,34 @@ main {
     font-size: 1em;
   }
 
-  .arrow{
+  .arrow {
     font-size: 1.5rem;
   }
 
-  #random-play-button{
+  #random-play-button {
     font-size: 1.3rem;
   }
 
-  .arrow:hover{
+  .arrow:hover {
     font-size: 2rem;
   }
 
-  #random-play-button:hover{
+  #random-play-button:hover {
     font-size: 1.5rem;
   }
 
-  .link{
+  .link {
     width: 50%;
     font-size: 80%;
   }
 
 }
 
-@media screen and (min-width: 0px) and (max-width: 480px) {
+@media screen and (max-width: 480px) {
 
   /* log in page */
-  .login-block, .register-block{
+  .login-block,
+  .register-block {
     width: 60%;
     margin-top: 7%;
     padding-left: 15%;
@@ -539,37 +639,42 @@ main {
     padding-bottom: 5%;
   }
 
-  .login, .create-account{
+  .login,
+  .create-account {
     font-size: 150%;
   }
 
-  #login-error{
+  #login-error {
     font-size: 90%;
   }
 
-  .username, .password, .email{
+  .username,
+  .password,
+  .email {
     font-size: 90%;
     width: 100%;
   }
 
-  .submit{
+  .submit {
     font-size: 100%;
   }
 
-  .register{
+  .register {
     font-size: 80%;
   }
 
-  .checkbox{
+  .checkbox {
     font-size: 90%;
   }
 
   /* home page */
-  .play_button{
+  .play_button {
     font-size: 1.2em;
   }
 
-  #category, #difficulty, #length{
+  #category,
+  #difficulty,
+  #length {
     font-size: 90%;
   }
 
@@ -580,11 +685,14 @@ main {
     margin: auto;
   }
 
-  #scoreboard{
+  #scoreboard {
     width: 100%;
   }
 
-  #points, #question-number, #score-category, #score-difficulty{
+  #points,
+  #question-number,
+  #score-category,
+  #score-difficulty {
     margin-left: 2%;
     margin-right: 2%;
     font-size: 70%;
@@ -612,35 +720,32 @@ main {
     font-size: 1em;
   }
 
-  .arrow{
+  .arrow {
     font-size: 1.5rem;
   }
 
-  .container img{
+  .container img {
     border-radius: 100%;
     min-width: 12%;
     max-width: 20%;
-    min-height:100%;
+    min-height: 100%;
     max-height: 80%;
   }
 
-  #random-play-button{
+  #random-play-button {
     font-size: 1rem;
   }
 
-  .arrow:hover{
+  .arrow:hover {
     font-size: 2rem;
   }
 
-  #random-play-button:hover{
+  #random-play-button:hover {
     font-size: 1rem;
   }
 
-  .link{
+  .link {
     width: 40%;
     font-size: 80%;
   }
-
-
-
 }
