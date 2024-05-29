@@ -109,9 +109,11 @@ def update_score(quiz, play_data, answer):
 # Routes
 # Homepage
 @html_bp.route("/", methods=["GET"])
-@login_required
 def home():
-    return render_template("home.html", categories=get_categories())
+    if current_user.is_authenticated:
+        return render_template("home.html", categories=get_categories())
+    else:
+        return redirect(url_for("auth.login"))
 
 
 # Homepage resume Quiz post
