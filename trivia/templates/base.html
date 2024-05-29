@@ -13,7 +13,8 @@
 <body>
   <nav>
     <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" id="nav-logo">
-    <a href="{{ url_for('html.home') }}" id="home">Home</a>
+    <a href="{{ url_for('html.home') }}"
+    id="home">Home</a>
     {% if quiz_exists %}
     <a href="{{ url_for('html.play_quiz') }}" id="play">Play Quiz</a>
     {% endif %}
@@ -22,6 +23,7 @@
     <!-- Show Log In or Log Out button depending if user is authenticated -->
     {% if not current_user.is_authenticated %}
     <a href="{{ url_for('auth.login') }}">Log In</a>
+    {{ current_user.username}}
     {% else %}
     <a href="{{ url_for('auth.logout') }}">Log Out</a>
     {% endif %}
