@@ -44,7 +44,7 @@ def test_question_to_play_dict(question):
     play_dict = question.to_play_dict()
     assert play_dict["id"] == question.id
     assert play_dict["category"] == question.category
-    assert play_dict["difficulty"] == question.difficulty
+    assert play_dict["difficulty"] == question.difficulty.capitalize()
     assert play_dict["question"] == question.question
     assert play_dict["correct_answer"] == question.correct_answer
     assert set(play_dict["answers"]) == set(
