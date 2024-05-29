@@ -593,6 +593,10 @@ main {
     margin: 4px;
   }
 
+  #score-blank {
+    display: none;
+  }
+
   .card {
     font-size: 1em;
   }
