@@ -59,7 +59,7 @@ class Question(db.Model):
         return {
             "id": self.id,
             "category": self.category,
-            "difficulty": self.difficulty,
+            "difficulty": self.difficulty.capitalize(),
             "question": self.question,
             "correct_answer": self.correct_answer,
             "answers": answers,

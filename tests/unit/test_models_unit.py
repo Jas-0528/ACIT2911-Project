@@ -1,54 +1,18 @@
 import json
-import pytest
 from werkzeug.security import check_password_hash
-from trivia.models import Question, Quiz, QuizQuestion, User
-
-
-# Basic User fixture
-@pytest.fixture
-def user():
-    user = User(username="user9", email="user9@example.com", password="password9")
-    return user
-
-
-# Basic Quiz fixture
-@pytest.fixture
-def quiz(user):
-    quiz = Quiz(user=user)
-    return quiz
-
-
-# Basic Question fixture
-@pytest.fixture
-def question():
-    question = Question(
-        category="Geography",
-        difficulty="hard",
-        question="Which is not a country in Africa?",
-        correct_answer="Guyana",
-        incorrect_answers_string=json.dumps(["Senegal", "Liberia", "Somalia"]),
-    )
-    return question
-
-
-# Basic QuizQuestion fixture
-@pytest.fixture
-def quiz_question(question, quiz):
-    quiz_question = QuizQuestion(question=question, quiz=quiz)
-    return quiz_question
 
 
 # Test User attributes
 def test_new_user(user):
     assert user.username == "user9"
     assert user.email == "user9@example.com"
-    assert user.password_hashed != "password9"
+    assert user.password_hashed != "P@ssw0rd!"
     assert user.password_hashed is not None
 
 
 # Test password hashing
 def test_password_hashing(user):
-    assert check_password_hash(user.password_hashed, "password9")
+    assert check_password_hash(user.password_hashed, "P@ssw0rd!")
 
 
 # Test relationship between User and Quiz
@@ -80,7 +44,7 @@ def test_question_to_play_dict(question):
     play_dict = question.to_play_dict()
     assert play_dict["id"] == question.id
     assert play_dict["category"] == question.category
-    assert play_dict["difficulty"] == question.difficulty
+    assert play_dict["difficulty"] == question.difficulty.capitalize()
     assert play_dict["question"] == question.question
     assert play_dict["correct_answer"] == question.correct_answer
     assert set(play_dict["answers"]) == set(

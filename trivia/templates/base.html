@@ -6,28 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trivia Game</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  {% block css %}
-  {% endblock %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
 </head>
 
 <body>
   <nav>
     <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" id="nav-logo">
-    <a href="{{ url_for('html.home') }}" id="home">Home</a>
-    {% if quiz_exists %}
-    <a href="{{ url_for('html.play_quiz') }}" id="play">Play Quiz</a>
-    {% endif %}
-    <a href="{{ url_for('html.play_random', question_id=random_question_id) }}">Play Random</a>
 
-    <!-- Show Log In or Log Out button depending if user is authenticated -->
-    {% if not current_user.is_authenticated %}
-    <a href="{{ url_for('auth.login') }}">Log In</a>
-    {% else %}
-    <a href="{{ url_for('auth.logout') }}">Log Out</a>
-    {% endif %}
+    <div id="nav-links">
+      <a href="{{ url_for('html.home') }}" id="home">Home</a>
+      {% if quiz_exists %}
+      <a href="{{ url_for('html.play_quiz') }}" id="play">Play Quiz</a>
+      {% endif %}
+      <a href="{{ url_for('html.play_random', question_id=random_question_id) }}">Play Random</a>
+
+      <!-- Show Log In or Log Out button depending if user is authenticated -->
+      {% if not current_user.is_authenticated %}
+      <a href="{{ url_for('auth.login') }}">Log In</a>
+      {% else %}
+      <a href="{{ url_for('auth.logout') }}">Log Out</a>
+      {% endif %}
+    </div>
+
+    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+    <a id="nav-burger">
+      <i class="fa fa-bars"></i>
+    </a>
   </nav>
 
   {% block content %}
   {% endblock %}
 </body>
+
 </html>

@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, redirect, url_for, request, flash
+import re
+from flask import Blueprint, flash, redirect, render_template, request, url_for
 from flask_login import current_user, login_user, logout_user
 from werkzeug.security import check_password_hash
 from trivia.db import db
@@ -24,22 +25,21 @@ def login_post():
     password = request.form.get("password")
     remember = True if request.form.get("remember") else False
     login_method = request.form.get("login_method")
+    user = None
 
     # Search database for matching username or email to login_method
-    stmt = db.select(User).where(User.email == login_method)
-    result = db.session.execute(stmt)
-    user = result.scalars().first()
-
-    # If no user found with matching email, find user with matching username
-    if not user:
-        stmt = db.select(User).where(User.username == login_method)
+    for attr in [User.email, User.username]:
+        stmt = db.select(User).where(attr == login_method)
         result = db.session.execute(stmt)
-        user = result.scalars().first()
+        user = result.scalar()
+        if user:
+            break
 
     # If no user found, redirect to login page and flash no user found
     if not user:
         flash("No user found with that email or username")
         return redirect(url_for("auth.login"))
+
     # If user is found, check password
     if not check_password_hash(user.password_hashed, password):
         flash("Incorrect password, try again")
@@ -47,6 +47,7 @@ def login_post():
 
     # If user is found, log them in
     login_user(user, remember=remember)
+
     # If login is successful, redirect to homepage
     return redirect(url_for("html.home"))
 
@@ -64,11 +65,25 @@ def register():
 def register_post():
     if current_user.is_authenticated:
         return redirect(url_for("html.home"))
+
+    # Get form data
     email = request.form.get("email")
     password = request.form.get("password")
     username = request.form.get("username")
 
-    # Check if user email already exists
+    # Check that all fields have input
+    if not email or not username or not password:
+        flash("All fields are required")
+        return redirect(url_for("auth.register"))
+
+    # Check if password meets criteria
+    if not re.match(
+        r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$",
+        password,
+    ):
+        return redirect(url_for("auth.register"))
+
+    # Check if email already in use
     stmt = db.select(User).where(User.email == email)
     result = db.session.execute(stmt)
     existing_user = result.scalars().first()
@@ -76,12 +91,12 @@ def register_post():
         flash("Email address already in use")
         return redirect(url_for("auth.register"))
 
-    # Check if username already exists
+    # Check if username already in use
     stmt = db.select(User).where(User.username == username)
     result = db.session.execute(stmt)
     existing_user = result.scalars().first()
     if existing_user:
-        flash("Username already exists")
+        flash("Username already in use")
         return redirect(url_for("auth.register"))
 
     # Else create new user and hash password

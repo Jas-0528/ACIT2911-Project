@@ -6,13 +6,15 @@
     <div class="score">
       <div id="scoreboard">
         {% if mode != "random" %}
-        <p id="points">Score: {{ score }}</p>
-        <p id="question-number">
+        <p id="points"><b>Score</b><br>{{ score }}</p>
+        <p id="question-number"><b>Question</b><br>
           {{ questions_done }}/{{ questions_total }}
         </p>
+        {% else %}
+        <p id="score-blank"></p>
         {% endif %}
-        <p id="category">Category: {{ category }}</p>
-        <p id="difficulty">Difficulty: {{ difficulty }}</p>
+        <p id="score-category"><b>Category</b><br>{{ category }}</p>
+        <p id="score-difficulty"><b>Difficulty</b><br>{{ difficulty }}</p>
       </div>
     </div>
 
@@ -46,18 +48,19 @@
   </div>
 </main>
 
-{% if mode == "random" %}
-<div class="right-arrow">
-  <a id="random-play-button" href="{{ url_for('html.play_random', question_id=random_question_id) }}">Random
-    Question</a>
+<div class="end-links">
+  <a class="link" href="https://opentdb.com/api_config.php">
+    Questions were obtained from the <b>Open Trivia DatabaseAPI</b>
+  </a>
+  {% if mode == "random" %}
+  <div class="right-arrow">
+    <a id="random-play-button" href="{{ url_for('html.play_random', question_id=random_question_id) }}">RANDOM
+      QUESTION</a>
+  </div>
+  {% elif answered %}
+  <div>
+    <a class="arrow" href="{{ url_for('html.play_quiz') }}"><i>NEXT</i></a>
+  </div>
+  {% endif %}
 </div>
-{% elif answered %}
-<div>
-  <a class="arrow" href="{{ url_for('html.play_quiz') }}"><i>&#8594;</i></a>
-</div>
-{% endif %}
-
-<a class="link" href="https://opentdb.com/api_config.php">Questions were obtained from the Open Trivia Database
-  API</a>
-
 {% endblock %}

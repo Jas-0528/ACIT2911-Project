@@ -1,12 +1,12 @@
 import os
 from dotenv import load_dotenv
 from flask import Flask
-from flask_login import LoginManager
+from flask_login import current_user, LoginManager
 from pathlib import Path
 from sqlalchemy.sql import functions as func
 from .db import db
 from .models import Question, Quiz, User
-from .routes import html_bp, api_questions_bp, auth_bp
+from .routes import html_bp, api_bp, auth_bp
 
 # Load environment variables from .env file
 load_dotenv()
@@ -23,8 +23,11 @@ def inject_data():
     random_question_id = db.session.execute(stmt).scalar()
 
     # Check if a Quiz exists
-    stmt = db.select(Quiz)
-    quiz = db.session.execute(stmt).scalar()
+    if current_user.is_authenticated:
+        stmt = db.select(Quiz).where(Quiz.user_id == current_user.id)
+        quiz = db.session.execute(stmt).scalar()
+    else:
+        quiz = None
 
     return dict(random_question_id=random_question_id, quiz_exists=bool(quiz))
 
@@ -54,6 +57,6 @@ def load_user(user_id):
     return db.session.get(User, int(user_id))
 
 
-app.register_blueprint(api_questions_bp, url_prefix="/api/questions")
+app.register_blueprint(api_bp, url_prefix="/api")
 app.register_blueprint(html_bp, url_prefix="/")
 app.register_blueprint(auth_bp, url_prefix="/auth")
