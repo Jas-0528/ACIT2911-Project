@@ -31,6 +31,13 @@ nav {
   position: relative;
 }
 
+#nav-logo {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  margin-right: 2%;
+}
+
 #nav-links {
   display: flex;
   justify-content: center;
@@ -51,13 +58,6 @@ nav {
 #nav-links a:hover {
   background-color: #fc6a91;
   border-radius: 325px;
-}
-
-#nav-logo {
-  border-radius: 50%;
-  width: 90px;
-  height: 90px;
-  margin-right: 2%;
 }
 
 #nav-burger {
@@ -264,6 +264,7 @@ main {
   border: 0.6rem solid #fc6a91;
   border-radius: 325px;
   color: var(--Goated-Purple);
+  text-align: center;
   /* text-color*/
   font-size: 1.5em;
   font-weight: 600;
@@ -274,6 +275,7 @@ main {
   align-items: center;
   margin-top: 2%;
   margin-bottom: 2%;
+
 }
 
 .options {
@@ -365,7 +367,7 @@ main {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 1280px) {
   /* log in page = is fine at this width*/
 
   /* register page = is fine at this width*/
@@ -394,9 +396,9 @@ main {
     font-size: 2rem;
   }
 
-  #nav-links {
-    min-width: 85vw;
-  }
+}
+
+@media screen and (max-width: 1279px) {
 
   /* log in page*/
   .login-block,
@@ -461,6 +463,14 @@ main {
     overflow: visible;
   }
 
+  #nav-logo {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 3px;
+    top: 3px;
+  }
+
   #nav-links {
     background-color: var(--background-color);
     display: none;
@@ -470,16 +480,8 @@ main {
     padding-block: 10px;
   }
 
-  #nav-logo {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    left: 3px;
-    top: 3px;
-  }
-
   #nav-links a {
-    color: black;
+    color: var(--Goated-Purple);
     display: block;
     font-size: 22px;
     text-align: center;

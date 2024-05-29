@@ -10,6 +10,8 @@
         <p id="question-number"><b>Question:</b>
           {{ questions_done }}/{{ questions_total }}
         </p>
+        {% else %}
+        <p></p>
         {% endif %}
         <p id="score-category"><b>Category:</b> {{ category }}</p>
         <p id="score-difficulty"><b>Difficulty:</b> {{ difficulty }}</p>
