@@ -19,7 +19,7 @@
 
   {% else %}
   <!-- Play (create) Quiz form -->
-  <form method="POST" action="{{ url_for('html.home_submit_play') }}">
+  <form method="POST" action="{{ url_for('html.home_submit_play') }}" class="fields">
     <input type="submit" value="Play Quiz" class="play_button">
     <div>
       <label for="category">Category</label>
@@ -70,7 +70,7 @@
   </form>
   {% with messages = get_flashed_messages() %}
   {% if messages %}
-  <ul class=flashes>
+  <ul id="error-code">
     {% for message in messages %}
     <li>{{ message }}</li>
     {% endfor %}

@@ -41,7 +41,7 @@ nav a{
 
 nav a:hover{
     background-color: #fc6a91;
-    border-radius: 5px;
+    border-radius: 325px;
 }
 
 #nav-logo{
@@ -100,7 +100,7 @@ nav a:hover{
   color: snow;
   font-size: 110%;
   margin-top: 5%;
-  border-radius: 30px;
+  border-radius: 5px;
   padding: 2% 5%;
   border: 2px snow;
   cursor: pointer;
@@ -148,7 +148,7 @@ nav a:hover{
   border-radius: 5px;
   border: 2px solid snow;
   cursor: pointer;
-  margin-top: 2%;
+  margin-top: 1%;
   text-decoration: none;
 }
 
@@ -164,7 +164,7 @@ nav a:hover{
   border-radius: 5px;
   border: 2px solid snow;
   cursor: pointer;
-  margin-top: 5%;
+  margin-top: 3%;
   margin-bottom: 2%;
   text-decoration: none;
   padding: 2% 3%;
@@ -203,15 +203,20 @@ label{
   color: snow;
 }
 
+#error-code{
+  color: snow;
+  list-style-type: none;
+}
+
 /* css for the trivia game */
 /*scoreboard*/
 #scoreboard{
   width: 80%;
   display: flex;
   justify-content: space-between;
-  padding: 0.5%;
+  padding: 0.5% 2%;
   background-color: snow;
-  border-radius: 10px;
+  border-radius: 325px;
   margin: 0 auto;
   border: 5px solid #f9c252;
 }
@@ -235,7 +240,7 @@ main {
   padding: 2%;
 
   border: 0.6rem solid #fc6a91;
-  border-radius: 10px;
+  border-radius: 325px;
   color: var(--Goated-Purple);
   /* text-color*/
   font-size: 1.5em;
@@ -262,7 +267,7 @@ main {
   color: var(--Goated-Purple);
   background-color: snow;
   /* background color for the rectangle cards */
-  border-radius: 10px;
+  border-radius: 325px;
   /* smoothens it from sharp corners to rounded--more circular */
   border: 0.6rem solid#FCDE93;
   /* this adds the shadow to the inside of the answer options. makes it look more 3d*/
