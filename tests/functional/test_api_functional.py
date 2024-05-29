@@ -1,6 +1,4 @@
-import os, pytest
 from flask import url_for
-from app import app
 
 
 def test_question_list(client):

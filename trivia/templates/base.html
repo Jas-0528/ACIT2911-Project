@@ -13,6 +13,7 @@
 <body>
   <nav>
     <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" id="nav-logo">
+
     <div id="nav-links">
       <a href="{{ url_for('html.home') }}" id="home">Home</a>
       {% if quiz_exists %}
@@ -27,14 +28,13 @@
       <a href="{{ url_for('auth.logout') }}">Log Out</a>
       {% endif %}
     </div>
-    <!-- <div>
-      {{ current_user.username }}
-    </div> -->
+
     <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
     <a id="nav-burger">
       <i class="fa fa-bars"></i>
     </a>
   </nav>
+
   {% block content %}
   {% endblock %}
 </body>

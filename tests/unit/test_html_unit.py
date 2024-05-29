@@ -1,5 +1,5 @@
 from unittest.mock import MagicMock, patch
-from trivia.models import Question, Quiz, QuizQuestion, User
+from trivia.models import Question, Quiz, User
 from trivia.routes.html import (
     get_user,
     get_question,
