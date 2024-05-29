@@ -81,9 +81,6 @@ def register_post():
         r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$",
         password,
     ):
-        flash(
-            "Password must be 8+ characters with at least one uppercase, one lowercase, one number, and one of these special characters: !, @, #, $, %, ^, &, *. Other special characters are not allowed."
-        )
         return redirect(url_for("auth.register"))
 
     # Check if email already in use
