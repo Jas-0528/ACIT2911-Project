@@ -47,7 +47,7 @@ def quiz(user):
 def question():
     question = Question(
         category="Geography",
-        difficulty="hard",
+        difficulty="Hard",
         question="Which is not a country in Africa?",
         correct_answer="Guyana",
         incorrect_answers_string='["Senegal", "Liberia", "Somalia"]',

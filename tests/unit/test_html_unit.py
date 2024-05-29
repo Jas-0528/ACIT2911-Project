@@ -40,7 +40,7 @@ def test_get_question(question, mock_session):
     # Assert that get_question returned the correct question
     assert retrieved_question.id == 456
     assert retrieved_question.category == "Geography"
-    assert retrieved_question.difficulty == "hard"
+    assert retrieved_question.difficulty == "Hard"
     assert retrieved_question.question == "Which is not a country in Africa?"
     assert retrieved_question.correct_answer == "Guyana"
     assert (
@@ -130,7 +130,7 @@ def test_create_quiz_existing_quiz(mock_session):
 
     # Call create_quiz with the mock User object
     result = create_quiz(
-        user=mock_user, category="Geography", difficulty="easy", length=3
+        user=mock_user, category="Geography", difficulty="Easy", length=3
     )
 
     # Assert that create_quiz returned True (an existing quiz can be played)
@@ -159,7 +159,7 @@ def test_create_quiz_no_existing_quiz(mock_session):
     ):
         # Call create_quiz with the mock User object
         result = create_quiz(
-            user=mock_user, category="Geography", difficulty="easy", length=3
+            user=mock_user, category="Geography", difficulty="Easy", length=3
         )
 
     # Assert that create_quiz returned True (an newly created quiz can be played)
@@ -188,7 +188,7 @@ def test_create_quiz_insufficient_questions(mock_session):
     ):
         # Call create_quiz with the mock User object
         result = create_quiz(
-            user=mock_user, category="Geography", difficulty="easy", length=3
+            user=mock_user, category="Geography", difficulty="Easy", length=3
         )
 
         # Assert that create_quiz returned False
@@ -205,25 +205,25 @@ def test_update_score(mock_session):
     mock_quiz.score = 0
 
     # Correct answer
-    play_data = {"correct_answer": "Brain", "difficulty": "easy"}
+    play_data = {"correct_answer": "Brain", "difficulty": "Easy"}
     user_answer = "Brain"
     update_score(mock_quiz, play_data, user_answer)
     assert mock_quiz.score == 1
 
     # Correct answer
-    play_data = {"correct_answer": "Barbados", "difficulty": "medium"}
+    play_data = {"correct_answer": "Barbados", "difficulty": "Medium"}
     user_answer = "Barbados"
     update_score(mock_quiz, play_data, user_answer)
     assert mock_quiz.score == 3
 
     # Correct answer
-    play_data = {"correct_answer": "Hoatzin", "difficulty": "hard"}
+    play_data = {"correct_answer": "Hoatzin", "difficulty": "Hard"}
     user_answer = "Hoatzin"
     update_score(mock_quiz, play_data, user_answer)
     assert mock_quiz.score == 6
 
     # Incorrect answer
-    play_data = {"correct_answer": "Cupertino, California", "difficulty": "hard"}
+    play_data = {"correct_answer": "Cupertino, California", "difficulty": "Hard"}
     user_answer = "Redwood City, California"
     update_score(mock_quiz, play_data, user_answer)
     assert mock_quiz.score == 6
