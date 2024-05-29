@@ -97,9 +97,9 @@ def create_quiz(user, category, difficulty, length):
 # If answer is correct, update score based on difficulty
 def update_score(quiz, play_data, answer):
     if play_data["correct_answer"] == answer:
-        if play_data["difficulty"] == "easy":
+        if play_data["difficulty"] == "Easy":
             quiz.score += 1
-        elif play_data["difficulty"] == "medium":
+        elif play_data["difficulty"] == "Medium":
             quiz.score += 2
         else:
             quiz.score += 3
