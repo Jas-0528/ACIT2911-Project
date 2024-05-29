@@ -6,15 +6,15 @@
     <div class="score">
       <div id="scoreboard">
         {% if mode != "random" %}
-        <p id="points"><b>Score:</b> {{ score }}</p>
-        <p id="question-number"><b>Question:</b>
+        <p id="points"><b>Score</b><br>{{ score }}</p>
+        <p id="question-number"><b>Question</b><br>
           {{ questions_done }}/{{ questions_total }}
         </p>
         {% else %}
         <p id="score-blank"></p>
         {% endif %}
-        <p id="score-category"><b>Category:</b> {{ category }}</p>
-        <p id="score-difficulty"><b>Difficulty:</b> {{ difficulty }}</p>
+        <p id="score-category"><b>Category</b><br>{{ category }}</p>
+        <p id="score-difficulty"><b>Difficulty</b><br>{{ difficulty }}</p>
       </div>
     </div>
 
