@@ -217,8 +217,9 @@ def play_quiz():
     if user.quiz is None:
         return redirect(url_for("html.home"))
 
-    # Retrieve their quiz
+    # Retrieve their quiz and count the number of answered questions
     quiz = get_quiz(user.quiz.id)
+    answered_questions = len([qq for qq in quiz.questions if qq.answered == 1])
 
     # Play the next unanswered question
     quiz_question = next((qq for qq in quiz.questions if qq.answered == 0), None)
@@ -238,7 +239,7 @@ def play_quiz():
             "correct": False,
             "mode": "quiz",
             "score": quiz.score,
-            "questions_done": quiz_question.id,
+            "current_question_number": answered_questions + 1,
             "questions_total": len(quiz.questions),
         }
     )
