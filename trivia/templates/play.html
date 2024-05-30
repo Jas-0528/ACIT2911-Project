@@ -8,7 +8,7 @@
         {% if mode != "random" %}
         <p id="points"><b>Score</b><br>{{ score }}</p>
         <p id="question-number"><b>Question</b><br>
-          {{ questions_done }}/{{ questions_total }}
+          {{ current_question_number }} of {{ questions_total }}
         </p>
         {% else %}
         <p id="score-blank"></p>
