@@ -6,9 +6,7 @@ Welcome to the Trivia Game website! Follow these instructions to start playing
 <!-- AF: changed from "steps" to instructions -->
 <!-- AN: These still aren't really instructions.. just aspects of the web app. Instructions would be more like: (1) Navigate to <ip address:port>. You will see a log in screen. (2) Click register. (3) Register an account. (4) Log in. (5) Click Play Random or set parameters and click Play Quiz... something like this, though I don't think its necessary. -->
 
-# Creating an Account
 
-_An account is needed to play the game_
 
 <!-- AN: Do you need an account to play? -->
 <!-- AF: added in the note "an account is needed to play the game" -->
@@ -16,17 +14,14 @@ _An account is needed to play the game_
 
 <!-- J: the heading sizes are a bit confusing. maybe make creating an account the main title and make log in the same size as registration. Or put login below registration-->
 <!-- AF: made it an h1 tag instead of an h2 -->
+
 <!-- AN: The order and organization here is illogical. You can't log in without having registered. Logging in is also not part of creating an account. -->
+<!-- AF: Got rid of the h1 title "Creating an account". Changed it so that registration is at the top. -->
 
-## Log In
-
-**Log In**: If you have previously created an account, you can log in using your login credentials.
-
-- Tick the "Remember me" checkbox to avoid needing to login each time you access the website!
-  <!-- AN: Logging in should be its own section. -->
-  <!-- AF: yessir 🫡 -->
 
 ### Registration
+_An account is needed to play the game_
+![image](/docs/images/RegisterSS.png)
 
 **Register**: To make an account, click on the "Don't have an account? Register here" link. You will be redirected to the **Registration** page.
 
@@ -34,7 +29,8 @@ _An account is needed to play the game_
 
 <!-- J: emails also need to be unique -->
 
-- Your email— <!-- AN: inconsistent use of dash and bullet levels --> needs to be unique and cannot be repeated twice
+- Your email 
+  - needs to be unique and cannot be repeated twice
 - A unique username
   - Usernames need to be unique, no two users can have the same username.
 - Password
@@ -43,7 +39,17 @@ _An account is needed to play the game_
 <!-- AN: You cannot create an account on the login page. Also need a step telling them to sit some button. Also consider telling them the password requirements. -->
 <!-- AF: added a line saying users need to click on the "Don't have an acc..." button -->
 
+## Log In
+![image](/docs/images/LoginSS.png)
+
+**Log In**: If you have previously created an account, you can log in using your login credentials.
+
+- Tick the "Remember me" checkbox to avoid needing to login each time you access the website!
+  <!-- AN: Logging in should be its own section. -->
+  <!-- AF: yessir 🫡 -->
+
 ## Home Page
+![HomepageScreenshot](/docs/Images/HomepageSS.png)
 
 After logging in, you'll be directed to the home page. Here, you'll see three lists: <!-- AN: drop-down/dropdown list/menu, not "drop down" -->
 <!-- AN: You say three but have a 5-item list. These are also not lists. They are buttons and dropdown menus. -->
@@ -58,6 +64,7 @@ After logging in, you'll be directed to the home page. Here, you'll see three li
 5. **Number of Questions**: Decide how many questions you want to answer.
 
 ## Playing Random Mode
+![PlayRandomScreenshot](/docs/Images/PlayRandomSS.png)
 
 Select this mode to get questions from all categories and difficulties.
 
@@ -68,18 +75,22 @@ Select this mode to get questions from all categories and difficulties.
 <!-- J: you can also click play random on the nav bar -->
 <!-- AF: added that in! -->
 
-**Next Random Question**: Click on the “Random Question” button— on the homepage or on the navigation bar— to generate a new question.
+**Next Random Question**: Click on the “Play Random" button— on the homepage or on the navigation bar— to generate a new question.
 <!-- AN: There is no "Random Question" button on the navbar. -->
+<!-- AF: Changed it to be "Play Random" instead of "Random Question" -->
 
 ---
 
 ## Playing Quiz Mode
+![PlayQuizScreenshot](/docs/Images/PlayQuizSS.png)
+![HomePage](/docs/Images/Saving_DeletingQuiz.png)
 
 <!-- AN: How do you start Quiz mode? Why isn't there a button at the top like Play Random? Is Quiz Mode endless? What IS quiz mode? Imagine explaining this to someone new. -->
 <!-- AF: added the following two lines in to address your comment! -->
 
-To start Quiz mode, click on the "Play Quiz" button which can be found on the home page and on the navigation bar.
+To start Quiz mode, click on the "Play Quiz" button which can be found on the home page and on the navigation bar. Please note that it's only available on the navigation bar *if* you have a created/saved quiz.
 <!-- AN: The "Play Quiz" button only appears in the navbar when there is a quiz created for the user already and does not allow the user to create/start a new quiz -->
+<!-- AF: added that as a note..."Please note that..."-->
 
 **Scoring:**
 You earn points based on the difficulty of the questions:
@@ -100,14 +111,14 @@ While playing, the scoreboard displays:
 
 - You can leave the quiz at any time, and your progress will be saved.
 - To resume, click on the “Resume Quiz” button on the home page.
-  - Each logged in account can have one saved quiz at a time, which is created on the homepage
+- Each logged in account can have one saved quiz at a time, which is created on the homepage
 
 <!-- AN: Inconsistent colon and section heading use -->
 
-**Deleting a Saved Quiz**
+**Deleting a Saved Quiz:**
 
-- You can delete a quiz by returning to the home page and clicking the "Delete Quiz" button. <!-- AN: What does it mean to delete a quiz? -->
-
+- You can delete a quiz by returning to the home page and clicking the "Delete Quiz" button. 
+  - Deleting quiz means all the saved progress is lost (score, chosen category/difficulty/number of questions). 
 ---
 
 > Questions were taken from Open Trivia DB API (https://opentdb.com/api_config.php)
@@ -115,7 +126,8 @@ While playing, the scoreboard displays:
 <!-- J: add an ending note like have fun playing or smt -->
 <!-- AF: added one! -->
 <!-- AN: Great idea, but not as a heading. -->
+<!-- AF: Made it bolded instead -->
 
 ---
 
-### Enjoy your Trivia adventure!
+**Enjoy your Trivia adventure!**
