@@ -6,7 +6,7 @@ This guide will detail the features of Trivia Game as well as explain how to reg
 
 > A user guide that explains how to clone this repository and take the required steps to run the application locally is located at [`docs/user_guide.md`](docs/user_guide.md).
 
-Trivia Game can be played on a computer or mobile device.
+Trivia Game can be played on a computer 💻 or mobile device 📱.
 
 ## Registering an Account
 

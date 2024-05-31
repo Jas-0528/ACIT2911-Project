@@ -110,6 +110,10 @@ nav {
   padding: 2%;
 }
 
+.checkbox {
+  color: #2A2030;
+}
+
 .submit {
   background-color: #fc6a91;
   color: snow;
