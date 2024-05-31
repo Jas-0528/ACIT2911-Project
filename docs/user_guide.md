@@ -117,7 +117,7 @@ The same flags can be used when using the management script like this.
 
 ### Generating a Local .env File with `generate_env_file.py`
 
-This `generate_env_file.py` script generates a .env file with a secret key and a port number. The secret key is a random 64-character hexadecimal string required by Flask-login. The port number defaults to 8888, and another port can be specified using a flag.
+This `generate_env_file.py` script generates a .env file with a secret key and a port number. The secret key is a random 64-character hexadecimal string required by Flask-login. The port number is the port the Flask server will listen on. It defaults to 8888, and another port can be specified using a flag.
 
 The following flags can be used with the command:
 
@@ -129,7 +129,7 @@ The following flags can be used with the command:
 
 Ensure that the following have been completed before running the application:
 
-- Python and pip are installed
+- [Python and pip are installed](https://www.python.org)
 - [a virtual environment has been set up and is active](#setting-up-a-virtual-environment)
 - [the required packages are installed](#installing-required-packages)
 - [an SQLite database has been created and populated with questions using the management script](#creating-and-populating-the-database)
@@ -141,6 +141,6 @@ Run the application:
 python app.py
 ```
 
-Trivia Game will then be accessible at localhost:8888 or 127.0.0.1:8888. If you specified a different port number in the .env file, use that instead. For example, localhost:\<port> or 127.0.0.1:\<port>.
+Trivia Game will then be accessible at localhost:8888 or 127.0.0.1:8888. If you specified a different port number in your .env file, use that instead. For example if you specified `PORT=5000`, use localhost:5000 or 127.0.0.1:5000.
 
 Instructions to register, log in and play the game are in the [README](../README.md).
